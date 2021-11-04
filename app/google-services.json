@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "294942713358",
+    "project_id": "healthy-home-b72f4",
+    "storage_bucket": "healthy-home-b72f4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294942713358:android:7c78c6613cb30ffa4bfe5f",
+        "android_client_info": {
+          "package_name": "com.example.android.healthyhome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294942713358-kafvulgbusb12dcl1jjniv24lss6670v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.healthyhome",
+            "certificate_hash": "0bdfdc58c2eb4b66cd6669e581bf266d422056a8"
+          }
+        },
+        {
+          "client_id": "294942713358-6gqo550o055duuffsjfc1p462dqcgejg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtP2hfzDiL3z6491dWkGcKwLCSkqrTE_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294942713358-6gqo550o055duuffsjfc1p462dqcgejg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
