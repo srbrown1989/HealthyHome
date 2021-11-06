@@ -10,4 +10,9 @@
         android:name="com.example.android.healthyhome.ServicesFragment"
         android:label="ServicesFragment"
         tools:layout="@layout/fragment_services"/>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.android.healthyhome.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login"/>
 </navigation>
