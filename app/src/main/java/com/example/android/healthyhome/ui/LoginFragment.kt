@@ -1,8 +1,9 @@
-package com.example.android.healthyhome
+package com.example.android.healthyhome.ui
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.text.Layout
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,7 +11,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.android.healthyhome.R
 import com.example.android.healthyhome.databinding.FragmentLoginBinding
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
@@ -49,6 +52,7 @@ class LoginFragment : Fragment() {
         )
 
         binding.loginButton.setOnClickListener { launchSignInFlow() }
+
 
         return binding.root
     }
