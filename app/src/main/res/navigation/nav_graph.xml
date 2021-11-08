@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/servicesFragment">
+    app:startDestination="@id/providerHomeFragment">
 
     <fragment
         android:id="@+id/servicesFragment"
@@ -21,8 +21,13 @@
     </fragment>
     <fragment
         android:id="@+id/providerFragment"
-        android:name="com.example.android.healthyhome.ui.ProviderFragment"
+        android:name="com.example.android.healthyhome.ui.ProviderSignUpFragment"
         android:label="ProviderFragment"
         tools:layout="@layout/fragment_provider_sign_up"/>
+    <fragment
+        android:id="@+id/providerHomeFragment"
+        android:name="com.example.android.healthyhome.ui.ProviderHomeFragment"
+        android:label="ProviderHomeFragment"
+        tools:layout="@layout/fragment_provider_home"/>
 
 </navigation>

@@ -15,4 +15,5 @@
     <string name="bio">Bio</string>
     <string name="service">Service</string>
     <string name="add_provider">Add Provider</string>
+    <string name="credit_card_number">Credit card number</string>
 </resources>

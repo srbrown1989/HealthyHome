@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-class ProviderFragment: Fragment() {
+class ProviderSignUpFragment: Fragment() {
 
     private lateinit var binding: FragmentProviderSignUpBinding
     private lateinit var database: DatabaseReference
@@ -33,18 +33,7 @@ class ProviderFragment: Fragment() {
         database = FirebaseDatabase.getInstance().reference.child("Provider")
 
         binding.providerAddButton.setOnClickListener {
-            var  provider = Provider()
-            provider.provider_id = database.push().key
-//            addProvider()
-
-
-            provider.uid = FirebaseAuth.getInstance().uid ?: "uidDidntWork"
-            provider.name = binding.providerNameEditText.text.toString()
-            provider.bio = binding.providerContactEditText.text.toString()
-            provider.contactNumber = binding.providerBioEditText.text.toString()
-            provider.service = binding.providerServiceEditText.text.toString()
-
-            database.child(provider.provider_id!!).setValue(provider)
+            addProvider()
 
         }
 
@@ -52,18 +41,21 @@ class ProviderFragment: Fragment() {
 
     }
 
-//    private fun addProvider() {
-//
-//
-//        var provider = Provider()
-//
-//        provider.uid = FirebaseAuth.getInstance().uid ?: "uidDidntWork"
-//        provider.name = binding.providerNameEditText.text.toString()
-//        provider.bio = binding.providerContactEditText.text.toString()
-//        provider.contactNumber = binding.providerBioEditText.text.toString()
-//        provider.service = binding.providerServiceEditText.text.toString()
-//
-//        database.push().setValue(provider)
-//
-//    }
+    private fun addProvider() {
+        var provider = Provider()
+        provider.provider_id = database.push().key
+
+
+        //Id of current logged in user.
+        provider.uid = FirebaseAuth.getInstance().uid
+
+        provider.name = binding.providerNameEditText.text.toString()
+        provider.bio = binding.providerContactEditText.text.toString()
+        provider.contactNumber = binding.providerBioEditText.text.toString()
+        provider.service = binding.providerServiceEditText.text.toString()
+        provider.contactNumber = binding.providerCreditEditText.text.toString()
+
+        database.child(provider.provider_id!!).setValue(provider)
+    }
+
 }
