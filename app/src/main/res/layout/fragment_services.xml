@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="Please select a service:"
+            android:text="@string/please_select_a_service"
             android:textColor="#000000"
             android:textStyle="bold"
             android:textSize="30sp"/>
@@ -59,7 +59,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Cleaning"
+                        android:text="@string/cleaning"
                         android:textStyle="bold"
                         android:textAlignment="center"
                         />
@@ -95,7 +95,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Locksmith"
+                        android:text="@string/locksmith"
                         android:textStyle="bold"
                         android:textAlignment="center"
                         />
@@ -130,7 +130,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Dog walking"
+                        android:text="@string/dog_walking"
                         android:textStyle="bold"
                         android:textAlignment="center"
                         />
@@ -165,7 +165,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Removals"
+                        android:text="@string/removals"
                         android:textStyle="bold"
                         android:textAlignment="center"
                         />
@@ -200,7 +200,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Gardener"
+                        android:text="@string/gardener"
                         android:textStyle="bold"
                         android:textAlignment="center"
                         />
@@ -235,7 +235,7 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Handyman"
+                        android:text="@string/odd_jobs"
                         android:textStyle="bold"
                         android:textAlignment="center"
                         />

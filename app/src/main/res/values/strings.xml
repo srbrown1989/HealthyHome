@@ -25,4 +25,9 @@
     <string name="messages_desc">View your messages, keep in contact with your customers.</string>
     <string name="offers">Offers</string>
     <string name="offers_desc">Fully customizable offers to attract customers</string>
+    <string name="cleaning">Cleaning</string>
+    <string name="please_select_a_service">Please select a service:</string>
+    <string name="locksmith">Locksmith</string>
+    <string name="removals">Removals</string>
+    <string name="gardener">Gardener</string>
 </resources>
