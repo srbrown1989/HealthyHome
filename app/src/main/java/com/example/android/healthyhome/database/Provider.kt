@@ -13,7 +13,8 @@ data class Provider(
     var bio : String? = null,
     var service : String? = null,
     var creditCardNumber : String? = null,
-    var rating : Int? = 3
+    var rating : Int? = 3,
+    var price : Int? = 0
 
 
 )

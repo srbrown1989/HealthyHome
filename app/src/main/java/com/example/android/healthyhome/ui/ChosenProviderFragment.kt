@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import com.example.android.healthyhome.R
+import com.example.android.healthyhome.databinding.FragmentChosenProviderBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -23,6 +25,8 @@ class ChosenProviderFragment : Fragment() {
     private lateinit var providerID: String
     private lateinit var dbProvider : DatabaseReference
 
+    private lateinit var binding : FragmentChosenProviderBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -37,7 +41,11 @@ class ChosenProviderFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chosen_provider, container, false)
+        binding = DataBindingUtil.inflate<FragmentChosenProviderBinding>(
+            inflater,R.layout.fragment_chosen_provider,container,false
+        )
+        return binding.root
+
     }
 
     companion object {
