@@ -53,6 +53,11 @@ class LoginFragment : Fragment() {
 
         binding.loginButton.setOnClickListener { launchSignInFlow() }
 
+        binding.providerButton.setOnClickListener { v: View ->
+            v.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToProviderFragment())
+
+        }
+
 
         return binding.root
     }
