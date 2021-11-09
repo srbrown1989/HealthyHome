@@ -16,4 +16,13 @@
     <string name="service">Service</string>
     <string name="add_provider">Add Provider</string>
     <string name="credit_card_number">Credit card number</string>
+    <string name="company_name">Company Name</string>
+    <string name="bio">Bio</string>
+    <string name="edit_your_profile">Edit your bio to provide your customers with the most up to date information.</string>
+    <string name="bookings">Bookings</string>
+    <string name="bookings_desc">View and manage your bookings or contact your customers</string>
+    <string name="messages">Messages</string>
+    <string name="messages_desc">View your messages, keep in contact with your customers.</string>
+    <string name="offers">Offers</string>
+    <string name="offers_desc">Fully customizable offers to attract customers</string>
 </resources>

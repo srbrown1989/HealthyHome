@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+    
+    <style name="title_header" parent="TextAppearance.AppCompat">
+
+        <item name="android:textSize">34sp</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
+    <style name="header" parent="TextAppearance.AppCompat">
+
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+
+    </style>
+    
+</resources>
