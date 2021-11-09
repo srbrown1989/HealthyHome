@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_loginFragment_to_providerFragment"
             app:destination="@id/providerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_filterServicesFragment"
+            app:destination="@id/filterServicesFragment" />
     </fragment>
     <fragment
         android:id="@+id/providerFragment"
@@ -33,5 +36,10 @@
         android:name="com.example.android.healthyhome.ui.ProviderHomeFragment"
         android:label="ProviderHomeFragment"
         tools:layout="@layout/fragment_provider_home"/>
+    <fragment
+        android:id="@+id/filterServicesFragment"
+        android:name="com.example.android.healthyhome.ui.FilterServicesFragment"
+        android:label="fragment_filter_services"
+        tools:layout="@layout/fragment_filter_services" />
 
 </navigation>

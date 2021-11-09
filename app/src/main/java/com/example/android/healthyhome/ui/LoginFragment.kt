@@ -58,6 +58,10 @@ class LoginFragment : Fragment() {
 
         }
 
+        binding.filterButton.setOnClickListener { v: View ->
+            v.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToFilterServicesFragment())
+        }
+
 
         return binding.root
     }

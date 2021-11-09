@@ -26,4 +26,8 @@
     <dimen name="question_text_size">30sp</dimen>
     <dimen name="image_header_height">192dp</dimen>
     <dimen name="game_over_height">350dp</dimen>
+
+    <dimen name="fullscreen_padding">16dp</dimen>
+    <dimen name="horizontal_spacer_width">20dp</dimen>
+    <dimen name="regularity_button_height">128dp</dimen>
 </resources>

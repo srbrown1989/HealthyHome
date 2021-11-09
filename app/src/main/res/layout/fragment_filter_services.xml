@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/baseLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.FilterServicesFragment">
+
+
+        <ScrollView
+            android:id="@+id/sv_optionsHolder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/fullscreen_padding"
+            android:paddingTop="@dimen/fullscreen_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btn_oneOff"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/regularity_button_height"
+                    android:text="@string/oneOffService"
+                    app:layout_constraintEnd_toStartOf="@+id/vw_horizontalSpacer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/vw_horizontalSpacer"
+                    android:layout_width="@dimen/horizontal_spacer_width"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@id/btn_regular"
+                    app:layout_constraintStart_toEndOf="@+id/btn_oneOff"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btn_regular"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/regularity_button_height"
+                    android:text="@string/regularService"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/vw_horizontalSpacer"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_selectRooms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/numOfRooms"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_oneOff" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_selectRooms">
+
+                    <RadioButton
+                        android:id="@+id/rb_oneRoom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/oneRoom" />
+
+                    <RadioButton
+                        android:id="@+id/rb_twoRooms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/twoRooms" />
+
+                    <RadioButton
+                        android:id="@+id/rb_threeRooms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/threeRooms" />
+
+                    <RadioButton
+                        android:id="@+id/rb_fourRooms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fourRooms" />
+
+                    <RadioButton
+                        android:id="@+id/rb_fiveRooms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fiveRooms" />
+                </RadioGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

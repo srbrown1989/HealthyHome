@@ -2,11 +2,8 @@
     <string name="app_name">HealthyHome</string>
     <string name="login">Login</string>
     <string name="service_title_string">Please select the service you require</string>
-    <string name="cleaning">Cleaning</string>
     <string name="gardening">Gardening</string>
     <string name="dog_walking">Dog Walking</string>
-    <string name="locksmith">Locksmith</string>
-    <string name="removals">Removals</string>
     <string name="odd_jobs">Odd Jobs</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -17,7 +14,6 @@
     <string name="add_provider">Add Provider</string>
     <string name="credit_card_number">Credit card number</string>
     <string name="company_name">Company Name</string>
-    <string name="bio">Bio</string>
     <string name="edit_your_profile">Edit your bio to provide your customers with the most up to date information.</string>
     <string name="bookings">Bookings</string>
     <string name="bookings_desc">View and manage your bookings or contact your customers</string>
@@ -30,4 +26,18 @@
     <string name="locksmith">Locksmith</string>
     <string name="removals">Removals</string>
     <string name="gardener">Gardener</string>
+
+    <!-- Jakes strings -->
+    <string name="oneOffService">One-off Service</string>
+    <string name="regularService">Regular Service</string>
+    <string name="numOfRooms">Number of Rooms</string>
+    <string name="oneRoom">1</string>
+    <string name="twoRooms">2</string>
+    <string name="threeRooms">3</string>
+    <string name="fourRooms">4</string>
+    <string name="fiveRooms">5</string>
+
+
+
+
 </resources>
