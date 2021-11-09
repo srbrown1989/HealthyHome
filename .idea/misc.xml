@@ -11,11 +11,17 @@
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21770833333333334" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_login.xml" value="0.33" />
-        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_provider_home.xml" value="0.25" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_provider_sign_up.xml" value="0.33" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_services.xml" value="0.33" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/nav_header.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/menu/navdrawer_menu.xml" value="0.20572916666666666" />
+        <entry key="..\:/Users/paulw/Desktop/appCode/HealthyHome/app/src/main/res/drawable/ic_cleaning.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/paulw/Desktop/appCode/HealthyHome/app/src/main/res/drawable/ic_dog_walker.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/paulw/Desktop/appCode/HealthyHome/app/src/main/res/drawable/ic_gardener.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/paulw/Desktop/appCode/HealthyHome/app/src/main/res/drawable/ic_locksmith.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/paulw/Desktop/appCode/HealthyHome/app/src/main/res/drawable/ic_odd_jobs.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/paulw/Desktop/appCode/HealthyHome/app/src/main/res/drawable/ic_removals.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/paulw/Desktop/appCode/HealthyHome/app/src/main/res/layout/fragment_services.xml" value="0.25" />
       </map>
     </option>
   </component>
