@@ -1,20 +1,18 @@
 package com.example.android.healthyhome.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.database.Provider
 import com.example.android.healthyhome.databinding.FragmentProviderSignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 
 class ProviderSignUpFragment: Fragment() {
 
@@ -34,6 +32,7 @@ class ProviderSignUpFragment: Fragment() {
 
         binding.providerAddButton.setOnClickListener {
             addProvider()
+            it.findNavController().navigate(ProviderSignUpFragmentDirections.actionProviderFragmentToProviderHomeFragment())
 
         }
 
@@ -43,19 +42,19 @@ class ProviderSignUpFragment: Fragment() {
 
     private fun addProvider() {
         var provider = Provider()
-        provider.provider_id = database.push().key
+        //provider.provider_id = database.push().key
 
 
         //Id of current logged in user.
         provider.uid = FirebaseAuth.getInstance().uid
 
         provider.name = binding.providerNameEditText.text.toString()
-        provider.bio = binding.providerContactEditText.text.toString()
-        provider.contactNumber = binding.providerBioEditText.text.toString()
+        provider.bio = binding.providerBioEditText.text.toString()
+        provider.contactNumber = binding.providerContactEditText.text.toString()
         provider.service = binding.providerServiceEditText.text.toString()
-        provider.contactNumber = binding.providerCreditEditText.text.toString()
+        provider.creditCardNumber = binding.providerCreditEditText.text.toString()
 
-        database.child(provider.provider_id!!).setValue(provider)
+        database.child(provider.uid!!).setValue(provider)
     }
 
 }
