@@ -43,4 +43,6 @@
     <string name="confirm">Confirm</string>
     <string name="full_name">Full Name</string>
     <string name="password_guide">Password must be 8 characters long, contain one uppercase, lowercase, number and symbol</string>
+    <string name="choose_a_provider">Choose a provider</string>
+    <string name="fake_one_liner">Fluid Hygiene is a professional cleaner in Canterbury</string>
 </resources>

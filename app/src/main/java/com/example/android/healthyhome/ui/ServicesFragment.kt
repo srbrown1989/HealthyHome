@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.databinding.FragmentServicesBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -33,6 +34,10 @@ class ServicesFragment : Fragment() {
         if(fAuth.currentUser?.uid != null) {
             Toast.makeText(context, "Logged in as ${fAuth.currentUser!!.email}",Toast.LENGTH_LONG).show()
 
+        }
+
+        binding.cleaningCardView.setOnClickListener {
+            it.findNavController().navigate(ServicesFragmentDirections.actionServicesFragmentToProviderSelectionFragment())
         }
 
         return binding.root
