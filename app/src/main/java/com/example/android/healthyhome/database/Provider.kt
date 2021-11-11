@@ -10,9 +10,12 @@ data class Provider(
     //actual fields.
     var name : String? = null,
     var contactNumber: String? = null,
+    var email: String? = null,
     var bio : String? = null,
     var service : String? = null,
-    var creditCardNumber : String? = null
+    var creditCardNumber : String? = null,
+    var rating : Int? = 3,
+    var price : Int? = 0
 
 
 )

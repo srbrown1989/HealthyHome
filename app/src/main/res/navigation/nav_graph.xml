@@ -3,35 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/servicesFragment">
 
     <fragment
         android:id="@+id/servicesFragment"
         android:name="com.example.android.healthyhome.ui.ServicesFragment"
-        android:label="ServicesFragment"
+        android:label="@string/services"
         tools:layout="@layout/fragment_services"/>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.android.healthyhome.ui.LoginFragment"
-        android:label="LoginFragment"
-        tools:layout="@layout/fragment_login">
+        android:label="@string/login"
+        tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_providerFragment"
-            app:destination="@id/providerFragment" />
+            android:id="@+id/action_loginFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
     </fragment>
     <fragment
-        android:id="@+id/providerFragment"
+        android:id="@+id/providerSignUpFragment"
         android:name="com.example.android.healthyhome.ui.ProviderSignUpFragment"
-        android:label="ProviderFragment"
+        android:label="@string/provider_sign_up"
         tools:layout="@layout/fragment_provider_sign_up">
         <action
-            android:id="@+id/action_providerFragment_to_providerHomeFragment"
+            android:id="@+id/action_providerSignUpFragment_to_providerHomeFragment"
             app:destination="@id/providerHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/providerHomeFragment"
         android:name="com.example.android.healthyhome.ui.ProviderHomeFragment"
-        android:label="ProviderHomeFragment"
+        android:label="@string/provider_home"
         tools:layout="@layout/fragment_provider_home"/>
 
 </navigation>
