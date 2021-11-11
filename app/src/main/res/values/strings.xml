@@ -32,4 +32,15 @@
         \n\n\n\n We clean for high street brands, blue-chip companies and some of the biggest \n household names in the hospitality industry.
     </string>
     <string name="price">Price(P/H): £</string>
+    <string name="provider_home">Provider Home</string>
+    <string name="provider_sign_up">Provider Sign Up</string>
+    <string name="services">Services</string>
+    <string name="email_example">Email@example.com</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="confirm">Confirm</string>
+    <string name="full_name">Full Name</string>
+    <string name="password_guide">Password must be 8 characters long, contain one uppercase, lowercase, number and symbol</string>
 </resources>

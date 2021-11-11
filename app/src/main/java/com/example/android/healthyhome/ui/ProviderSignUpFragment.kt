@@ -32,7 +32,7 @@ class ProviderSignUpFragment: Fragment() {
 
         binding.providerAddButton.setOnClickListener {
             addProvider()
-            it.findNavController().navigate(ProviderSignUpFragmentDirections.actionProviderFragmentToProviderHomeFragment())
+            it.findNavController().navigate(ProviderSignUpFragmentDirections.actionProviderSignUpFragmentToProviderHomeFragment())
 
         }
 
@@ -53,6 +53,8 @@ class ProviderSignUpFragment: Fragment() {
         provider.contactNumber = binding.providerContactEditText.text.toString()
         provider.service = binding.providerServiceEditText.text.toString()
         provider.creditCardNumber = binding.providerCreditEditText.text.toString()
+
+
 
         database.child(provider.uid!!).setValue(provider)
     }
