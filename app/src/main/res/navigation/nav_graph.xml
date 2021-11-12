@@ -40,6 +40,14 @@
         android:id="@+id/filterServicesFragment"
         android:name="com.example.android.healthyhome.ui.FilterServicesFragment"
         android:label="fragment_filter_services"
-        tools:layout="@layout/fragment_filter_services" />
+        tools:layout="@layout/fragment_filter_services" >
+        <action
+            android:id="@+id/action_filterServicesFragment_to_filterDateFragment"
+            app:destination="@id/filterDateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterDateFragment"
+        android:name="com.example.android.healthyhome.ui.FilterDateFragment"
+        android:label="FilterDateFragment" />
 
 </navigation>

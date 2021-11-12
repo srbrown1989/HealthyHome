@@ -30,4 +30,5 @@
     <dimen name="fullscreen_padding">16dp</dimen>
     <dimen name="horizontal_spacer_width">20dp</dimen>
     <dimen name="regularity_button_height">128dp</dimen>
+    <dimen name="additional_options_button_size">80dp</dimen>
 </resources>

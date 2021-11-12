@@ -37,7 +37,13 @@
     <string name="fourRooms">4</string>
     <string name="fiveRooms">5</string>
 
-
+    <string name="oven">Oven</string>
+    <string name="carpet">Carpet</string>
+    <string name="hoover">Hoover</string>
+    <string name="Fridge">Fridge</string>
+    <string name="dust">Dust</string>
+    <string name="sofa">Sofa</string>
+    <string name="next">Next</string>
 
 
 </resources>
