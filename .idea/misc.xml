@@ -27,6 +27,15 @@
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/provider_list_item_recycler.xml" value="0.33" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/provider_list_view_recycler.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/menu/navdrawer_menu.xml" value="0.5" />
+        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/activity_main.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_chosen_provider.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_filter_date.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_filter_services.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_login.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_provider_home.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_provider_sign_up.xml" value="0.33" />
+        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_services.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/nav_header.xml" value="0.33177083333333335" />
       </map>
     </option>
   </component>

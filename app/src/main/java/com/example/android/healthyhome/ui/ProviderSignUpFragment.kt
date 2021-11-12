@@ -30,7 +30,7 @@ class ProviderSignUpFragment: Fragment() {
         )
         database = FirebaseDatabase.getInstance().reference.child("Provider")
 
-        binding.providerAddButton.setOnClickListener {
+        binding.finishButton.setOnClickListener {
             addProvider()
             it.findNavController().navigate(ProviderSignUpFragmentDirections.actionProviderSignUpFragmentToProviderHomeFragment())
 
@@ -48,12 +48,12 @@ class ProviderSignUpFragment: Fragment() {
         //Id of current logged in user.
         provider.uid = FirebaseAuth.getInstance().uid
 
-        provider.name = binding.providerNameEditText.text.toString()
-        provider.bio = binding.providerBioEditText.text.toString()
-        provider.contactNumber = binding.providerContactEditText.text.toString()
-        provider.service = binding.providerServiceEditText.text.toString()
-        provider.email = binding.providerEmailEditText.text.toString()
-        provider.price = Integer.parseInt(binding.providerPriceText.text.toString())
+        provider.providerName = binding.providerName.text.toString()
+        provider.bio = binding.bioInput.text.toString()
+        provider.phoneNumber = binding.phoneNumber.text.toString()
+        provider.serviceType = binding.spinnerServiceType.selectedItem.toString()
+        provider.providerEmail = binding.providerEmail.text.toString()
+        provider.price = Integer.parseInt(binding.priceInput.text.toString())
 
 
 
