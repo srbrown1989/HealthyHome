@@ -48,6 +48,7 @@
     <fragment
         android:id="@+id/filterDateFragment"
         android:name="com.example.android.healthyhome.ui.FilterDateFragment"
-        android:label="FilterDateFragment" />
+        android:label="FilterDateFragment"
+        tools:layout="@layout/fragment_filter_date"/>
 
 </navigation>
