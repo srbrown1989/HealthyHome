@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/servicesFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/servicesFragment"
@@ -18,11 +18,37 @@
         <action
             android:id="@+id/action_loginFragment_to_providerFragment"
             app:destination="@id/providerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_filterServicesFragment"
+            app:destination="@id/filterServicesFragment" />
     </fragment>
     <fragment
         android:id="@+id/providerFragment"
-        android:name="com.example.android.healthyhome.ui.ProviderFragment"
+        android:name="com.example.android.healthyhome.ui.ProviderSignUpFragment"
         android:label="ProviderFragment"
-        tools:layout="@layout/fragment_provider_sign_up"/>
+        tools:layout="@layout/fragment_provider_sign_up">
+        <action
+            android:id="@+id/action_providerFragment_to_providerHomeFragment"
+            app:destination="@id/providerHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/providerHomeFragment"
+        android:name="com.example.android.healthyhome.ui.ProviderHomeFragment"
+        android:label="ProviderHomeFragment"
+        tools:layout="@layout/fragment_provider_home"/>
+    <fragment
+        android:id="@+id/filterServicesFragment"
+        android:name="com.example.android.healthyhome.ui.FilterServicesFragment"
+        android:label="fragment_filter_services"
+        tools:layout="@layout/fragment_filter_services" >
+        <action
+            android:id="@+id/action_filterServicesFragment_to_filterDateFragment"
+            app:destination="@id/filterDateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterDateFragment"
+        android:name="com.example.android.healthyhome.ui.FilterDateFragment"
+        android:label="FilterDateFragment"
+        tools:layout="@layout/fragment_filter_date"/>
 
 </navigation>

@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="CARD VIEW DESIGN"
+            android:text="@string/please_select_a_service"
             android:textColor="#000000"
             android:textStyle="bold"
             android:textSize="30sp"/>
@@ -40,9 +40,10 @@
                 android:layout_gravity="fill"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+
                 >
                 <LinearLayout
                     android:layout_height="wrap_content"
@@ -51,14 +52,14 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical|center_horizontal">
                     <ImageView
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:src="@drawable/ic_launcher_foreground"
+                        android:layout_height="100dp"
+                        android:layout_width="100dp"
+                        android:src="@drawable/ic_cleaning"
                         />
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Home"
+                        android:text="@string/cleaning"
                         android:textStyle="bold"
                         android:textAlignment="center"
                         />
@@ -76,9 +77,9 @@
                 android:layout_gravity="fill"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
                 >
                 <LinearLayout
                     android:layout_height="wrap_content"
@@ -87,14 +88,14 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical|center_horizontal">
                     <ImageView
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:src="@drawable/ic_launcher_foreground"
+                        android:layout_height="100dp"
+                        android:layout_width="100dp"
+                        android:src="@drawable/ic_locksmith"
                         />
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Home"
+                        android:text="@string/locksmith"
                         android:textStyle="bold"
                         android:textAlignment="center"
                         />
@@ -111,9 +112,9 @@
                 android:layout_gravity="fill"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
                 >
                 <LinearLayout
                     android:layout_height="wrap_content"
@@ -122,14 +123,14 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical|center_horizontal">
                     <ImageView
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:src="@drawable/ic_launcher_foreground"
+                        android:layout_height="100dp"
+                        android:layout_width="100dp"
+                        android:src="@drawable/ic_dog_walker"
                         />
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Home"
+                        android:text="@string/dog_walking"
                         android:textStyle="bold"
                         android:textAlignment="center"
                         />
@@ -146,9 +147,9 @@
                 android:layout_gravity="fill"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
                 >
                 <LinearLayout
                     android:layout_height="wrap_content"
@@ -157,14 +158,14 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical|center_horizontal">
                     <ImageView
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:src="@drawable/ic_launcher_foreground"
+                        android:layout_height="100dp"
+                        android:layout_width="100dp"
+                        android:src="@drawable/ic_removals"
                         />
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Home"
+                        android:text="@string/removals"
                         android:textStyle="bold"
                         android:textAlignment="center"
                         />
@@ -181,9 +182,9 @@
                 android:layout_gravity="fill"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
                 >
                 <LinearLayout
                     android:layout_height="wrap_content"
@@ -192,14 +193,14 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical|center_horizontal">
                     <ImageView
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:src="@drawable/ic_launcher_foreground"
+                        android:layout_height="100dp"
+                        android:layout_width="100dp"
+                        android:src="@drawable/ic_gardener"
                         />
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Home"
+                        android:text="@string/gardener"
                         android:textStyle="bold"
                         android:textAlignment="center"
                         />
@@ -216,9 +217,9 @@
                 android:layout_gravity="fill"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
                 >
                 <LinearLayout
                     android:layout_height="wrap_content"
@@ -227,14 +228,14 @@
                     android:gravity="center"
                     android:layout_gravity="center_vertical|center_horizontal">
                     <ImageView
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:src="@drawable/ic_launcher_foreground"
+                        android:layout_height="100dp"
+                        android:layout_width="100dp"
+                        android:src="@drawable/ic_odd_jobs"
                         />
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Home"
+                        android:text="@string/odd_jobs"
                         android:textStyle="bold"
                         android:textAlignment="center"
                         />
