@@ -32,6 +32,10 @@ class ProviderHomeFragment : Fragment() {
         binding = DataBindingUtil.inflate<FragmentProviderHomeBinding>(
             inflater, R.layout.fragment_provider_home, container, false
         )
+        if (FirebaseAuth.getInstance().uid == null){
+            
+
+        }
        database = FirebaseDatabase.getInstance().reference.child("Provider")
 
         fillProviderInfo()

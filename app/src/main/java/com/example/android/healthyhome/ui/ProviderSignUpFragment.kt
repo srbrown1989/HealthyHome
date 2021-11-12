@@ -52,7 +52,8 @@ class ProviderSignUpFragment: Fragment() {
         provider.bio = binding.providerBioEditText.text.toString()
         provider.contactNumber = binding.providerContactEditText.text.toString()
         provider.service = binding.providerServiceEditText.text.toString()
-        provider.creditCardNumber = binding.providerCreditEditText.text.toString()
+        provider.email = binding.providerEmailEditText.text.toString()
+        provider.price = Integer.parseInt(binding.providerPriceText.text.toString())
 
 
 

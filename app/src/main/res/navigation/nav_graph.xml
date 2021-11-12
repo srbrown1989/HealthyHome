@@ -32,7 +32,11 @@
         android:id="@+id/providerHomeFragment"
         android:name="com.example.android.healthyhome.ui.ProviderHomeFragment"
         android:label="@string/provider_home"
-        tools:layout="@layout/fragment_provider_home"/>
+        tools:layout="@layout/fragment_provider_home">
+        <action
+            android:id="@+id/action_providerHomeFragment_to_providerSignUpFragment"
+            app:destination="@id/providerSignUpFragment" />
+    </fragment>
     <fragment
         android:id="@+id/filterServicesFragment"
         android:name="com.example.android.healthyhome.ui.FilterServicesFragment"

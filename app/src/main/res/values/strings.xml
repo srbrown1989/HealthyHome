@@ -58,6 +58,10 @@
     <string name="dust">Dust</string>
     <string name="sofa">Sofa</string>
     <string name="next">Next</string>
+    <string name="submit">Submit</string>
+    <string name="cleaning">cleaning</string>
+    <string name="locksmith">locksmith</string>
+    <string name="removals">removals</string>
 
 
 </resources>
