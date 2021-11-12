@@ -36,6 +36,11 @@ class ProviderSignUpFragment: Fragment() {
 
         }
 
+        binding.backButton.setOnClickListener {
+            it.findNavController().navigate(ProviderSignUpFragmentDirections.actionProviderSignUpFragmentToServicesFragment())
+        }
+
+
         return binding.root
 
     }
