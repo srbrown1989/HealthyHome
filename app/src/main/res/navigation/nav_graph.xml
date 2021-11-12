@@ -9,7 +9,11 @@
         android:id="@+id/servicesFragment"
         android:name="com.example.android.healthyhome.ui.ServicesFragment"
         android:label="@string/services"
-        tools:layout="@layout/fragment_services"/>
+        tools:layout="@layout/fragment_services">
+        <action
+            android:id="@+id/action_servicesFragment_to_providerListFragment2"
+            app:destination="@id/providerListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.android.healthyhome.ui.LoginFragment"
@@ -33,5 +37,9 @@
         android:name="com.example.android.healthyhome.ui.ProviderHomeFragment"
         android:label="@string/provider_home"
         tools:layout="@layout/fragment_provider_home"/>
+    <fragment
+        android:id="@+id/providerListFragment"
+        android:name="com.example.android.healthyhome.ui.ProviderListFragment"
+        android:label="@string/provider_list_screen" />
 
 </navigation>
