@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.get
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -59,6 +60,7 @@ class ProviderSignUpFragment: Fragment() {
         provider.serviceType = binding.spinnerServiceType.selectedItem.toString()
         provider.providerEmail = binding.providerEmail.text.toString()
         provider.price = Integer.parseInt(binding.priceInput.text.toString())
+        provider.offers = binding.radioYes.isChecked.toString()
 
 
 

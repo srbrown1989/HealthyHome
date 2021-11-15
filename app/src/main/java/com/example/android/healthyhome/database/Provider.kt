@@ -13,6 +13,7 @@ data class Provider(
     var providerName: String? = null,
     var providerEmail: String? = null,
     var phoneNumber: String? = null,
+    var offers: String? = null,
     var rating : Int? = 3,
     var price : Int? = 0
 
