@@ -25,7 +25,7 @@
             android:id="@+id/tv_datePicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Tap to select date"
+            android:hint="@string/pickDate"
             android:textAlignment="center"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -34,12 +34,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_timePicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Select a Time here aswell\nbuttons underneath for frequency\n (once a week, once a fortnite, once a month)"
+            android:hint="@string/pickTime"
             android:textAlignment="center"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_datePicker" />
