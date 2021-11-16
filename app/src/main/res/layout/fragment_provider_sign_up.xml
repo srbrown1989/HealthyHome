@@ -7,7 +7,6 @@
         <variable
             name="Provider"
             type="com.example.android.healthyhome.database.Provider" />
-
     </data>
 
     <ScrollView
@@ -153,7 +152,7 @@
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/radio_set"
                 app:layout_constraintVertical_bias="0.0" />

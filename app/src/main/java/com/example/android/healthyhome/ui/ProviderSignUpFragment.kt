@@ -25,6 +25,7 @@ class ProviderSignUpFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate<FragmentProviderSignUpBinding>(
             inflater, R.layout.fragment_provider_sign_up, container, false

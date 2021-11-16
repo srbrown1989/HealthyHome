@@ -72,6 +72,7 @@
         <item>HouseKeeper</item>
         <item>Dog Walker</item>
         <item>BabySitter</item>
+        <item>Plumbing</item>
     </string-array>
 
     <string name="finish">finish</string>
