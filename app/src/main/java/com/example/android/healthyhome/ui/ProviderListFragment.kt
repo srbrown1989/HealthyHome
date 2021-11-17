@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.healthyhome.R
@@ -35,6 +36,11 @@ class ProviderListFragment : Fragment() {
         recyclerView.adapter = ProviderListAdapter(providerList)
         recyclerView.layoutManager = LinearLayoutManager(this.context)
         recyclerView.setHasFixedSize(true)
+
+        binding.tempButton.setOnClickListener {
+            it.findNavController().navigate( ProviderListFragmentDirections.actionProviderListFragmentToChosenProviderFragment())
+        }
+
         return binding.root
     }
     private fun generateDummyList(size: Int): List<Provider> {

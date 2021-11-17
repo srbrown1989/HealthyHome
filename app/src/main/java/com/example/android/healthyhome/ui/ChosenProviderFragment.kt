@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.databinding.FragmentChosenProviderBinding
 import com.google.firebase.database.DatabaseReference
@@ -44,6 +45,10 @@ class ChosenProviderFragment : Fragment() {
         binding = DataBindingUtil.inflate<FragmentChosenProviderBinding>(
             inflater,R.layout.fragment_chosen_provider,container,false
         )
+
+        binding.arrangeButton.setOnClickListener {
+            it.findNavController().navigate(ChosenProviderFragmentDirections.actionChosenProviderFragmentToFilterServicesFragment())
+        }
         return binding.root
 
     }

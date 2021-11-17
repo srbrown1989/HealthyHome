@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.database.Provider
 import com.example.android.healthyhome.databinding.FragmentProviderHomeBinding
@@ -22,6 +24,7 @@ class ProviderHomeFragment : Fragment() {
 
     private lateinit var binding : FragmentProviderHomeBinding
     private lateinit var database : DatabaseReference
+    private lateinit var navController : NavController
 
 
     override fun onCreateView(
@@ -32,10 +35,8 @@ class ProviderHomeFragment : Fragment() {
         binding = DataBindingUtil.inflate<FragmentProviderHomeBinding>(
             inflater, R.layout.fragment_provider_home, container, false
         )
-        if (FirebaseAuth.getInstance().uid == null){
-            
 
-        }
+
        database = FirebaseDatabase.getInstance().reference.child("Provider")
 
         fillProviderInfo()
