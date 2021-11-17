@@ -26,7 +26,9 @@
         tools:layout="@layout/fragment_provider_sign_up">
         <action
             android:id="@+id/action_providerSignUpFragment_to_providerHomeFragment"
-            app:destination="@id/providerHomeFragment" />
+            app:destination="@id/providerHomeFragment"
+            app:popUpTo="@id/providerSignUpFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_providerSignUpFragment_to_servicesFragment"
             app:destination="@id/servicesFragment" />
