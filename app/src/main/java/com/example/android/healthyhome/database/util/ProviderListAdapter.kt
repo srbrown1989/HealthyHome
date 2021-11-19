@@ -21,7 +21,7 @@ class ProviderListAdapter(private val providerList: List<Provider>) : RecyclerVi
 //   holder vals come from ProviderViewHolder
     override fun onBindViewHolder(holder: ProviderViewHolder, position: Int) {
         val currentItem = providerList[position]
-        holder.textView1.text = currentItem.name
+        holder.textView1.text = currentItem.providerName
         holder.textView2.text = currentItem.bio
         holder.textView3.text = "Rating: " + currentItem.rating.toString()
         holder.textView4.text = "Price: " + currentItem.price.toString()
