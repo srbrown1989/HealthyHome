@@ -47,7 +47,7 @@ class ProviderHomeFragment : Fragment() {
     private fun fillProviderInfo() {
         database.child(FirebaseAuth.getInstance().uid!!).get().addOnSuccessListener{
             val provider : Provider? = it.getValue(Provider::class.java)
-            binding.companyNameTextView.text = provider?.name.toString()
+            binding.companyNameTextView.text = provider?.providerName.toString()
             binding.ratingBar.rating = provider?.rating?.toFloat()!!
 
 

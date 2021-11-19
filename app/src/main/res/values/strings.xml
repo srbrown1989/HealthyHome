@@ -62,8 +62,29 @@
     <string name="cleaning">cleaning</string>
     <string name="locksmith">locksmith</string>
     <string name="removals">removals</string>
-
-
     <string name="provider_list_screen">Service Providers</string>
     <string name="temp">Temp</string>
+
+    <!-- Irfans strings -->
+    <string-array name="Services">
+        <item>Cleaning</item>
+        <item>Gardening</item>
+        <item>Building</item>
+        <item>HouseKeeper</item>
+        <item>Dog Walker</item>
+        <item>BabySitter</item>
+    </string-array>
+
+    <string name="finish">finish</string>
+    <string name="no">no</string>
+    <string name="yes">yes</string>
+    <string name="would_you_like_to_hear_about_our_exciting_offers">would you like to hear about our exciting offers?</string>
+    <string name="store_name">store_name</string>
+    <string name="phone_number">phone_number</string>
+    <string name="provider_email">provider_email</string>
+    <string name="provider_name">provider_name</string>
+    <string name="service_type">service_type</string>
+    <string name="please_note_that_your_dbs_will_have_to_be_cqc_countersigned">please note that your dbs will have to be cqc countersigned</string>
+    <string name="back">Back</string>
+
 </resources>

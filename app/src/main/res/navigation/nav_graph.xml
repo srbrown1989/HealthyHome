@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_providerSignUpFragment_to_providerHomeFragment"
             app:destination="@id/providerHomeFragment" />
+        <action
+            android:id="@+id/action_providerSignUpFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
     </fragment>
     <fragment
         android:id="@+id/providerHomeFragment"

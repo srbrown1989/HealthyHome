@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.get
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -30,11 +31,16 @@ class ProviderSignUpFragment: Fragment() {
         )
         database = FirebaseDatabase.getInstance().reference.child("Provider")
 
-        binding.providerAddButton.setOnClickListener {
+        binding.finishButton.setOnClickListener {
             addProvider()
             it.findNavController().navigate(ProviderSignUpFragmentDirections.actionProviderSignUpFragmentToProviderHomeFragment())
 
         }
+
+        binding.backButton.setOnClickListener {
+            it.findNavController().navigate(ProviderSignUpFragmentDirections.actionProviderSignUpFragmentToServicesFragment())
+        }
+
 
         return binding.root
 
@@ -48,12 +54,13 @@ class ProviderSignUpFragment: Fragment() {
         //Id of current logged in user.
         provider.uid = FirebaseAuth.getInstance().uid
 
-        provider.name = binding.providerNameEditText.text.toString()
-        provider.bio = binding.providerBioEditText.text.toString()
-        provider.contactNumber = binding.providerContactEditText.text.toString()
-        provider.service = binding.providerServiceEditText.text.toString()
-        provider.email = binding.providerEmailEditText.text.toString()
-        provider.price = Integer.parseInt(binding.providerPriceText.text.toString())
+        provider.providerName = binding.providerName.text.toString()
+        provider.bio = binding.bioInput.text.toString()
+        provider.phoneNumber = binding.phoneNumber.text.toString()
+        provider.serviceType = binding.spinnerServiceType.selectedItem.toString()
+        provider.providerEmail = binding.providerEmail.text.toString()
+        provider.price = Integer.parseInt(binding.priceInput.text.toString())
+        provider.offers = binding.radioYes.isChecked.toString()
 
 
 
