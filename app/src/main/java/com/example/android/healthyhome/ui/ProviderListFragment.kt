@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.database.Provider
-import com.example.android.healthyhome.database.util.ProviderListAdapter
+import com.example.android.healthyhome.util.ProviderListAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase

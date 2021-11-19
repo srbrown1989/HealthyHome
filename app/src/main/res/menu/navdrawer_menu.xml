@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/loginFragment"
-        android:icon="@drawable/ic_baseline_person_24"
-        android:title="@string/login" />
-    <item
-        android:id="@+id/providerHomeFragment"
-        android:icon="@drawable/ic_baseline_home_work_24"
-        android:title="@string/provider_home" />
-    <item
-        android:id="@+id/providerSignUpFragment"
-        android:icon="@drawable/ic_enrollment"
-        android:title="@string/provider_sign_up" />
+    <group
+        android:id="@+id/not_logged_in"
+        android:visible="true">
+        <item
+            android:id="@+id/loginFragment"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="@string/login" />
+
+    </group>
+
+    <group
+        android:id="@+id/logged_in_not_provider"
+        android:visible="true">
+        <item
+            android:id="@+id/logoutFragment"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/logout" />
+        <item
+            android:id="@+id/providerSignUpFragment"
+            android:icon="@drawable/ic_enrollment"
+            android:title="@string/provider_sign_up" />
+    </group>
+
+    <group android:id="@+id/logged_in_provider"
+        android:visible="true">
+
+        <item
+            android:id="@+id/providerHomeFragment"
+            android:icon="@drawable/ic_baseline_home_work_24"
+            android:title="@string/provider_home" />
+
+    </group>
 </menu>

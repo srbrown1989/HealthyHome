@@ -1,4 +1,4 @@
-package com.example.android.healthyhome.database.util
+package com.example.android.healthyhome.util
 
 import android.view.LayoutInflater
 import android.view.View

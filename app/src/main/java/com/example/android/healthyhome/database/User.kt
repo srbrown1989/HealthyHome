@@ -6,6 +6,6 @@ data class User(
     //actual fields.
     var name : String? = null,
     var email : String? = null,
-    var isProvider : Boolean? = null
+    var isProvider : Boolean = false
 
 )
