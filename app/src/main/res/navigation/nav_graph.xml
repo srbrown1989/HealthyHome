@@ -9,7 +9,11 @@
         android:id="@+id/servicesFragment"
         android:name="com.example.android.healthyhome.ui.ServicesFragment"
         android:label="@string/services"
-        tools:layout="@layout/fragment_services"/>
+        tools:layout="@layout/fragment_services">
+        <action
+            android:id="@+id/action_servicesFragment_to_providerListFragment2"
+            app:destination="@id/providerListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.android.healthyhome.ui.LoginFragment"
@@ -54,5 +58,24 @@
         android:name="com.example.android.healthyhome.ui.FilterDateFragment"
         android:label="FilterDateFragment"
         tools:layout="@layout/fragment_filter_date"/>
+        tools:layout="@layout/fragment_provider_home"/>
+    <fragment
+        android:id="@+id/providerListFragment"
+        android:name="com.example.android.healthyhome.ui.ProviderListFragment"
+        android:label="@string/provider_list_screen"
+        tools:layout="@layout/fragment_provider_list">
+        <action
+            android:id="@+id/action_providerListFragment_to_chosenProviderFragment"
+            app:destination="@id/chosenProviderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chosenProviderFragment"
+        android:name="com.example.android.healthyhome.ui.ChosenProviderFragment"
+        android:label="ChosenProviderFragment"
+        tools:layout="@layout/fragment_chosen_provider">
+        <action
+            android:id="@+id/action_chosenProviderFragment_to_filterServicesFragment"
+            app:destination="@id/filterServicesFragment" />
+    </fragment>
 
 </navigation>

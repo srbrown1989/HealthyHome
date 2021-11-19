@@ -62,7 +62,8 @@
     <string name="cleaning">cleaning</string>
     <string name="locksmith">locksmith</string>
     <string name="removals">removals</string>
-
+    <string name="provider_list_screen">Service Providers</string>
+    <string name="temp">Temp</string>
 
     <!-- Irfans strings -->
     <string-array name="Services">
@@ -85,6 +86,5 @@
     <string name="service_type">service_type</string>
     <string name="please_note_that_your_dbs_will_have_to_be_cqc_countersigned">please note that your dbs will have to be cqc countersigned</string>
     <string name="back">Back</string>
-
 
 </resources>
