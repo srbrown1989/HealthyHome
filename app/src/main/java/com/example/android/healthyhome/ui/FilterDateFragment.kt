@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.android.healthyhome.R
@@ -17,23 +18,20 @@ class FilterDateFragment : Fragment(){
 
     private lateinit var binding : FragmentFilterDateBinding
     val REQUEST_DATE: Int = 0
-    val REQUEST_TIME: Int = 1
 
-    //Defaults, will display current date and time on creation
+    //Defaults, will display current date on creation
     var curYear: Int = -1
     var curMonth: Int = -1
     var curDay: Int = -1
-    var curHour: Int = -1
-    var curMin: Int = -1
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate<FragmentFilterDateBinding>(inflater, R.layout.fragment_filter_date, container, false)
+        setUpTimeSpinner()
 
 
         binding.tvDatePicker.setOnClickListener { _ -> displayDatePrompt() }
-        binding.tvTimePicker.setOnClickListener { _ -> displayTimePrompt() }
 
         binding.btnNext.setOnClickListener { view: View ->
             //Go to the next part of the page
@@ -50,17 +48,34 @@ class FilterDateFragment : Fragment(){
         picker.setTargetFragment(this, REQUEST_DATE)
 
         //Testing with just todays date
-        picker.setDaysToShow(arrayOf(Calendar.getInstance()))
+        var date2 = Date(2021, 11, 23)
+        var date2cal = Calendar.getInstance()
+        date2cal.set(2021, 11, 23)
+        picker.setDaysToShow(arrayOf(Calendar.getInstance(), date2cal))
         picker.show(parentFragmentManager, "datePicker")
     }
 
+    private fun setUpTimeSpinner(){
+        updateTimeItems()
+    }
+
     /**
-     * Displays the prompt to pick a time
+     * This will check the database for available times on the date set and update the spinner items to reflect that
      */
-    private fun displayTimePrompt(){
-        val picker: TimePickerFragment = TimePickerFragment(curHour, curMin)
-        picker.setTargetFragment(this, REQUEST_TIME)
-        picker.show(parentFragmentManager, "timePicker")
+    private fun updateTimeItems(){
+        //This all has to be temporary as I have no database link but this string array would be formed from the database
+        val times = arrayOf("10:15", "12:45", "13:15", "14:00", "14:50", "15:00", "16:50", "18:20", "18:30", "19:20")
+        //This would be for if there are no valid times for the date selected
+        if(times.isEmpty()){
+            var adap = ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item, arrayOf("No Times"))
+        }
+        else {
+            var adap: ArrayAdapter<String> =
+                ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item, times)
+            adap.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            binding.spnrTimePicker.adapter = adap
+        }
+
     }
 
     /**
@@ -85,19 +100,6 @@ class FilterDateFragment : Fragment(){
             }
 
             binding.tvDatePicker.text = "${curYear}/${curMonth}/${curDay}"
-        }
-
-        //When time is returned
-        if(requestCode == REQUEST_TIME){
-            val hour: Int? = data?.getIntExtra("HOUR", -1)
-            val minute: Int? = data?.getIntExtra("MINUTE", -1)
-
-            if(hour != null && minute != null){
-                curHour = hour
-                curMin = minute
-            }
-
-            binding.tvTimePicker.text = "${curHour}:${curMin}"
         }
     }
 

@@ -22,6 +22,7 @@ class DatePickerFragment(setYear: Int, setMonth: Int, setDay: Int) : DialogFragm
      */
     fun setDaysToShow(days: Array<Calendar>){
         initDialog()
+
         dpd.selectableDays = days
     }
 
