@@ -25,6 +25,7 @@ class FilterServicesFragment : Fragment() {
     private var activeServices : MutableList<String> = mutableListOf();
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        activeServices = mutableListOf()
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate<FragmentFilterServicesBinding>(inflater, R.layout.fragment_filter_services, container, false)
 
@@ -55,7 +56,7 @@ class FilterServicesFragment : Fragment() {
             view.findNavController().navigate(FilterServicesFragmentDirections.actionFilterServicesFragmentToFilterDateFragment(uid, recurring, numOfRooms, activeServices.toTypedArray()))
         }
 
-        buildServiceButtons(listOf("Sofa", "Carpet", "Bathroom", "Hoover", "Party", "Upstairs"))
+        buildServiceButtons(listOf("Sofa", "Carpet", "Bathroom", "Hoover", "Party", "Upstairs", "more", "etc"))
 
         return binding.root
     }
@@ -65,8 +66,6 @@ class FilterServicesFragment : Fragment() {
         var prevAboveView : View = binding.radioGroup
         var counter = 0
 
-        var constSet = ConstraintSet()
-        constSet.clone(binding.parentConstraint)
         //binding.parentConstraint
 
         for(ser in services){
@@ -75,8 +74,9 @@ class FilterServicesFragment : Fragment() {
             curButton.text = ser
             curButton.textOn = ser
             curButton.textOff = ser
-            curButton.width = pixelsToDisplayPixels(150)
-            curButton.height = pixelsToDisplayPixels(80)
+            curButton.textSize = 11f
+            curButton.width = pixelsToDisplayPixels(0)
+            curButton.height = pixelsToDisplayPixels(150)
             curButton.setOnCheckedChangeListener { _, isChecked ->
                 if(isChecked){
                     activeServices.add(ser)
@@ -87,22 +87,23 @@ class FilterServicesFragment : Fragment() {
             }
 
             binding.parentConstraint.addView(curButton)
-
+            var constSet = ConstraintSet()
+            constSet.clone(binding.parentConstraint)
 
             //Set height of button
             constSet.connect(curButton.id, ConstraintSet.TOP, prevAboveView.id, ConstraintSet.BOTTOM, 0) //Current top -> prevTop Bottom
             if(prevButton == null){
                 //Put button to left of screen
-                //constSet.connect(binding.parentConstraint.id, ConstraintSet.END, curButton.id, ConstraintSet.START, 0)
+                constSet.connect(binding.parentConstraint.id, ConstraintSet.LEFT, curButton.id, ConstraintSet.RIGHT, 0)
             }
             else{
                 //Sets up chain links
-                //constSet.connect(prevButton.id, ConstraintSet.END, curButton.id, ConstraintSet.START, pixelsToDisplayPixels(20))
+                constSet.connect(prevButton.id, ConstraintSet.RIGHT, curButton.id, ConstraintSet.LEFT, pixelsToDisplayPixels(20))
             }
 
             //Set final one to the right of the screen
             if(counter % 4 == 3){
-                //constSet.connect(curButton.id, ConstraintSet.END, binding.parentConstraint.id, ConstraintSet.START, 0)
+                constSet.connect(curButton.id, ConstraintSet.RIGHT, binding.parentConstraint.id, ConstraintSet.RIGHT, 0)
             }
 
             //Go down a row
@@ -113,8 +114,9 @@ class FilterServicesFragment : Fragment() {
             }else{
                 prevButton = curButton
             }
+            constSet.applyTo(binding.parentConstraint)
         }
-        constSet.applyTo(binding.parentConstraint)
+        println("__________________ " + counter + " buttons created")
     }
 
     private fun pixelsToDisplayPixels(pix : Int) : Int{
