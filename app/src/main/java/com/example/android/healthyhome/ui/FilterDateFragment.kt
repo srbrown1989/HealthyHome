@@ -48,10 +48,12 @@ class FilterDateFragment : Fragment(){
         picker.setTargetFragment(this, REQUEST_DATE)
 
         //Testing with just todays date
-        var date2 = Date(2021, 11, 23)
+        var date2 = Calendar.getInstance()
+        date2.set(2022, 1, 4)
         var date2cal = Calendar.getInstance()
-        date2cal.set(2021, 11, 23)
-        picker.setDaysToShow(arrayOf(Calendar.getInstance(), date2cal))
+        date2cal.set(2022, 1, 7)
+
+        picker.setDaysToShow(arrayOf(Calendar.getInstance(), date2cal, date2))
         picker.show(parentFragmentManager, "datePicker")
     }
 

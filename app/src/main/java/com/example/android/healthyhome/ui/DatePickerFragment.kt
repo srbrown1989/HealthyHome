@@ -53,7 +53,7 @@ class DatePickerFragment(setYear: Int, setMonth: Int, setDay: Int) : DialogFragm
 
         val intent = Intent()
         intent.putExtra("DAY", day)
-        intent.putExtra("MONTH", month)
+        intent.putExtra("MONTH", month + 1)
         intent.putExtra("YEAR", year)
         targetFragment?.onActivityResult(targetRequestCode, Activity.RESULT_OK, intent)
 

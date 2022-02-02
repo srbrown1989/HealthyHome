@@ -66,7 +66,7 @@ class FilterServicesFragment : Fragment() {
         var prevAboveView : View = binding.radioGroup
         var counter = 0
 
-        //binding.parentConstraint
+
 
         for(ser in services){
             val curButton = ToggleButton(this.requireContext())
