@@ -88,5 +88,14 @@
     <string name="service_type">service_type</string>
     <string name="please_note_that_your_dbs_will_have_to_be_cqc_countersigned">please note that your dbs will have to be cqc countersigned</string>
     <string name="back">Back</string>
+    <string name="bookings">Bookings</string>
+    <string name="what_would_you_like_your_new_bio_to_be">What would you like your new bio to be?</string>
+    <string name="about_me">About Me</string>
+    <string name="tell_us_a_little_about_yourself">Tell us a little about yourself</string>
+    <string name="would_you_like_to_set_a_new_price">Would you like to set a new price?</string>
+    <string name="do_you_have_a_new_phone_number">Do you have a new Phone Number?</string>
+    <string name="phone_number_change">Phone Number</string>
+    <string name="new_email">New Email?</string>
+    <string name="email_address">Email Address</string>
 
 </resources>
