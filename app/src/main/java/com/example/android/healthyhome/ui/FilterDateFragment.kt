@@ -51,7 +51,7 @@ class FilterDateFragment : Fragment(){
         var date2 = Calendar.getInstance()
         date2.set(2022, 1, 4)
         var date2cal = Calendar.getInstance()
-        date2cal.set(2022, 1, 7)
+        date2cal.set(2022, 1, 10)
 
         picker.setDaysToShow(arrayOf(Calendar.getInstance(), date2cal, date2))
         picker.show(parentFragmentManager, "datePicker")

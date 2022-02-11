@@ -56,12 +56,17 @@ class FilterServicesFragment : Fragment() {
             view.findNavController().navigate(FilterServicesFragmentDirections.actionFilterServicesFragmentToFilterDateFragment(uid, recurring, numOfRooms, activeServices.toTypedArray()))
         }
 
-        buildServiceButtons(listOf("Sofa", "Carpet", "Bathroom", "Hoover", "Party", "Upstairs", "more", "etc"))
+        buildServiceButtons(mutableListOf("Sofa", "Carpet", "Bathroom", "Hoover", "Party", "Upstairs", "more", "etc", "one more", "two more", "three more"))
 
         return binding.root
     }
 
-    private fun buildServiceButtons(services : List<String>){
+    private fun buildServiceButtons(services : MutableList<String>){
+
+        while(services.size % 4 != 0){
+            services.add("holder");
+        }
+
         var prevButton : View? = null
         var prevAboveView : View = binding.radioGroup
         var counter = 0
@@ -75,15 +80,21 @@ class FilterServicesFragment : Fragment() {
             curButton.textOn = ser
             curButton.textOff = ser
             curButton.textSize = 11f
-            curButton.width = pixelsToDisplayPixels(0)
+            curButton.width = pixelsToDisplayPixels(20)
             curButton.height = pixelsToDisplayPixels(150)
-            curButton.setOnCheckedChangeListener { _, isChecked ->
-                if(isChecked){
-                    activeServices.add(ser)
-                }else{
-                    activeServices.remove(ser)
+            if(ser != "holder") {
+                curButton.setOnCheckedChangeListener { _, isChecked ->
+                    if (isChecked) {
+                        activeServices.add(ser)
+                    } else {
+                        activeServices.remove(ser)
+                    }
+                    Toast.makeText(this.requireContext(),
+                        activeServices.toString(),
+                        Toast.LENGTH_SHORT).show()
                 }
-                Toast.makeText(this.requireContext(), activeServices.toString(), Toast.LENGTH_SHORT).show()
+            }else{
+                curButton.visibility = View.INVISIBLE;
             }
 
             binding.parentConstraint.addView(curButton)
@@ -94,16 +105,16 @@ class FilterServicesFragment : Fragment() {
             constSet.connect(curButton.id, ConstraintSet.TOP, prevAboveView.id, ConstraintSet.BOTTOM, 0) //Current top -> prevTop Bottom
             if(prevButton == null){
                 //Put button to left of screen
-                constSet.connect(binding.parentConstraint.id, ConstraintSet.LEFT, curButton.id, ConstraintSet.RIGHT, 0)
+                constSet.connect(binding.parentConstraint.id, ConstraintSet.LEFT, curButton.id, ConstraintSet.RIGHT, pixelsToDisplayPixels(0))
             }
             else{
                 //Sets up chain links
-                constSet.connect(prevButton.id, ConstraintSet.RIGHT, curButton.id, ConstraintSet.LEFT, pixelsToDisplayPixels(20))
+                constSet.connect(prevButton.id, ConstraintSet.RIGHT, curButton.id, ConstraintSet.LEFT, pixelsToDisplayPixels(0))
             }
 
             //Set final one to the right of the screen
             if(counter % 4 == 3){
-                constSet.connect(curButton.id, ConstraintSet.RIGHT, binding.parentConstraint.id, ConstraintSet.RIGHT, 0)
+                constSet.connect(curButton.id, ConstraintSet.RIGHT, binding.parentConstraint.id, ConstraintSet.RIGHT, pixelsToDisplayPixels(0))
             }
 
             //Go down a row
