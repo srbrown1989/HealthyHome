@@ -27,6 +27,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/parent_constraint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -39,11 +40,14 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
 
-                <Button
+                <ToggleButton
                     android:id="@+id/btn_oneOff"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/regularity_button_height"
+                    android:checked="true"
                     android:text="@string/oneOffService"
+                    android:textOff="@string/oneOffService"
+                    android:textOn="@string/oneOffService"
                     app:layout_constraintEnd_toStartOf="@+id/vw_horizontalSpacer"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/btn_next" />
@@ -56,11 +60,13 @@
                     app:layout_constraintStart_toEndOf="@+id/btn_oneOff"
                     app:layout_constraintTop_toBottomOf="@id/btn_next" />
 
-                <Button
+                <ToggleButton
                     android:id="@+id/btn_regular"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/regularity_button_height"
                     android:text="@string/regularService"
+                    android:textOff="@string/regularService"
+                    android:textOn="@string/regularService"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/vw_horizontalSpacer"
                     app:layout_constraintTop_toBottomOf="@id/btn_next" />
@@ -116,92 +122,6 @@
                         android:text="@string/fiveRooms" />
 
                 </RadioGroup>
-
-                <Button
-                    android:id="@+id/btn_services1"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/additional_options_button_size"
-                    android:layout_marginHorizontal="8dp"
-                    android:text="@string/oven"
-                    android:textSize="10sp"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_services2"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-                <Button
-                    android:id="@+id/btn_services2"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/additional_options_button_size"
-                    android:layout_marginHorizontal="8dp"
-                    android:text="@string/Fridge"
-                    android:textSize="10sp"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_services3"
-                    app:layout_constraintStart_toEndOf="@+id/btn_services1"
-                    app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-                <Button
-                    android:id="@+id/btn_services3"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/additional_options_button_size"
-                    android:layout_marginHorizontal="8dp"
-                    android:text="@string/carpet"
-                    android:textSize="10sp"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_services4"
-                    app:layout_constraintStart_toEndOf="@+id/btn_services2"
-                    app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-                <Button
-                    android:id="@+id/btn_services4"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/additional_options_button_size"
-                    android:layout_marginHorizontal="8dp"
-                    android:text="@string/hoover"
-                    android:textSize="10sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/btn_services3"
-                    app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-                <Button
-                    android:id="@+id/btn_services5"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/additional_options_button_size"
-                    android:layout_marginHorizontal="8dp"
-                    android:text="@string/dust"
-                    android:textSize="10sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_services6"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_services1" />
-
-                <Button
-                    android:id="@+id/btn_services6"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/additional_options_button_size"
-                    android:layout_marginHorizontal="8dp"
-                    android:text="@string/sofa"
-                    android:textSize="10sp"
-                    app:layout_constraintStart_toEndOf="@+id/btn_services5"
-                    app:layout_constraintEnd_toStartOf="@id/btn_dummy1"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_services1" />
-
-                <Button
-                    android:id="@+id/btn_dummy1"
-                    android:visibility="invisible"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/additional_options_button_size"
-                    android:layout_marginHorizontal="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_services1"
-                    app:layout_constraintStart_toEndOf="@id/btn_services6"
-                    app:layout_constraintEnd_toStartOf="@id/btn_dummy2"/>
-
-                <Button
-                    android:id="@+id/btn_dummy2"
-                    android:visibility="invisible"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/additional_options_button_size"
-                    android:layout_marginHorizontal="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_services1"
-                    app:layout_constraintStart_toEndOf="@id/btn_dummy1"
-                    app:layout_constraintEnd_toEndOf="parent"/>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

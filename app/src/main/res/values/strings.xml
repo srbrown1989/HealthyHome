@@ -50,7 +50,6 @@
     <string name="threeRooms">3</string>
     <string name="fourRooms">4</string>
     <string name="fiveRooms">5</string>
-
     <string name="oven">Oven</string>
     <string name="carpet">Carpet</string>
     <string name="hoover">Hoover</string>
@@ -58,6 +57,9 @@
     <string name="dust">Dust</string>
     <string name="sofa">Sofa</string>
     <string name="next">Next</string>
+    <string name="pickDate">Tap to select a date</string>
+    <string name="pickTime">Select a time : </string>
+
     <string name="submit">Submit</string>
     <string name="cleaning">cleaning</string>
     <string name="locksmith">locksmith</string>
