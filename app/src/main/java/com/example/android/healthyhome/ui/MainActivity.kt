@@ -30,4 +30,6 @@ class MainActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.nav_host_fragment)
         return NavigationUI.navigateUp(navController, appBarConfiguration)
     }
+
+    //test
 }
