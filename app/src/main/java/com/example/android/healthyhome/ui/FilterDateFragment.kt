@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.android.healthyhome.R
+import com.example.android.healthyhome.database.DBCalls
 import com.example.android.healthyhome.databinding.FragmentFilterDateBinding
 import java.util.*
 
@@ -35,6 +36,10 @@ class FilterDateFragment : Fragment(){
 
         binding.btnNext.setOnClickListener { view: View ->
             //Go to the next part of the page
+        }
+
+        binding.testButton.setOnClickListener { view: View ->
+            DBCalls.getResponseFromPath("https://blank.org/")
         }
 
         return binding.root
