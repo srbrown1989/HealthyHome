@@ -39,7 +39,19 @@ class FilterDateFragment : Fragment(){
         }
 
         binding.testButton.setOnClickListener { view: View ->
-            DBCalls.getResponseFromPath("https://blank.org/")
+            var output = "API ERROR"
+            DBCalls.getJSONFromPath("https://api2.binance.com/api/v3/ticker/price?symbol=XRPGBP")
+            { string ->
+                output = string
+                println(output)
+            }
+
+            DBCalls.getServicesListFromProvider("XRPGBP"){test ->
+                println("result")
+                println(test.symbol)
+                println(test.price)
+            }
+
         }
 
         return binding.root
