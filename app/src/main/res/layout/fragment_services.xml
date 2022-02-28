@@ -65,9 +65,9 @@
 
                         android:backgroundTint="@color/primaryLightColor"
 
-                        android:gravity="start"
+                        android:gravity="center_horizontal"
 
-                        android:text="Cleaning"
+                        android:text="@string/cleaning"
                         android:textAlignment="center"
                         tools:layout_conversion_absoluteHeight="48dp"
                         tools:layout_conversion_absoluteWidth="102dp"
@@ -110,9 +110,9 @@
                         android:textStyle="bold"
                         android:backgroundTint="@color/primaryLightColor"
 
-                        android:gravity="left"
+                        android:gravity="center_horizontal"
 
-                        android:text="Locksmith"
+                        android:text="@string/locksmith"
                         android:textAlignment="center"
                         tools:layout_conversion_absoluteHeight="48dp"
                         tools:layout_conversion_absoluteWidth="102dp"
@@ -148,7 +148,7 @@
 
                     android:orientation="vertical"
                     android:gravity="center_horizontal|bottom"
-                    android:background="@drawable/docwalker_image"
+                    android:background="@drawable/dogwalker_image"
                     >
 
                     <Button
@@ -163,9 +163,9 @@
                         android:textStyle="bold"
                         android:backgroundTint="@color/primaryLightColor"
 
-                        android:gravity="left"
+                        android:gravity="center_horizontal"
 
-                        android:text="Dog Walking"
+                        android:text="@string/dog_walking"
                         android:textAlignment="center"
                         tools:layout_conversion_absoluteHeight="48dp"
                         tools:layout_conversion_absoluteWidth="102dp"
@@ -213,9 +213,9 @@
                         android:textAllCaps="false"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:gravity="left"
+                        android:gravity="center_horizontal"
 
-                        android:text="Removals"
+                        android:text="@string/removals"
                         android:textAlignment="center"
                         tools:layout_conversion_absoluteHeight="48dp"
                         tools:layout_conversion_absoluteWidth="102dp"
@@ -263,9 +263,9 @@
                         android:textAllCaps="false"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:gravity="left"
+                        android:gravity="center_horizontal"
 
-                        android:text="Gardening"
+                        android:text="@string/gardening"
                         android:textAlignment="center"
                         tools:layout_conversion_absoluteHeight="48dp"
                         tools:layout_conversion_absoluteWidth="102dp"
@@ -311,11 +311,11 @@
 
                         android:backgroundTint="@color/primaryLightColor"
 
-                        android:gravity="left"
+                        android:gravity="center_horizontal"
                         android:textAllCaps="false"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:text="Odd Jobs"
+                        android:text="@string/odd_jobs"
                         android:textAlignment="center"
                         tools:layout_conversion_absoluteHeight="48dp"
                         tools:layout_conversion_absoluteWidth="102dp"

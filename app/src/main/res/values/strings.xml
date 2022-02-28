@@ -88,5 +88,7 @@
     <string name="service_type">service_type</string>
     <string name="please_note_that_your_dbs_will_have_to_be_cqc_countersigned">please note that your dbs will have to be cqc countersigned</string>
     <string name="back">Back</string>
+    <string name="dog_walking">Dog Walking</string>
+    <string name="odd_jobs">Odd Jobs</string>
 
 </resources>
