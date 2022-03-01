@@ -56,6 +56,7 @@ class FilterServicesFragment : Fragment() {
             view.findNavController().navigate(FilterServicesFragmentDirections.actionFilterServicesFragmentToFilterDateFragment(uid, recurring, numOfRooms, activeServices.toTypedArray()))
         }
 
+
         buildServiceButtons(mutableListOf("Sofa", "Carpet", "Bathroom", "Hoover", "Party", "Upstairs", "more", "etc", "one more", "two more", "three more"))
 
         return binding.root
