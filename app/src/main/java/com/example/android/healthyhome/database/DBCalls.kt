@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken
 
 class DBCalls {
     companion object {
+        //Base API URL
         var baseURL = "https://api2.binance.com" //Obviously temporary
 
         //php scripts
