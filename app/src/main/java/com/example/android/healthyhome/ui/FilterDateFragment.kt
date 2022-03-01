@@ -38,6 +38,7 @@ class FilterDateFragment : Fragment(){
             //Go to the next part of the page
         }
 
+        /*
         binding.testButton.setOnClickListener { view: View ->
             var output = "API ERROR"
             DBCalls.getJSONFromPath("https://api2.binance.com/api/v3/ticker/price?symbol=XRPGBP")
@@ -53,6 +54,7 @@ class FilterDateFragment : Fragment(){
             }
 
         }
+         */
 
         return binding.root
     }

@@ -63,6 +63,7 @@ dependencies {
 
     //HTML Calls
     implementation 'com.github.kittinunf.fuel:fuel:2.3.1'
+    implementation "org.jetbrains.anko:anko:0.10.4"
     //JSON
     implementation 'com.google.code.gson:gson:2.8.5'
 
