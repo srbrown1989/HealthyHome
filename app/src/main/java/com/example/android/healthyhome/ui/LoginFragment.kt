@@ -18,7 +18,10 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.android.healthyhome.R
+import com.example.android.healthyhome.database.APIResponse
 import com.example.android.healthyhome.database.User
+import com.example.android.healthyhome.database.util.Common
+import com.example.android.healthyhome.database.util.IMyAPI
 import com.example.android.healthyhome.databinding.FragmentLoginBinding
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
@@ -27,6 +30,9 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,14 +44,13 @@ import com.google.firebase.ktx.Firebase
  */
 class LoginFragment : Fragment() {
 
-    private lateinit var database: DatabaseReference
-
 
     private lateinit var binding: FragmentLoginBinding
     private lateinit var navController: NavController
 
+    private lateinit var mService : IMyAPI
 
-    private lateinit var fAuth : FirebaseAuth
+
 
 
 
@@ -63,9 +68,9 @@ class LoginFragment : Fragment() {
             inflater, R.layout.fragment_login, container, false
         )
 
-        fAuth = Firebase.auth
+        mService = Common.getAPI()
 
-        database = FirebaseDatabase.getInstance().reference.child("Users")
+
 
 
 
@@ -98,7 +103,8 @@ class LoginFragment : Fragment() {
     }
 
     private fun loginIntent() {
-        validateLoginForm()
+        SignIn()
+        //validateLoginForm()
 
     }
 
@@ -124,7 +130,7 @@ class LoginFragment : Fragment() {
                     if (!binding.passwordEditText.text.toString().matches(Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@\$%^&*-]).{8,}\$"))) {
                         binding.passwordEditText.setError("Invalid Password", icon)
                     } else {
-                        firebaseSignIn()
+                        SignIn()
                     }
 
                 } else {
@@ -135,45 +141,30 @@ class LoginFragment : Fragment() {
         }
     }
 
-    private fun firebaseSignIn() {
-        binding.buttonLogin.isEnabled = false
-        val icon = AppCompatResources.getDrawable(requireContext(),
-            R.drawable.ic_warning)
+    private fun SignIn() {
+        mService.loginUser(binding.emailEditText.text.toString(),binding.passwordEditText.text.toString())
+            .enqueue(object : Callback<APIResponse>{
+                override fun onResponse(call: Call<APIResponse>, response: Response<APIResponse>) {
+                    val result : APIResponse? = response.body()
+                    if (result?.error!!){
+                        Toast.makeText(activity?.applicationContext,result.error_msg,Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(activity?.applicationContext,"Login Successful",Toast.LENGTH_SHORT).show()
+                    }
+                }
 
-        icon?.setBounds(0,0,icon.intrinsicWidth,icon.intrinsicHeight)
+                override fun onFailure(call: Call<APIResponse>, t: Throwable) {
+                    Toast.makeText(activity?.applicationContext, t.message, Toast.LENGTH_SHORT).show()
+                }
 
-        fAuth.signInWithEmailAndPassword(binding.emailEditText.text.toString()
-            ,binding.passwordEditText.text.toString()).addOnCompleteListener{
-                task ->
-            if (task.isSuccessful){
-                navController.navigate(LoginFragmentDirections.actionLoginFragmentToServicesFragment())
-
-            } else {
-                binding.emailEditText.setError("Invalid email or password",icon)
-                binding.passwordEditText.setError("Invalid email or password",icon)
-                binding.buttonLogin.isEnabled = true
-
-            }
-
-        }
-    }
-
-    private fun addUser() {
-        var user = User()
-        user.name = binding.nameEditText.text.toString()
-        user.email = binding.emailEditText.text.toString()
-        user.uid = FirebaseAuth.getInstance().uid
-        user.isProvider = false
-
-        database.child(user.uid!!).setValue(user)
-
+            })
 
 
     }
+
 
     private fun registerIntent() {
         validateRegisterForm()
-
 
 
     }
@@ -206,7 +197,7 @@ class LoginFragment : Fragment() {
                         if (binding.emailEditText.text.toString().matches(Regex("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"))){
                             if (binding.passwordEditText.text.toString().matches(Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@\$%^&*-]).{8,}\$"))){
                                 if(binding.passwordEditText.text.toString() == binding.confirmPasswordEditText.text.toString()){
-                                    firebaseSignUp()
+                                    SignUp()
 
 
                                 } else {
@@ -225,17 +216,25 @@ class LoginFragment : Fragment() {
         }
     }
 
-    private fun firebaseSignUp() {
-        fAuth.createUserWithEmailAndPassword(binding.emailEditText.text.toString(),binding.passwordEditText.text.toString())
-            .addOnCompleteListener{task ->
-                if (task.isSuccessful){
-                    addUser()
-                    navController.navigate(LoginFragmentDirections.actionLoginFragmentToServicesFragment())
-                } else {
-                    Toast.makeText(context,"Username or Password Incorrect",Toast.LENGTH_LONG).show()
+    private fun SignUp() {
 
+        mService.registerUser(binding.nameEditText.text.toString(),binding.emailEditText.text.toString(),binding.passwordEditText.text.toString())
+            .enqueue(object : Callback<APIResponse>{
+                override fun onResponse(call: Call<APIResponse>, response: Response<APIResponse>) {
+                    val result : APIResponse? = response.body()
+                    if (result?.error!!){
+                        Toast.makeText(activity?.applicationContext,result.error_msg,Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(activity?.applicationContext,"Signed up as " + response.body()!!.user.name,Toast.LENGTH_SHORT).show()
+                    }
                 }
-            }
+
+                override fun onFailure(call: Call<APIResponse>, t: Throwable) {
+                    Toast.makeText(activity?.applicationContext, t.message, Toast.LENGTH_SHORT).show()
+                }
+
+            })
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -244,39 +243,5 @@ class LoginFragment : Fragment() {
         navController = findNavController()
     }
 
-//    private fun launchSignInFlow() {
-//        val providers = arrayListOf(
-//            AuthUI.IdpConfig.EmailBuilder().build(), AuthUI.IdpConfig.GoogleBuilder().build()
-//        )
-//        // Create and launch sign-in intent. We listen to the response of this activity with the
-//        // SIGN_IN_RESULT_CODE code.
-//        startActivityForResult(
-//            AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(
-//                providers
-//            ).build(), SIGN_IN_RESULT_CODE
-//        )
-//
-//    }
-//
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if (requestCode == SIGN_IN_RESULT_CODE) {
-//            val response = IdpResponse.fromResultIntent(data)
-//            if (resultCode == Activity.RESULT_OK) {
-//                // Successfully signed in user.
-//                Log.i(
-//                    TAG,
-//                    "Successfully signed in user " +
-//                            "${FirebaseAuth.getInstance().currentUser?.displayName}!"
-//                )
-//            } else {
-//                // Sign in failed. If response is null the user canceled the sign-in flow using
-//                // the back button. Otherwise check response.getError().getErrorCode() and handle
-//                // the error.
-//                Log.i(TAG, "Sign in unsuccessful ${response?.error?.errorCode}")
-//            }
-//        }
-//
-//
-//    }
+
 }
