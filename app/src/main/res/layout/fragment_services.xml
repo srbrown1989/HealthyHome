@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_alignParentBottom="true"
     tools:context="com.example.android.healthyhome.ui.ServicesFragment">
 
     <data>
@@ -10,8 +11,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/services_fragment_text"
@@ -27,15 +27,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/services_fragment_text"
-            android:rowCount="3"
             android:columnCount="2"
-
-            >
+            android:rowCount="3">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/ic_services_cleaner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_row="0"
                 android:layout_rowWeight="1"
                 android:layout_column="0"
@@ -44,210 +42,293 @@
                 android:layout_margin="16dp"
                 app:cardBackgroundColor="@android:color/white"
                 app:cardCornerRadius="20dp"
+                app:cardElevation="20dp">
 
-                app:cardElevation="2dp">
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/cleaning_image"
+                    android:gravity="center_horizontal|bottom"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginRight="16dp"
+
+                        android:backgroundTint="@color/primaryLightColor"
+
+                        android:gravity="start"
+
+                        android:text="Cleaning"
+                        android:textAlignment="center"
+                        tools:layout_conversion_absoluteHeight="48dp"
+                        tools:layout_conversion_absoluteWidth="102dp"
+                        tools:layout_editor_absoluteX="51dp"
+                        tools:layout_editor_absoluteY="110dp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="20dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|center_horizontal"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/ic_cleaning" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/cleaning"
-                        android:textAlignment="center"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="1"
-                android:layout_gravity="fill"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="16dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="2dp"
-                >
-                <LinearLayout
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
+                    android:gravity="center_horizontal|bottom"
                     android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center_vertical|center_horizontal">
-                    <ImageView
-                        android:layout_height="100dp"
-                        android:layout_width="100dp"
-                        android:src="@drawable/ic_locksmith"
-                        />
-                    <TextView
+                    android:background="@drawable/locksmith_image"
+                    >
+
+                    <Button
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="@string/locksmith"
+
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginRight="16dp"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
                         android:textStyle="bold"
+                        android:backgroundTint="@color/primaryLightColor"
+
+                        android:gravity="left"
+
+                        android:text="Locksmith"
                         android:textAlignment="center"
-                        />
+                        tools:layout_conversion_absoluteHeight="48dp"
+                        tools:layout_conversion_absoluteWidth="102dp"
+                        tools:layout_editor_absoluteX="51dp"
+                        tools:layout_editor_absoluteY="110dp" />
+
+
 
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_row="1"
-                android:layout_column="0"
-                android:layout_gravity="fill"
                 android:layout_rowWeight="1"
+                android:layout_column="0"
                 android:layout_columnWeight="1"
-                android:layout_margin="16dp"
+                android:layout_gravity="fill"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="2dp"
-                >
+                app:cardElevation="20dp">
+
                 <LinearLayout
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+
                     android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center_vertical|center_horizontal">
-                    <ImageView
-                        android:layout_height="100dp"
-                        android:layout_width="100dp"
-                        android:src="@drawable/ic_dog_walker"
-                        />
-                    <TextView
+                    android:gravity="center_horizontal|bottom"
+                    android:background="@drawable/docwalker_image"
+                    >
+
+                    <Button
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="@string/dog_walking"
+
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginRight="16dp"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
                         android:textStyle="bold"
+                        android:backgroundTint="@color/primaryLightColor"
+
+                        android:gravity="left"
+
+                        android:text="Dog Walking"
                         android:textAlignment="center"
-                        />
+                        tools:layout_conversion_absoluteHeight="48dp"
+                        tools:layout_conversion_absoluteWidth="102dp"
+                        tools:layout_editor_absoluteX="51dp"
+                        tools:layout_editor_absoluteY="110dp" />
+
+
 
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_row="1"
-                android:layout_column="1"
-                android:layout_gravity="fill"
                 android:layout_rowWeight="1"
+                android:layout_column="1"
                 android:layout_columnWeight="1"
+                android:layout_gravity="fill"
                 android:layout_margin="16dp"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="2dp"
-                >
+                app:cardElevation="20dp">
+
                 <LinearLayout
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+
                     android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center_vertical|center_horizontal">
-                    <ImageView
-                        android:layout_height="100dp"
-                        android:layout_width="100dp"
-                        android:src="@drawable/ic_removals"
-                        />
-                    <TextView
+                    android:gravity="center_horizontal|bottom"
+                    android:background="@drawable/removal_image"
+                    >
+
+                    <Button
+                        android:layout_width="160dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="@string/removals"
+
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginRight="16dp"
+
+                        android:backgroundTint="@color/primaryLightColor"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
                         android:textStyle="bold"
+                        android:gravity="left"
+
+                        android:text="Removals"
                         android:textAlignment="center"
-                        />
+                        tools:layout_conversion_absoluteHeight="48dp"
+                        tools:layout_conversion_absoluteWidth="102dp"
+                        tools:layout_editor_absoluteX="51dp"
+                        tools:layout_editor_absoluteY="110dp" />
+
+
 
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_row="2"
+                android:layout_rowWeight="1"
                 android:layout_column="0"
-                android:layout_gravity="fill"
-                android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
+                android:layout_gravity="fill"
                 android:layout_margin="16dp"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="2dp"
-                >
+                app:cardElevation="20dp">
+
                 <LinearLayout
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+
                     android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center_vertical|center_horizontal">
-                    <ImageView
-                        android:layout_height="100dp"
-                        android:layout_width="100dp"
-                        android:src="@drawable/ic_gardener"
-                        />
-                    <TextView
+                    android:gravity="center_horizontal|bottom"
+                    android:background="@drawable/gardener_image"
+                    >
+
+                    <Button
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="@string/gardener"
+
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginRight="16dp"
+
+                        android:backgroundTint="@color/primaryLightColor"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
                         android:textStyle="bold"
+                        android:gravity="left"
+
+                        android:text="Gardening"
                         android:textAlignment="center"
-                        />
+                        tools:layout_conversion_absoluteHeight="48dp"
+                        tools:layout_conversion_absoluteWidth="102dp"
+                        tools:layout_editor_absoluteX="51dp"
+                        tools:layout_editor_absoluteY="110dp" />
+
+
 
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_row="2"
-                android:layout_column="1"
-                android:layout_gravity="fill"
                 android:layout_rowWeight="1"
+                android:layout_column="1"
                 android:layout_columnWeight="1"
+                android:layout_gravity="fill"
                 android:layout_margin="16dp"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="2dp"
-                >
+                app:cardElevation="20dp">
+
                 <LinearLayout
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+
                     android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_gravity="center_vertical|center_horizontal">
-                    <ImageView
-                        android:layout_height="100dp"
-                        android:layout_width="100dp"
-                        android:src="@drawable/ic_odd_jobs"
-                        />
-                    <TextView
+                    android:gravity="center_horizontal|bottom"
+                    android:background="@drawable/handyman_image"
+                    >
+
+                    <Button
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="@string/odd_jobs"
+
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginRight="16dp"
+
+                        android:backgroundTint="@color/primaryLightColor"
+
+                        android:gravity="left"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
                         android:textStyle="bold"
+                        android:text="Odd Jobs"
                         android:textAlignment="center"
-                        />
+                        tools:layout_conversion_absoluteHeight="48dp"
+                        tools:layout_conversion_absoluteWidth="102dp"
+                        tools:layout_editor_absoluteX="51dp"
+                        tools:layout_editor_absoluteY="110dp" />
+
+
 
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
         </GridLayout>
-
 
 
     </RelativeLayout>
