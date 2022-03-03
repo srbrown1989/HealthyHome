@@ -1,6 +1,6 @@
 package com.example.android.healthyhome.database
 
-data class APIResponse(
+data class LoginResponse(
     val error: Boolean,
     val uid: Int,
     val user: UserX,

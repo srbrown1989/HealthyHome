@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.android.healthyhome.R
+import com.example.android.healthyhome.database.UserX
+import com.example.android.healthyhome.database.util.Common
 import com.example.android.healthyhome.databinding.FragmentServicesBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -17,8 +19,7 @@ import com.google.firebase.ktx.Firebase
 
 
 class ServicesFragment : Fragment() {
-
-    private lateinit var fAuth : FirebaseAuth
+    private lateinit var currentUser: UserX
     private lateinit var navController: NavController
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -26,12 +27,10 @@ class ServicesFragment : Fragment() {
         val binding: FragmentServicesBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_services, container, false)
 
-        fAuth = Firebase.auth
+        currentUser= Common.currentUser
 
-        if(fAuth.currentUser?.uid != null) {
-            Toast.makeText(context, "Logged in as ${fAuth.currentUser!!.email}",Toast.LENGTH_LONG).show()
+        Toast.makeText(context, "Logged in as ${currentUser.email}",Toast.LENGTH_LONG).show()
 
-        }
         binding.icServicesCleaner.setOnClickListener {
             navController.navigate(ServicesFragmentDirections.actionServicesFragmentToProviderListFragment2())
         }
