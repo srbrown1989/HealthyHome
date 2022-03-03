@@ -11,8 +11,13 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.android.healthyhome.R
+import com.example.android.healthyhome.database.AvailabilityType
+import com.example.android.healthyhome.database.BookingType
 import com.example.android.healthyhome.database.DBCalls
 import com.example.android.healthyhome.databinding.FragmentFilterDateBinding
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class FilterDateFragment : Fragment(){
@@ -21,73 +26,220 @@ class FilterDateFragment : Fragment(){
     val REQUEST_DATE: Int = 0
 
     //Defaults, will display current date on creation
-    var curYear: Int = -1
-    var curMonth: Int = -1
-    var curDay: Int = -1
+    var selYear: Int = -1
+    var selMonth: Int = -1
+    var selDay: Int = -1
+
+    var curDateStr: String = ""
+
+    var cid: Int = -1
+    var pid: Int = -1
+    var recurring: Boolean = false
+    var numOfRooms: Int = -1
+    var extras: MutableList<String> = mutableListOf()
+    var times: MutableList<String> = mutableListOf()
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        //Obtain variables
+        val args = FilterDateFragmentArgs.fromBundle(requireArguments())
+        cid = args.cid
+        pid = args.pid
+        recurring = args.recurring
+        numOfRooms = args.numOfRooms
+        extras = args.services.toMutableList()
+
+        //Set current date
+        setCurrentDate()
 
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate<FragmentFilterDateBinding>(inflater, R.layout.fragment_filter_date, container, false)
+        fillBookingInformation()
         setUpTimeSpinner()
 
-
-        binding.tvDatePicker.setOnClickListener { _ -> displayDatePrompt() }
-
-        binding.btnNext.setOnClickListener { view: View ->
-            //Go to the next part of the page
-        }
-
-        /*
-        binding.testButton.setOnClickListener { view: View ->
-            var output = "API ERROR"
-            DBCalls.getJSONFromPath("https://api2.binance.com/api/v3/ticker/price?symbol=XRPGBP")
-            { string ->
-                output = string
-                println(output)
-            }
-
-            DBCalls.getServicesListFromProvider("XRPGBP"){test ->
-                println("result")
-                println(test.symbol)
-                println(test.price)
+        binding.tvDatePicker.setOnClickListener { _ ->
+            println(pid)
+            DBCalls.getAvailabilityByPID(pid.toString()){a ->
+                if(!a.set){
+                    binding.tvDatePicker.text = "ERROR: Provider hasn't set their availability"
+                }else{
+                    displayDatePrompt(a)
+                }
             }
 
         }
-         */
+
+        binding.btnConfirm.setOnClickListener {
+            val timeSelection = binding.spnrTimePicker.selectedItemId
+            if(timeSelection >= 0){
+                var time = times[timeSelection.toInt()]
+                println(numOfRooms)
+                println(extras.size)
+                DBCalls.insertBooking(cid.toString(), pid.toString(), binding.tvDatePicker.text.toString(), time.replace(":", ""), binding.tvExtrasPresent.text.toString().replace(" ", ""), numOfRooms + extras.size)
+            }
+        }
 
         return binding.root
     }
 
     /**
+     * Fills in the booking information that has already been provided
+     */
+    private fun fillBookingInformation(){
+        //cid
+        DBCalls.getCustomerFullNameByID(cid.toString()){name ->
+            binding.tvCustNamePresent.text = name
+        }
+        //pid
+        DBCalls.getProviderNameByID(pid.toString()){name ->
+            binding.tvProvNamePresent.text = name
+        }
+        //recurring
+        if(recurring){
+            binding.tvRecurringPresent.text = "Yes"
+        }else{
+            binding.tvRecurringPresent.text = "No"
+        }
+        //extras
+        var exString = "No Extras Selected"
+        if(extras.size != 0){
+            exString = ""
+            for(s in extras){
+                exString += "${s}, "
+            }
+            exString = exString.substring(0, exString.length - 2)
+        }
+        binding.tvExtrasPresent.text = exString
+    }
+
+    /**
      * Displays the prompt to pick a date
      */
-    private fun displayDatePrompt(){
-        val picker: DatePickerFragment = DatePickerFragment(curYear, curMonth, curDay)
+    private fun displayDatePrompt(avail: AvailabilityType){
+
+        val picker: DatePickerFragment = DatePickerFragment(selYear, selMonth, selDay)
         picker.setTargetFragment(this, REQUEST_DATE)
 
-        //Testing with just todays date
-        var date2 = Calendar.getInstance()
-        date2.set(2022, 1, 4)
-        var date2cal = Calendar.getInstance()
-        date2cal.set(2022, 1, 10)
+        val dayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
+        var offset = (dayOfWeek - 2) % 7
+        var availDaysList: MutableList<Calendar> = mutableListOf()
 
-        picker.setDaysToShow(arrayOf(Calendar.getInstance(), date2cal, date2))
+        //60 days in advance
+        for(i in 1..60){
+            var dayI = Calendar.getInstance()
+            dayI.add(Calendar.DAY_OF_MONTH, i)
+
+            val real = (i + offset) % 7
+            //Mon
+            if(real == 0){
+                //Not a day off
+                if(avail.mon != "000000000000000000000000000000000000000000000000"){
+                    availDaysList.add(dayI)
+                }
+            }
+            //Tues
+            else if(real == 1){
+                //Not a day off
+                if(avail.tue != "000000000000000000000000000000000000000000000000"){
+                    availDaysList.add(dayI)
+                }
+            }
+            //Wed
+            else if(real == 2){
+                //Not a day off
+                if(avail.wed != "000000000000000000000000000000000000000000000000"){
+                    availDaysList.add(dayI)
+                }
+            }
+            //Thurs
+            else if(real == 3){
+                //Not a day off
+                if(avail.thu != "000000000000000000000000000000000000000000000000"){
+                    availDaysList.add(dayI)
+                }
+            }
+            //Fri
+            else if(real == 4){
+                //Not a day off
+                if(avail.fri != "000000000000000000000000000000000000000000000000"){
+                    availDaysList.add(dayI)
+                }
+            }
+            //Sat
+            else if(real == 5){
+                //Not a day off
+                if(avail.sat != "000000000000000000000000000000000000000000000000"){
+                    availDaysList.add(dayI)
+                }
+            }
+            //Sunday
+            else if(real == 6){
+                //Not a day off
+                if(avail.sun != "000000000000000000000000000000000000000000000000"){
+                    availDaysList.add(dayI)
+                }
+            }
+        }
+
+        picker.setDaysToShow(availDaysList.toTypedArray())
         picker.show(parentFragmentManager, "datePicker")
     }
 
     private fun setUpTimeSpinner(){
-        updateTimeItems()
+        updateTimeItems("", listOf())
     }
 
     /**
      * This will check the database for available times on the date set and update the spinner items to reflect that
      */
-    private fun updateTimeItems(){
+    private fun updateTimeItems(dayAvailability: String, existingBookings: List<BookingType>){
         //This all has to be temporary as I have no database link but this string array would be formed from the database
-        val times = arrayOf("10:15", "12:45", "13:15", "14:00", "14:50", "15:00", "16:50", "18:20", "18:30", "19:20")
+
+        if(dayAvailability != "") {
+            var min: Int = 0
+            var busy: Int = 0
+            for (i in 0..47) {
+                val curMin: Int = min % 60
+                val curHour: Int = min / 60
+
+                if (busy != 0) {
+                    min += 30
+                    busy--
+                    continue
+                }
+                if (dayAvailability[i] == '0') {
+                    min += 30
+                    continue
+                }
+
+                var conflict = false
+                for (booking in existingBookings) {
+                    if (booking.time == "${curHour}${curMin}") {
+                        min += 30
+                        busy = booking.halfHoursreq
+                        conflict = true
+                        break
+                    }
+                }
+
+                if (!conflict) {
+                    min += 30
+                    var hStr = curHour.toString()
+                    if(hStr.length == 1) {
+                        hStr = "0${curHour}"
+                    }
+                    var mStr = curMin.toString()
+                    if(mStr.length == 1) {
+                        mStr = "0${curMin}"
+                    }
+                    times.add("${hStr}:${mStr}")
+                }
+            }
+        }
+
+
         //This would be for if there are no valid times for the date selected
-        if(times.isEmpty()){
+        if(dayAvailability == "" || times.isEmpty()){
             var adap = ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item, arrayOf("No Times"))
         }
         else {
@@ -97,6 +249,23 @@ class FilterDateFragment : Fragment(){
             binding.spnrTimePicker.adapter = adap
         }
 
+    }
+
+    /**
+     * Sets the current date
+     */
+    private fun setCurrentDate(){
+        val cal: Calendar = Calendar.getInstance()
+        var d: String = cal.get(Calendar.DAY_OF_MONTH).toString()
+        var m: String = cal.get(Calendar.WEEK_OF_MONTH).toString()
+        var y: String = cal.get(Calendar.YEAR).toString()
+        if(d.length == 1){
+            d = "0${d}"
+        }
+        if(m.length == 1){
+            m = "0${m}"
+        }
+        curDateStr = "${y}/${m}/${d}"
     }
 
     /**
@@ -115,12 +284,55 @@ class FilterDateFragment : Fragment(){
             val year: Int? = data?.getIntExtra("YEAR", -1)
 
             if(day != null && month != null && year != null){
-                curDay = day
-                curMonth = month
-                curYear = year
+                selDay = day
+                selMonth = month
+                selYear = year
             }
 
-            binding.tvDatePicker.text = "${curYear}/${curMonth}/${curDay}"
+            var monStr = month.toString()
+            var dayStr = day.toString()
+            if(monStr.length == 1){
+                monStr = "0${monStr}"
+            }
+            if(dayStr.length == 1){
+                dayStr = "0${dayStr}"
+            }
+            binding.tvDatePicker.text = "${year}/${monStr}/${dayStr}"
+            println("${year}/${monStr}/${dayStr}")
+
+            DBCalls.getBookingsByPIDAndDate(pid.toString(), "${year}/${monStr}/${dayStr}"){ bookingList ->
+                DBCalls.getAvailabilityByPID(pid.toString()){a ->
+                    if(a.set){
+                        var availabilityStr: String
+
+                        //Finds day of week of the date you have selected
+                        val sdf= SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
+                        val selDate = sdf.parse("${selDay}/${selMonth}/${selYear}")
+                        sdf.applyPattern("EEE")
+                        val selDayOfWeek = sdf.format(selDate)
+
+                        if(selDayOfWeek == "Mon"){
+                            availabilityStr = a.mon
+                        }else if(selDayOfWeek == "Tue"){
+                            availabilityStr = a.tue
+                        }else if(selDayOfWeek == "Wed"){
+                            availabilityStr = a.wed
+                        }else if(selDayOfWeek == "Thu"){
+                            availabilityStr = a.thu
+                        }else if(selDayOfWeek == "Fri"){
+                            availabilityStr = a.fri
+                        }else if(selDayOfWeek == "Sat"){
+                            availabilityStr = a.sat
+                        }else if(selDayOfWeek == "Sun"){
+                            availabilityStr = a.sun
+                        }else{
+                            availabilityStr = ""
+                        }
+
+                        updateTimeItems(availabilityStr, bookingList)
+                    }
+                }
+            }
         }
     }
 

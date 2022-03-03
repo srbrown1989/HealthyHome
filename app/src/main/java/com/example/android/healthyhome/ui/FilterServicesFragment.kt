@@ -52,14 +52,15 @@ class FilterServicesFragment : Fragment() {
 
 
         binding.btnNext.setOnClickListener { view: View ->
-            val uid = "100" //Filler
+            val cid = Integer.parseInt(binding.cidTemp.text.toString()) //Filler
+            val pid = Integer.parseInt(binding.pidTemp.text.toString()) //Filler
             val numOfRooms = binding.radioGroup.checkedRadioButtonId + 1
-            view.findNavController().navigate(FilterServicesFragmentDirections.actionFilterServicesFragmentToFilterDateFragment(uid, recurring, numOfRooms, activeServices.toTypedArray()))
+            view.findNavController().navigate(FilterServicesFragmentDirections.actionFilterServicesFragmentToFilterDateFragment(pid, recurring, 1, activeServices.toTypedArray(), cid))
         }
 
 
         //pID taken from selected provider
-        DBCalls.getServicesListFromProvider("1"){ rArray ->
+        DBCalls.getServicesListFromProvider("2"){ rArray ->
             buildServiceButtons(rArray)
         }
 
@@ -136,7 +137,7 @@ class FilterServicesFragment : Fragment() {
                 }
                 constSet.applyTo(binding.parentConstraint)
             }
-            println("__________________ " + counter + " buttons created")
+            println("__________________ " + counter + " extras provided with " + counter + " buttons created for them")
         }
 
 

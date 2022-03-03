@@ -54,6 +54,12 @@
     <string name="pickTime">Select a time : </string>
     <string name="next">Next</string>
     <string name="noExtras">This provider offers no additional services</string>
+    <string name="bookingTitle">Your Booking</string>
+    <string name="custName">Customer Name:</string>
+    <string name="provName">Provider Name:</string>
+    <string name="recurring">Recurring Service?</string>
+    <string name="extrasSelect">Extras Selected</string>
+    <string name="confirmBooking">Confirm Booking</string>
 
     <string name="submit">Submit</string>
     <string name="cleaning">cleaning</string>
