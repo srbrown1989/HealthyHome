@@ -1,6 +1,6 @@
 package com.example.android.healthyhome.database.util;
 
-import com.example.android.healthyhome.database.APIResponse;
+import com.example.android.healthyhome.database.LoginResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -11,10 +11,10 @@ public interface IMyAPI {
 
     @FormUrlEncoded
     @POST("login.php")
-    Call<APIResponse> loginUser(@Field("email") String email, @Field("password") String password);
+    Call<LoginResponse> loginUser(@Field("email") String email, @Field("password") String password);
 
     @FormUrlEncoded
     @POST("register.php")
-    Call<APIResponse> registerUser(@Field("name") String name, @Field("email") String email, @Field("password") String password);
+    Call<LoginResponse> registerUser(@Field("name") String name, @Field("email") String email, @Field("password") String password);
 
 }

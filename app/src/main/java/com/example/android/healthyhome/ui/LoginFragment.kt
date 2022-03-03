@@ -1,11 +1,7 @@
 package com.example.android.healthyhome.ui
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
-import android.text.Layout
 import android.text.TextUtils
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,23 +9,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.whenCreated
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.android.healthyhome.R
-import com.example.android.healthyhome.database.APIResponse
-import com.example.android.healthyhome.database.User
+import com.example.android.healthyhome.database.LoginResponse
 import com.example.android.healthyhome.database.util.Common
 import com.example.android.healthyhome.database.util.IMyAPI
 import com.example.android.healthyhome.databinding.FragmentLoginBinding
-import com.firebase.ui.auth.AuthUI
-import com.firebase.ui.auth.IdpResponse
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -143,17 +129,19 @@ class LoginFragment : Fragment() {
 
     private fun SignIn() {
         mService.loginUser(binding.emailEditText.text.toString(),binding.passwordEditText.text.toString())
-            .enqueue(object : Callback<APIResponse>{
-                override fun onResponse(call: Call<APIResponse>, response: Response<APIResponse>) {
-                    val result : APIResponse? = response.body()
+            .enqueue(object : Callback<LoginResponse>{
+                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                    val result : LoginResponse? = response.body()
                     if (result?.error!!){
                         Toast.makeText(activity?.applicationContext,result.error_msg,Toast.LENGTH_SHORT).show()
                     } else {
-                        Toast.makeText(activity?.applicationContext,"Login Successful",Toast.LENGTH_SHORT).show()
+                        Common.currentUser = response.body()!!.user
+                        Toast.makeText(activity?.applicationContext,"Logged in as " + response.body()!!.user.name,Toast.LENGTH_SHORT).show()
+                        navController.navigate(LoginFragmentDirections.actionLoginFragmentToServicesFragment());
                     }
                 }
 
-                override fun onFailure(call: Call<APIResponse>, t: Throwable) {
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Toast.makeText(activity?.applicationContext, t.message, Toast.LENGTH_SHORT).show()
                 }
 
@@ -219,17 +207,19 @@ class LoginFragment : Fragment() {
     private fun SignUp() {
 
         mService.registerUser(binding.nameEditText.text.toString(),binding.emailEditText.text.toString(),binding.passwordEditText.text.toString())
-            .enqueue(object : Callback<APIResponse>{
-                override fun onResponse(call: Call<APIResponse>, response: Response<APIResponse>) {
-                    val result : APIResponse? = response.body()
+            .enqueue(object : Callback<LoginResponse>{
+                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                    val result : LoginResponse? = response.body()
                     if (result?.error!!){
                         Toast.makeText(activity?.applicationContext,result.error_msg,Toast.LENGTH_SHORT).show()
                     } else {
+                        Common.currentUser = response.body()!!.user
                         Toast.makeText(activity?.applicationContext,"Signed up as " + response.body()!!.user.name,Toast.LENGTH_SHORT).show()
+                        navController.navigate(LoginFragmentDirections.actionLoginFragmentToServicesFragment());
                     }
                 }
 
-                override fun onFailure(call: Call<APIResponse>, t: Throwable) {
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Toast.makeText(activity?.applicationContext, t.message, Toast.LENGTH_SHORT).show()
                 }
 
