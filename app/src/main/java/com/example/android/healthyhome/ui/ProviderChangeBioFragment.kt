@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.android.healthyhome.R
+import com.example.android.healthyhome.database.util.Common
 import com.example.android.healthyhome.databinding.FragmentProviderSignUpBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -36,8 +37,14 @@ class ProviderChangeBioFragment : Fragment() {
             it.findNavController().navigate(ProviderSignUpFragmentDirections.actionProviderSignUpFragmentToServicesFragment())
         }
 
+        binding.bioInput.hint = Common.currentProvider.bio
+
 
         return binding.root
+
+
+
+
     }
 
 }

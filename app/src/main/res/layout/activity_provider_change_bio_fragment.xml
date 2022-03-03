@@ -1,161 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.ProviderChangeBioFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/change_description_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:gravity="center"
-        android:text="@string/what_would_you_like_your_new_bio_to_be"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/change_bio_box"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <data>
 
-    <TextView
-        android:id="@+id/about_me_title"
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="45sp"
-        android:layout_marginBottom="16dp"
-        android:background="#4CAF50"
-        android:gravity="center"
-        android:text="@string/about_me"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/change_description_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="match_parent"
+        tools:context=".ui.ProviderChangeBioFragment">
 
-    <EditText
-        android:id="@+id/change_bio_box"
-        android:layout_width="250dp"
-        android:layout_height="104dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/border"
-        android:ems="10"
-        android:gravity="top"
-        android:hint="@string/tell_us_a_little_about_yourself"
-        android:inputType="textPersonName"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/change_price_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TouchTargetSizeCheck"
-        android:autofillHints="" />
+        <TextView
+            android:id="@+id/change_description_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"
+            android:text="@string/what_would_you_like_your_new_bio_to_be"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/change_bio_box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/popup_confirm_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="@string/confirm"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/about_me_title"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginBottom="16dp"
+            android:background="#4CAF50"
+            android:gravity="center"
+            android:text="@string/about_me"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/change_description_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/change_price_box"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:gravity="top"
-        android:hint="@string/price"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/change_phone_number_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        <EditText
+            android:id="@+id/change_bio_box"
+            android:layout_width="250dp"
+            android:layout_height="104dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="@string/tell_us_a_little_about_yourself"
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/change_price_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TouchTargetSizeCheck"
+            android:autofillHints="" />
 
-    <TextView
-        android:id="@+id/change_price_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/would_you_like_to_set_a_new_price"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/change_price_box"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/popup_confirm_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:text="@string/confirm"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/change_phone_number_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/do_you_have_a_new_phone_number"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/change_phone_number_box"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+            android:id="@+id/change_price_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="top"
+            android:hint="@string/price"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/change_phone_number_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/change_phone_number_box"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:gravity="top"
-        android:hint="@string/phone_number_change"
-        android:inputType="phone"
-        android:minHeight="48dp"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/change_email_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        <TextView
+            android:id="@+id/change_price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/would_you_like_to_set_a_new_price"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/change_price_box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/change_email_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="@string/new_email"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/change_email_box"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/change_phone_number_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/do_you_have_a_new_phone_number"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/change_phone_number_box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/change_email_box"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:gravity="top"
-        android:hint="@string/email_address"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/popup_confirm_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+            android:id="@+id/change_phone_number_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="top"
+            android:hint="@string/phone_number_change"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/change_email_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/change_email_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/new_email"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/change_email_box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/change_email_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="top"
+            android:hint="@string/email_address"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/popup_confirm_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

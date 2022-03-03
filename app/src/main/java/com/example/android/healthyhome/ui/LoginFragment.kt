@@ -136,6 +136,7 @@ class LoginFragment : Fragment() {
                         Toast.makeText(activity?.applicationContext,result.error_msg,Toast.LENGTH_SHORT).show()
                     } else {
                         Common.currentUser = response.body()!!.user
+                        var currentUser2 = response.body()!!.user
                         Toast.makeText(activity?.applicationContext,"Logged in as " + response.body()!!.user.name,Toast.LENGTH_SHORT).show()
                         navController.navigate(LoginFragmentDirections.actionLoginFragmentToServicesFragment());
                     }

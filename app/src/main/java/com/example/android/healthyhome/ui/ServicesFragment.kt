@@ -35,6 +35,8 @@ class ServicesFragment : Fragment() {
             navController.navigate(ServicesFragmentDirections.actionServicesFragmentToProviderListFragment2())
         }
 
+        binding.servicesFragmentText.text = currentUser.uid.toString()
+
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
