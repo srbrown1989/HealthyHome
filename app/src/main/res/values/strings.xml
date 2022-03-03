@@ -15,7 +15,6 @@
     <string name="credit_card_number">Credit card number</string>
     <string name="company_name">Company Name</string>
     <string name="edit_your_profile">Edit your bio to provide your customers with the most up to date information.</string>
-    <string name="bookings">Bookings</string>
     <string name="bookings_desc">View and manage your bookings or contact your customers</string>
     <string name="messages">Messages</string>
     <string name="messages_desc">View your messages, keep in contact with your customers.</string>
@@ -82,11 +81,21 @@
     <string name="yes">yes</string>
     <string name="would_you_like_to_hear_about_our_exciting_offers">would you like to hear about our exciting offers?</string>
     <string name="store_name">store_name</string>
-    <string name="phone_number">phone_number</string>
-    <string name="provider_email">provider_email</string>
-    <string name="provider_name">provider_name</string>
-    <string name="service_type">service_type</string>
     <string name="please_note_that_your_dbs_will_have_to_be_cqc_countersigned">please note that your dbs will have to be cqc countersigned</string>
     <string name="back">Back</string>
+    <string name="bookings">Bookings</string>
+    <string name="what_would_you_like_your_new_bio_to_be">What would you like your new bio to be?</string>
+    <string name="about_me">About Me</string>
+    <string name="tell_us_a_little_about_yourself">Tell us a little about yourself</string>
+    <string name="would_you_like_to_set_a_new_price">Would you like to set a new price?</string>
+    <string name="do_you_have_a_new_phone_number">Do you have a new Phone Number?</string>
+    <string name="phone_number_change">Phone Number</string>
+    <string name="new_email">New Email?</string>
+    <string name="email_address">Email Address</string>
+    <string name="service_type">Service Type</string>
+    <string name="provider_name">Provider Name</string>
+    <string name="provider_email">Provider Email</string>
+    <string name="provider_phone_number">Phone Number</string>
+    <string name="provider_password">Password</string>
 
 </resources>
