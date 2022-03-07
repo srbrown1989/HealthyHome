@@ -12,42 +12,30 @@
         android:layout_height="match_parent"
         tools:context=".ui.FilterDateFragment">
 
-        <Button
-            android:id="@+id/btn_next"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:text="@string/next"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/tv_datePicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:hint="@string/pickDate"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_extras"
+            app:layout_constraintTop_toBottomOf="@+id/tv_extras" />
 
         <TextView
             android:id="@+id/tv_timePicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="15dp"
             android:hint="@string/pickTime"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_datePicker"
             app:layout_constraintTop_toBottomOf="@+id/tv_datePicker" />
 
         <Spinner
             android:id="@+id/spnr_timePicker"
             android:layout_width="200dp"
-            android:layout_height="30dp"
+            android:layout_height="48dp"
             android:layout_marginEnd="32dp"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="@+id/tv_timePicker"
@@ -55,14 +43,100 @@
             app:layout_constraintStart_toEndOf="@+id/tv_timePicker"
             app:layout_constraintTop_toTopOf="@+id/tv_timePicker" />
 
-        <Button
-            android:id="@+id/testButton"
+        <TextView
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Test"
+            android:layout_marginTop="30dp"
+            android:text="@string/bookingTitle"
+            android:textSize="28sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_custName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="75dp"
+            android:text="@string/custName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_provName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/provName"
+            app:layout_constraintStart_toStartOf="@+id/tv_custName"
+            app:layout_constraintTop_toBottomOf="@+id/tv_custName" />
+
+        <TextView
+            android:id="@+id/tv_recurring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/recurring"
+            app:layout_constraintStart_toStartOf="@+id/tv_provName"
+            app:layout_constraintTop_toBottomOf="@+id/tv_provName" />
+
+        <TextView
+            android:id="@+id/tv_extras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/extrasSelect"
+            app:layout_constraintStart_toStartOf="@+id/tv_recurring"
+            app:layout_constraintTop_toBottomOf="@+id/tv_recurring" />
+
+        <TextView
+            android:id="@+id/tv_custNamePresent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_custName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toEndOf="@+id/tv_custName"
+            app:layout_constraintTop_toTopOf="@+id/tv_custName" />
+
+        <TextView
+            android:id="@+id/tv_provNamePresent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_provName"
+            app:layout_constraintStart_toStartOf="@+id/tv_custNamePresent"
+            app:layout_constraintTop_toTopOf="@+id/tv_provName"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tv_recurringPresent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_recurring"
+            app:layout_constraintStart_toStartOf="@+id/tv_custNamePresent"
+            app:layout_constraintTop_toTopOf="@+id/tv_recurring"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tv_ExtrasPresent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_extras"
+            app:layout_constraintStart_toStartOf="@+id/tv_custNamePresent"
+            app:layout_constraintTop_toTopOf="@+id/tv_extras"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirmBooking"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spnr_timePicker" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

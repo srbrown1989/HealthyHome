@@ -59,8 +59,8 @@
         android:label="FilterDateFragment"
         tools:layout="@layout/fragment_filter_date">
         <argument
-            android:name="uid"
-            app:argType="string" />
+            android:name="pid"
+            app:argType="integer" />
         <argument
             android:name="recurring"
             app:argType="boolean" />
@@ -70,6 +70,9 @@
         <argument
             android:name="services"
             app:argType="string[]" />
+        <argument
+            android:name="cid"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/providerListFragment"
