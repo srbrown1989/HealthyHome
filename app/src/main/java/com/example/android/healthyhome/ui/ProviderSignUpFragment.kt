@@ -45,10 +45,6 @@ class ProviderSignUpFragment: Fragment() {
 
         }
 
-        binding.backButton.setOnClickListener {
-            it.findNavController().navigate(ProviderSignUpFragmentDirections.actionProviderSignUpFragmentToServicesFragment())
-        }
-
         mService = Common.getAPI()
 
 
@@ -70,6 +66,9 @@ class ProviderSignUpFragment: Fragment() {
         var serviceType = binding.spinnerServiceType.selectedItem.toString()
         var providerEmail = binding.providerEmail.text.toString()
         var price = binding.priceInput.text.toString()
+        var address = binding.companyAddress.text.toString()
+        var postcode = binding.companyPostcode.text.toString()
+        var rating = binding.ratingStar.rating.toString()
         var offers = binding.radioYes.isChecked.toString()
 
         mService.registerProvider(45,"test avenue","Ct27UB", "test","01892592345", "shauns cleaners", "test bio", "cleaning","[carpet]",4, "£15")

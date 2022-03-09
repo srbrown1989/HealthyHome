@@ -34,4 +34,18 @@ public interface IMyAPI {
             @Field("price") String price
     );
 
+    @FormUrlEncoded
+    @POST("providerChangeBio.php")
+    Call<ProviderSignUpResponse> updateProvider(
+            @Field("uid") int uid,
+            @Field("address") String address,
+            @Field("postcode")String postcode,
+            @Field("contact") String contact,
+            @Field("companyEmail") String companyEmail,
+            @Field("Bio") String bio,
+            @Field("rating") int rating,
+            @Field("price") String price
+    );
+
+
 }

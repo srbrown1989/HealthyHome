@@ -26,8 +26,7 @@
     <fragment
         android:id="@+id/providerSignUpFragment"
         android:name="com.example.android.healthyhome.ui.ProviderSignUpFragment"
-        android:label="@string/provider_sign_up"
-        tools:layout="@layout/fragment_provider_sign_up">
+        android:label="@string/provider_sign_up">
         <action
             android:id="@+id/action_providerSignUpFragment_to_providerHomeFragment"
             app:destination="@id/providerHomeFragment" />
@@ -38,8 +37,7 @@
     <fragment
         android:id="@+id/providerHomeFragment"
         android:name="com.example.android.healthyhome.ui.ProviderHomeFragment"
-        android:label="@string/provider_home"
-        tools:layout="@layout/fragment_provider_home">
+        android:label="@string/provider_home">
         <action
             android:id="@+id/action_providerHomeFragment_to_providerSignUpFragment"
             app:destination="@id/providerSignUpFragment" />
@@ -89,5 +87,22 @@
             android:id="@+id/action_chosenProviderFragment_to_filterServicesFragment"
             app:destination="@id/filterServicesFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/providerBookingsFragment"
+        android:name="com.example.android.healthyhome.ui.ProviderBookingsFragment"
+        android:label="ProviderBookingsFragment" >
+        <action
+            android:id="@+id/action_providerBookingsFragment_to_providerHomeFragment2"
+            app:destination="@id/providerHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/providerChangeBioFragment"
+        android:name="com.example.android.healthyhome.ui.ProviderChangeBioFragment"
+        android:label="ProviderChangeBioFragment" >
+        <action
+            android:id="@+id/action_providerChangeBioFragment_to_providerHomeFragment"
+            app:destination="@id/providerHomeFragment" />
+    </fragment>
+
 
 </navigation>
