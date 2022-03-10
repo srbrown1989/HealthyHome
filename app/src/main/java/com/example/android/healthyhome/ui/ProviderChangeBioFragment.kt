@@ -44,16 +44,46 @@ class ProviderChangeBioFragment : Fragment() {
 
         //replacing hints with current stored data
 
-        binding.changeBioBox.hint = Common.currentProvider.bio
-        binding.changePhoneNumberBox.hint = Common.currentProvider.contact
-        binding.changeEmailBox.hint = Common.currentProvider.email
-        binding.changePriceBox.hint = Common.currentProvider.price
-        binding.changeAddressBox.hint = Common.currentProvider.address
-        binding.changePostcodeBox.hint = Common.currentProvider.postcode
-        binding.changeRatingBox.numStars = Common.currentProvider.rating
+        binding.currentBioBox.hint = Common.currentProvider.bio
+        binding.currentPhoneNumberBox.hint = Common.currentProvider.contact
+        binding.currentEmailBox.hint = Common.currentProvider.email
+        binding.currentPriceBox.hint = Common.currentProvider.price
+        binding.currentAddressBox.hint = Common.currentProvider.address
+        binding.currentPostcodeBox.hint = Common.currentProvider.postcode
+        binding.currentRatingBox.numStars = Common.currentProvider.rating
 
 
         mService = Common.getAPI()
+
+        // Change Info
+        binding.changeDescriptionText.setOnClickListener {
+            binding.currentBioBox.visibility = View.INVISIBLE
+            binding.changeBioBox.visibility = View.VISIBLE
+        }
+        binding.changePhoneNumberText.setOnClickListener {
+            binding.currentPhoneNumberBox.visibility = View.INVISIBLE
+            binding.changePhoneNumberBox.visibility = View.VISIBLE
+        }
+        binding.changeEmailText.setOnClickListener {
+            binding.currentEmailBox.visibility = View.INVISIBLE
+            binding.changeEmailBox.visibility = View.VISIBLE
+        }
+        binding.changePriceText.setOnClickListener {
+            binding.currentPriceBox.visibility = View.INVISIBLE
+            binding.changePriceBox.visibility = View.VISIBLE
+        }
+        binding.changeAddressText.setOnClickListener {
+            binding.currentAddressBox.visibility = View.INVISIBLE
+            binding.changeAddressBox.visibility = View.VISIBLE
+        }
+        binding.changePostcodeText.setOnClickListener {
+            binding.currentPostcodeBox.visibility = View.INVISIBLE
+            binding.changePostcodeBox.visibility = View.VISIBLE
+        }
+        binding.changeRatingText.setOnClickListener {
+            binding.currentRatingBox.visibility = View.INVISIBLE
+            binding.changeRatingBox.visibility = View.VISIBLE
+        }
 
         return binding.root
 
