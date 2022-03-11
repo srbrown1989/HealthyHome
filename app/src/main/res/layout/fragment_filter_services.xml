@@ -31,14 +31,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <TextView
+                    android:id="@+id/noServices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/noExtras"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
                 <Button
                     android:id="@+id/btn_next"
                     android:layout_width="80dp"
                     android:layout_height="40dp"
                     android:text="@string/next"
                     android:textSize="12sp"
+                    android:visibility="visible"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ToggleButton
                     android:id="@+id/btn_oneOff"
@@ -122,6 +133,30 @@
                         android:text="@string/fiveRooms" />
 
                 </RadioGroup>
+
+                <EditText
+                    android:id="@+id/cidTemp"
+                    android:layout_width="75dp"
+                    android:layout_height="35dp"
+                    android:hint="cid Temp"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/pidTemp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/pidTemp"
+                    android:layout_width="75dp"
+                    android:layout_height="35dp"
+                    android:hint="pid Temp"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_next"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/cidTemp"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@ import androidx.core.view.marginLeft
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.android.healthyhome.R
+import com.example.android.healthyhome.database.DBCalls
 import com.example.android.healthyhome.databinding.FragmentFilterServicesBinding
 import com.example.android.healthyhome.databinding.FragmentProviderHomeBinding
 import com.google.firebase.database.FirebaseDatabase
@@ -51,84 +52,95 @@ class FilterServicesFragment : Fragment() {
 
 
         binding.btnNext.setOnClickListener { view: View ->
-            val uid = "100" //Filler
+            val cid = Integer.parseInt(binding.cidTemp.text.toString()) //Filler
+            val pid = Integer.parseInt(binding.pidTemp.text.toString()) //Filler
             val numOfRooms = binding.radioGroup.checkedRadioButtonId + 1
-            view.findNavController().navigate(FilterServicesFragmentDirections.actionFilterServicesFragmentToFilterDateFragment(uid, recurring, numOfRooms, activeServices.toTypedArray()))
+            view.findNavController().navigate(FilterServicesFragmentDirections.actionFilterServicesFragmentToFilterDateFragment(pid, recurring, 1, activeServices.toTypedArray(), cid))
         }
 
 
-        buildServiceButtons(mutableListOf("Sofa", "Carpet", "Bathroom", "Hoover", "Party", "Upstairs", "more", "etc", "one more", "two more", "three more"))
+        //pID taken from selected provider
+        DBCalls.getServicesListFromProvider("2"){ rArray ->
+            buildServiceButtons(rArray)
+        }
 
         return binding.root
     }
 
     private fun buildServiceButtons(services : MutableList<String>){
 
-        while(services.size % 4 != 0){
-            services.add("holder");
-        }
+        println(services.size)
+        if(services.size == 0){
+            binding.noServices.visibility = View.VISIBLE
+        }else{
+            while(services.size % 4 != 0){
+                services.add("holder");
+            }
 
-        var prevButton : View? = null
-        var prevAboveView : View = binding.radioGroup
-        var counter = 0
+            var prevButton : View? = null
+            var prevAboveView : View = binding.radioGroup
+            var counter = 0
 
 
 
-        for(ser in services){
-            val curButton = ToggleButton(this.requireContext())
-            curButton.id = View.generateViewId()
-            curButton.text = ser
-            curButton.textOn = ser
-            curButton.textOff = ser
-            curButton.textSize = 11f
-            curButton.width = pixelsToDisplayPixels(20)
-            curButton.height = pixelsToDisplayPixels(150)
-            if(ser != "holder") {
-                curButton.setOnCheckedChangeListener { _, isChecked ->
-                    if (isChecked) {
-                        activeServices.add(ser)
-                    } else {
-                        activeServices.remove(ser)
+            for(ser in services){
+                val curButton = ToggleButton(this.requireContext())
+                curButton.id = View.generateViewId()
+                curButton.text = ser
+                curButton.textOn = ser
+                curButton.textOff = ser
+                curButton.textSize = 11f
+                curButton.width = pixelsToDisplayPixels(20)
+                curButton.height = pixelsToDisplayPixels(150)
+                if(ser != "holder") {
+                    curButton.setOnCheckedChangeListener { _, isChecked ->
+                        if (isChecked) {
+                            activeServices.add(ser)
+                        } else {
+                            activeServices.remove(ser)
+                        }
+                        Toast.makeText(this.requireContext(),
+                            activeServices.toString(),
+                            Toast.LENGTH_SHORT).show()
                     }
-                    Toast.makeText(this.requireContext(),
-                        activeServices.toString(),
-                        Toast.LENGTH_SHORT).show()
+                }else{
+                    curButton.visibility = View.INVISIBLE;
                 }
-            }else{
-                curButton.visibility = View.INVISIBLE;
-            }
 
-            binding.parentConstraint.addView(curButton)
-            var constSet = ConstraintSet()
-            constSet.clone(binding.parentConstraint)
+                binding.parentConstraint.addView(curButton)
+                var constSet = ConstraintSet()
+                constSet.clone(binding.parentConstraint)
 
-            //Set height of button
-            constSet.connect(curButton.id, ConstraintSet.TOP, prevAboveView.id, ConstraintSet.BOTTOM, 0) //Current top -> prevTop Bottom
-            if(prevButton == null){
-                //Put button to left of screen
-                constSet.connect(binding.parentConstraint.id, ConstraintSet.LEFT, curButton.id, ConstraintSet.RIGHT, pixelsToDisplayPixels(0))
-            }
-            else{
-                //Sets up chain links
-                constSet.connect(prevButton.id, ConstraintSet.RIGHT, curButton.id, ConstraintSet.LEFT, pixelsToDisplayPixels(0))
-            }
+                //Set height of button
+                constSet.connect(curButton.id, ConstraintSet.TOP, prevAboveView.id, ConstraintSet.BOTTOM, 0) //Current top -> prevTop Bottom
+                if(prevButton == null){
+                    //Put button to left of screen
+                    constSet.connect(binding.parentConstraint.id, ConstraintSet.LEFT, curButton.id, ConstraintSet.RIGHT, pixelsToDisplayPixels(0))
+                }
+                else{
+                    //Sets up chain links
+                    constSet.connect(prevButton.id, ConstraintSet.RIGHT, curButton.id, ConstraintSet.LEFT, pixelsToDisplayPixels(0))
+                }
 
-            //Set final one to the right of the screen
-            if(counter % 4 == 3){
-                constSet.connect(curButton.id, ConstraintSet.RIGHT, binding.parentConstraint.id, ConstraintSet.RIGHT, pixelsToDisplayPixels(0))
-            }
+                //Set final one to the right of the screen
+                if(counter % 4 == 3){
+                    constSet.connect(curButton.id, ConstraintSet.RIGHT, binding.parentConstraint.id, ConstraintSet.RIGHT, pixelsToDisplayPixels(0))
+                }
 
-            //Go down a row
-            counter = (counter + 1)
-            if(counter % 4 == 0){
-                prevButton = null
-                prevAboveView = curButton
-            }else{
-                prevButton = curButton
+                //Go down a row
+                counter = (counter + 1)
+                if(counter % 4 == 0){
+                    prevButton = null
+                    prevAboveView = curButton
+                }else{
+                    prevButton = curButton
+                }
+                constSet.applyTo(binding.parentConstraint)
             }
-            constSet.applyTo(binding.parentConstraint)
+            println("__________________ " + counter + " extras provided with " + counter + " buttons created for them")
         }
-        println("__________________ " + counter + " buttons created")
+
+
     }
 
     private fun pixelsToDisplayPixels(pix : Int) : Int{
