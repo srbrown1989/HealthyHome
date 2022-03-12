@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_providerHomeFragment_to_providerSignUpFragment"
             app:destination="@id/providerSignUpFragment" />
+        <action
+            android:id="@+id/action_providerHomeFragment_to_providerChangeBioFragment"
+            app:destination="@id/providerChangeBioFragment" />
     </fragment>
     <fragment
         android:id="@+id/filterServicesFragment"

@@ -38,7 +38,7 @@ class ProviderChangeBioFragment : Fragment() {
 
         binding.popupConfirmButton.setOnClickListener {
 
-          //  it.findNavController().navigate(ProviderChangeBioFragmentDirections.actionProviderChangeBioFragmentToProviderHomeFragment())
+          it.findNavController().navigate(ProviderChangeBioFragmentDirections.actionProviderChangeBioFragmentToProviderHomeFragment())
 
         }
 
@@ -58,30 +58,37 @@ class ProviderChangeBioFragment : Fragment() {
         // Change Info
         binding.changeDescriptionText.setOnClickListener {
             binding.currentBioBox.visibility = View.INVISIBLE
+            binding.changeDescriptionText.visibility = View.INVISIBLE
             binding.changeBioBox.visibility = View.VISIBLE
         }
         binding.changePhoneNumberText.setOnClickListener {
             binding.currentPhoneNumberBox.visibility = View.INVISIBLE
+            binding.changePhoneNumberText.visibility = View.INVISIBLE
             binding.changePhoneNumberBox.visibility = View.VISIBLE
         }
         binding.changeEmailText.setOnClickListener {
             binding.currentEmailBox.visibility = View.INVISIBLE
+            binding.changeEmailText.visibility = View.INVISIBLE
             binding.changeEmailBox.visibility = View.VISIBLE
         }
         binding.changePriceText.setOnClickListener {
             binding.currentPriceBox.visibility = View.INVISIBLE
+            binding.changePriceText.visibility = View.INVISIBLE
             binding.changePriceBox.visibility = View.VISIBLE
         }
         binding.changeAddressText.setOnClickListener {
             binding.currentAddressBox.visibility = View.INVISIBLE
+            binding.changeAddressText.visibility = View.INVISIBLE
             binding.changeAddressBox.visibility = View.VISIBLE
         }
         binding.changePostcodeText.setOnClickListener {
             binding.currentPostcodeBox.visibility = View.INVISIBLE
+            binding.changePostcodeText.visibility = View.INVISIBLE
             binding.changePostcodeBox.visibility = View.VISIBLE
         }
         binding.changeRatingText.setOnClickListener {
             binding.currentRatingBox.visibility = View.INVISIBLE
+            binding.changeRatingText.visibility = View.INVISIBLE
             binding.changeRatingBox.visibility = View.VISIBLE
         }
 

@@ -13,12 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthyHome">
         <activity
-            android:name=".ui.ProviderChangeBioFragment"
-            android:exported="false" />
-        <activity
-            android:name=".ui.ProviderBookingsFragment"
-            android:exported="false" />
-        <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
