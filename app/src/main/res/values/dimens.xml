@@ -19,7 +19,7 @@
     <dimen name="vertical_margin">16dp</dimen>
     <dimen name="horizontal_margin">8dp</dimen>
     <dimen name="button_padding">16dp</dimen>
-    <dimen name="button_text_size">18sp</dimen>
+    <dimen name="button_text_size">16sp</dimen>
     <dimen name="question_horizontal_margin">32dp</dimen>
     <dimen name="question_vertical_margin">8dp</dimen>
     <dimen name="answer_text_size">18sp</dimen>
@@ -31,5 +31,8 @@
     <dimen name="horizontal_spacer_width">20dp</dimen>
     <dimen name="regularity_button_height">128dp</dimen>
     <dimen name="additional_options_button_size">80dp</dimen>
-    <dimen name="text_size">20sp</dimen>
+
+    <dimen name="header_text_size">30sp</dimen>
+    <dimen name="header_text_2">20sp</dimen>
+    <dimen name="text_size">16sp</dimen>
 </resources>

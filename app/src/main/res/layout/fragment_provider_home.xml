@@ -20,7 +20,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/company_name" />
+            tools:text="@string/company_name"
+            android:textSize="@dimen/header_text_size"
+            />
 
         <RatingBar
             android:id="@+id/ratingBar"
@@ -30,6 +32,8 @@
             android:layout_marginTop="8dp"
             android:numStars="5"
             android:rating="5"
+
+            android:textSize="@dimen/header_text_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/company_name_text_view"
@@ -76,7 +80,9 @@
                     android:text="@string/bio"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/bio_imageView"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="@dimen/header_text_2"
+                    />
 
                 <TextView
                     android:id="@+id/bio_description"
@@ -89,7 +95,7 @@
                     android:rotation="0"
                     android:text="@string/edit_your_profile"
                     android:textAlignment="center"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/text_size"
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -140,11 +146,14 @@
                     android:text="@string/bookings"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/bookings_imageView"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="@dimen/header_text_2"
+                    />
 
                 <TextView
                     android:id="@+id/bookings_description"
                     android:layout_width="250dp"
+                    android:textSize="@dimen/text_size"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
@@ -153,7 +162,7 @@
                     android:rotation="0"
                     android:text="@string/bookings_desc"
                     android:textAlignment="center"
-                    android:textSize="14sp"
+
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -196,6 +205,7 @@
                 <TextView
                     android:id="@+id/messages_heading"
                     style="@style/header"
+                    android:textSize="@dimen/header_text_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -208,6 +218,7 @@
 
                 <TextView
                     android:id="@+id/messages_description"
+
                     android:layout_width="250dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -217,7 +228,7 @@
                     android:rotation="0"
                     android:text="@string/messages_desc"
                     android:textAlignment="center"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/text_size"
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -266,6 +277,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:text="@string/offers"
+                    android:textSize="@dimen/header_text_2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/offers_imageView"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -281,7 +293,7 @@
                     android:rotation="0"
                     android:text="@string/offers_desc"
                     android:textAlignment="center"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/text_size"
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

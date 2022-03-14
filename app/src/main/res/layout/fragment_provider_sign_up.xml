@@ -30,7 +30,7 @@
                 android:layout_marginBottom="372dp"
                 android:text="@string/please_note_that_your_dbs_will_have_to_be_cqc_countersigned"
                 android:textColor="#0000FF"
-                android:textSize="20sp"
+                android:textSize="@dimen/header_text_size"
                 app:layout_constraintBottom_toTopOf="@+id/bio_input"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/service_type"
-                android:textSize="16sp"
+                android:textSize="@dimen/header_text_2"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/check_dbs" />
@@ -56,6 +56,7 @@
                 android:layout_marginTop="8dp"
                 android:entries="@array/Services"
                 android:minHeight="48dp"
+                android:textSize="@dimen/text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/price_input"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -84,6 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:textSize="@dimen/text_size"
                 android:hint="@string/provider_email"
                 android:inputType="textEmailAddress"
                 android:minHeight="48dp"
@@ -116,6 +118,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/bio"
+                android:textSize="@dimen/text_size"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -135,14 +138,16 @@
                 android:layout_marginBottom="60dp"
                 android:hint="@string/would_you_like_to_hear_about_our_exciting_offers"
                 android:textAlignment="center"
-                android:textSize="24sp"
+
                 android:textStyle="normal|bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bio_input"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+
+                android:textSize="@dimen/header_text_2"/>
 
             <RadioButton
                 android:id="@+id/radio_no1"
@@ -180,12 +185,15 @@
                 android:hint="@string/price"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/check_dbs"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/spinner_serviceType"
-                app:layout_constraintVertical_bias="0.148" />
+                app:layout_constraintVertical_bias="0.148"
+                android:textSize="@dimen/text_size"
+                />
 
             <RadioGroup
                 android:id="@+id/radio_set"
@@ -214,7 +222,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/no"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/text_size"
                     tools:layout_editor_absoluteX="168dp"
                     tools:layout_editor_absoluteY="687dp" />
 
@@ -228,7 +236,9 @@
                 android:layout_marginTop="5dp"
                 android:text="@string/back"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="@dimen/button_text_size"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

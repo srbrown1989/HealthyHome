@@ -38,7 +38,9 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Fluid Hygiene" />
+                    tools:text="Fluid Hygiene"
+                    android:textSize="@dimen/header_text_size"
+                    />
 
                 <RatingBar
                     android:id="@+id/chosen_rating_bar"
@@ -68,7 +70,9 @@
                         android:layout_height="wrap_content"
                         android:text="@string/fake_bio"
                         android:textAlignment="viewStart"
-                        android:textSize="16sp" />
+                        android:textSize="@dimen/text_size"
+
+                        />
                 </ScrollView>
 
                 <TextView
@@ -76,7 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/bio"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/text_size"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.08"
@@ -90,7 +94,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="@string/price"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/text_size"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -104,7 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/text_size"
                     android:textStyle="bold"
                     app:layout_constraintBaseline_toBaselineOf="@+id/price_label"
                     app:layout_constraintStart_toEndOf="@+id/price_label"
@@ -115,11 +119,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/header_text_2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/name_text_view"
-                    tools:text="Contact Number" />
+                    tools:text="Contact Number"
+
+                    />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="207dp"
@@ -155,7 +161,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView"
-            tools:text="Customer Reviews Go Here" />
+            tools:text="Customer Reviews Go Here"
+            android:textSize="@dimen/text_size"
+            />
 
         <Button
             android:id="@+id/arrange_button"
@@ -163,7 +171,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:text="Arrange Booking"
-            android:textSize="16sp"
+            android:textSize="@dimen/button_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -175,7 +183,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:text="Request Contact"
-            android:textSize="16sp"
+            android:textSize="@dimen/button_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/arrange_button"
             app:layout_constraintHorizontal_bias="0.5"
