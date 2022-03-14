@@ -8,7 +8,9 @@ import android.widget.Toast
 import androidx.core.view.get
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.database.LoginResponse
 import com.example.android.healthyhome.database.Provider
@@ -26,7 +28,7 @@ import retrofit2.Response
 class ProviderSignUpFragment: Fragment() {
 
     private lateinit var binding: FragmentProviderSignUpBinding
-
+    private lateinit var navController: NavController
     private lateinit var mService : IMyAPI
 
     override fun onCreateView(
@@ -40,19 +42,21 @@ class ProviderSignUpFragment: Fragment() {
         )
 
         binding.finishButton.setOnClickListener {
-            addProvider()
-           // it.findNavController().navigate(ProviderSignUpFragmentDirections.actionProviderSignUpFragmentToProviderHomeFragment())
+            loginIntent()
+          //  it.findNavController().navigate(ProviderSignUpFragmentDirections.actionProviderSignUpFragmentToProviderHomeFragment())
 
-        }
-
-        binding.backButton.setOnClickListener {
-            it.findNavController().navigate(ProviderSignUpFragmentDirections.actionProviderSignUpFragmentToServicesFragment())
         }
 
         mService = Common.getAPI()
 
 
         return binding.root
+
+    }
+
+    private fun loginIntent() {
+        addProvider()
+        //validateLoginForm()
 
     }
 
@@ -70,6 +74,9 @@ class ProviderSignUpFragment: Fragment() {
         var serviceType = binding.spinnerServiceType.selectedItem.toString()
         var providerEmail = binding.providerEmail.text.toString()
         var price = binding.priceInput.text.toString()
+        var address = binding.companyAddress.text.toString()
+        var postcode = binding.companyPostcode.text.toString()
+        var rating = binding.ratingStar.rating.toString()
         var offers = binding.radioYes.isChecked.toString()
 
         mService.registerProvider(45,"test avenue","Ct27UB", "test","01892592345", "shauns cleaners", "test bio", "cleaning","[carpet]",4, "£15")
@@ -80,6 +87,7 @@ class ProviderSignUpFragment: Fragment() {
                 ) {
                     Common.currentProvider = response.body()!!.provider
                     Toast.makeText(activity?.applicationContext,"Successfully signed up as " + response.body()!!.provider!!.name,Toast.LENGTH_SHORT).show()
+                    navController.navigate(ProviderSignUpFragmentDirections.actionProviderSignUpFragmentToProviderHomeFragment())
                 }
 
                 override fun onFailure(call: Call<ProviderSignUpResponse>, t: Throwable) {
@@ -89,6 +97,12 @@ class ProviderSignUpFragment: Fragment() {
             })
 
 
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        navController = findNavController()
     }
 
 }
