@@ -193,7 +193,6 @@ class FilterDateFragment : Fragment(){
      * This will check the database for available times on the date set and update the spinner items to reflect that
      */
     private fun updateTimeItems(dayAvailability: String, existingBookings: List<BookingType>){
-        //This all has to be temporary as I have no database link but this string array would be formed from the database
 
         if(dayAvailability != "") {
             var min: Int = 0
@@ -201,6 +200,7 @@ class FilterDateFragment : Fragment(){
             for (i in 0..47) {
                 val curMin: Int = min % 60
                 val curHour: Int = min / 60
+                var timeString = changeTimeString(curHour, curMin)
 
                 if (busy != 0) {
                     min += 30
@@ -214,7 +214,7 @@ class FilterDateFragment : Fragment(){
 
                 var conflict = false
                 for (booking in existingBookings) {
-                    if (booking.time == "${curHour}${curMin}") {
+                    if (booking.time == timeString) {
                         min += 30
                         busy = booking.halfHoursreq
                         conflict = true
@@ -266,6 +266,21 @@ class FilterDateFragment : Fragment(){
             m = "0${m}"
         }
         curDateStr = "${y}/${m}/${d}"
+    }
+
+    /**
+     * Converts int time to string time
+     */
+    private fun changeTimeString(hour: Int, min: Int): String{
+        var h: String = hour.toString()
+        var m: String = min.toString()
+        if(hour < 10){
+            h = "0${hour}"
+        }
+        if(min < 10){
+            m = "0${min}"
+        }
+        return "${h}${m}"
     }
 
     /**
