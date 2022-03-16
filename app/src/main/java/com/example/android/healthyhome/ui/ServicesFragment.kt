@@ -32,13 +32,19 @@ class ServicesFragment : Fragment() {
         Toast.makeText(context, "Logged in as ${currentUser.email}",Toast.LENGTH_LONG).show()
 
         binding.icServicesCleaner.setOnClickListener {
-            navController.navigate(ServicesFragmentDirections.actionServicesFragmentToProviderListFragment2())
+            //Do this manually for each button ig
+            navigateToProviders("cleaning")
         }
 
         binding.servicesFragmentText.text = currentUser.uid.toString()
 
         return binding.root
     }
+
+    private fun navigateToProviders(service: String){
+        navController.navigate(ServicesFragmentDirections.actionServicesFragmentToProviderListFragment2(service))
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

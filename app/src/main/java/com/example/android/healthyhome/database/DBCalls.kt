@@ -9,15 +9,16 @@ import org.jetbrains.anko.uiThread
 class DBCalls {
     companion object {
         //Base API URL
-        var baseURL = "https://raptor.kent.ac.uk/proj/comp6000/project/14/"
+        val baseURL = "https://raptor.kent.ac.uk/proj/comp6000/project/14/"
 
         //php scripts
-        var servicesList = "getProviderExtras.php?pid="
-        var makeBooking = "makeBooking.php?"
-        var custNameByID = "getCustomerNameByID.php?cid="
-        var provNameByID = "getProviderNameByID.php?pid="
-        var availByPID = "getProviderAvailability.php?pid="
-        var bookingByPID = "getBookingsByPIDAndDate.php?"
+        val servicesList = "getProviderExtras.php?pid="
+        val makeBooking = "makeBooking.php?"
+        val custNameByID = "getCustomerNameByID.php?cid="
+        val provNameByID = "getProviderNameByID.php?pid="
+        val availByPID = "getProviderAvailability.php?pid="
+        val bookingByPID = "getBookingsByPIDAndDate.php?"
+        val providersByService = "ProvidersByService.php?service="
 
         /**
          * Make an API call and have it returned in a specified return function
@@ -75,6 +76,23 @@ class DBCalls {
                 }else{
 
                 }
+            }
+        }
+
+        /**
+         * Uses API to return a list of the customer viewable information of all providers under a given service
+         * @param service Service name of lookup
+         */
+        fun getProvidersFromService(service: String, responseFunction: (List<ProviderCViewType>) -> Unit){
+            getJSONFromPath(baseURL + providersByService + service, false){rJson ->
+                var typeProvCV = object : TypeToken<List<ProviderCViewType>>() {}.type
+                val gson = Gson()
+                //Conversion
+                var provList: List<ProviderCViewType> = gson.fromJson(rJson, typeProvCV)
+                if(provList.isEmpty()){
+                    println("no providers with that service name")
+                }
+                responseFunction(provList)
             }
         }
 
