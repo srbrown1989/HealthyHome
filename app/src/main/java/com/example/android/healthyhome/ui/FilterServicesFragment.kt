@@ -5,19 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
 import android.widget.ToggleButton
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
-import androidx.core.view.marginLeft
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.database.DBCalls
+import com.example.android.healthyhome.database.mail.Mail
 import com.example.android.healthyhome.databinding.FragmentFilterServicesBinding
-import com.example.android.healthyhome.databinding.FragmentProviderHomeBinding
-import com.google.firebase.database.FirebaseDatabase
 
 class FilterServicesFragment : Fragment() {
 
@@ -52,6 +48,7 @@ class FilterServicesFragment : Fragment() {
 
 
         binding.btnNext.setOnClickListener { view: View ->
+
             val cid = Integer.parseInt(binding.cidTemp.text.toString()) //Filler
             val pid = Integer.parseInt(binding.pidTemp.text.toString()) //Filler
             val numOfRooms = binding.radioGroup.checkedRadioButtonId + 1

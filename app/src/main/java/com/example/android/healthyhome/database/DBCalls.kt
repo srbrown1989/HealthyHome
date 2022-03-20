@@ -18,6 +18,7 @@ class DBCalls {
         var provNameByID = "getProviderNameByID.php?pid="
         var availByPID = "getProviderAvailability.php?pid="
         var bookingByPID = "getBookingsByPIDAndDate.php?"
+        var emailByUID = "getEmailByUID.php?uid="
 
         /**
          * Make an API call and have it returned in a specified return function
@@ -108,6 +109,25 @@ class DBCalls {
                     responseFunction("${custNameObj.firstName} ${custNameObj.lastName}")
                 }else{
                     responseFunction("Customer doesn't exist")
+                }
+            }
+        }
+
+        /**
+         * Uses API to retrieve the E-Mail address of a user given by the UID
+         * @param userID ID of the user for lookup
+         * @param responseFunction A lambda function that returns String of the user E-Mail
+         */
+        fun getEmailByUID(userID: String, responseFunction: (String) -> Unit){
+            getJSONFromPath(baseURL + emailByUID + userID, true){ rJson ->
+                if(rJson != "" && rJson != "{}"){
+                    val typeEmail = object : TypeToken<EmailType>() {}.type
+                    val gson = Gson()
+                    val uidEmail: EmailType = gson.fromJson(rJson, typeEmail)
+
+                    responseFunction("${uidEmail.email}")
+                }else{
+                    println("UID has no email")
                 }
             }
         }
