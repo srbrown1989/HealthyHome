@@ -62,6 +62,14 @@ class Mail {
             }
         }
 
+        fun buildConfirmation(custName: String, provName: String, date: String, time: String): String{
+            return "Hello ${custName},\n" +
+                    "Thank you again for choosing Healthy Homes as a domestic service provider" +
+                    "A new booking has just been made with ${provName} on ${date} at ${time}\n" +
+                    "If you wish to change or cancel this booking, log into the Healthy Homes app and navigate to Bookings\n\n" +
+                    "This is a no-reply email"
+        }
+
         private fun putIfMissing(props: Properties, key: String, value: String) {
             if (!props.containsKey(key)) {
                 props[key] = value

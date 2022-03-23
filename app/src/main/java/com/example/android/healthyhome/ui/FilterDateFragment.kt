@@ -80,7 +80,7 @@ class FilterDateFragment : Fragment(){
 
                 //UID OBTAINED FROM SESSION
                 DBCalls.getEmailByUID("1"){ email ->
-                    Mail.sendEMail("New Booking Confirmed", "Hello ${binding.tvCustNamePresent.text},\nThank you for choosing Healthy Homes to make a booking\nA new booking has been made with ${binding.tvProvNamePresent.text} on ${binding.tvDatePicker.text} at ${time}\n\n\nThis is a no-reply email", email)
+                    Mail.sendEMail("Healthy Homes : New Booking", Mail.buildConfirmation(binding.tvCustNamePresent.text.toString(), binding.tvProvNamePresent.text.toString(), binding.tvDatePicker.text.toString(), time), email)
                 }
             }
         }
