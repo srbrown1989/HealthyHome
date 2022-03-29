@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/filterServicesFragment">
 
     <fragment
         android:id="@+id/servicesFragment"
@@ -74,6 +74,9 @@
         <argument
             android:name="cid"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_filterDateFragment_to_filterServicesFragment"
+            app:destination="@id/filterServicesFragment" />
     </fragment>
     <fragment
         android:id="@+id/providerListFragment"
