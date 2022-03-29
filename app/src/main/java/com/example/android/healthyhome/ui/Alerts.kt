@@ -3,7 +3,6 @@ package com.example.android.healthyhome.ui
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
-import android.view.View
 
 class Alerts {
     companion object{
