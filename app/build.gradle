@@ -15,7 +15,7 @@ android {
     defaultConfig {
         applicationId "com.example.android.healthyhome"
         minSdk 21
-        targetSdk 31
+        targetSdk 29
         versionCode 1
         versionName "1.0"
 
@@ -70,11 +70,15 @@ dependencies {
     //Calender stuff
     implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
 
-// Retrofit
+    //Email
+    implementation 'com.sun.mail:android-mail:1.6.2'
+    implementation 'com.sun.mail:android-activation:1.6.2'
+
+    // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation "com.squareup.okhttp3:okhttp:4.9.0"
-    //
+
 
     // Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
