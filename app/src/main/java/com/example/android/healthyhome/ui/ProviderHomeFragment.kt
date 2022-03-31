@@ -18,6 +18,7 @@ import com.example.android.healthyhome.databinding.FragmentProviderHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
@@ -44,10 +45,14 @@ class ProviderHomeFragment : Fragment() {
             inflater, R.layout.fragment_provider_home, container, false
         )
 
+        navController = findNavController()
+
         binding.bioCardView.setOnClickListener {
-            it.findNavController()
-                .navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderChangeBioFragment())
+            navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderChangeBioFragment())
+
         }
+
+
 
 
         mService = Common.getAPI()

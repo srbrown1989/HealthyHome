@@ -92,18 +92,11 @@
             app:destination="@id/providerHomeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/providerChangeBioFragment"
-        android:name="com.example.android.healthyhome.ui.ProviderChangeBioFragment"
-        android:label="ProviderChangeBioFragment" >
-        <action
-            android:id="@+id/action_providerChangeBioFragment_to_providerHomeFragment"
-            app:destination="@id/providerHomeFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/providerSignUpFragment2"
         android:name="com.example.android.healthyhome.ui.ProviderSignUpFragment"
         android:label="ProviderSignUpFragment"
-        tools:layout="@layout/fragment_provider_sign_up"/>
+        tools:layout="@layout/fragment_provider_sign_up"
+        />
     <fragment
         android:id="@+id/customerHomeFragment"
         android:name="com.example.android.healthyhome.ui.CustomerHomeFragment"
@@ -113,6 +106,11 @@
             android:id="@+id/action_customerHomeFragment_to_servicesFragment"
             app:destination="@id/servicesFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/providerChangeBioFragment"
+        android:name="com.example.android.healthyhome.ui.ProviderChangeBioFragment"
+        android:label="ProviderChangeBioFragment"
+        tools:layout="@layout/fragment_provider_change_bio"/>
 
 
 </navigation>
