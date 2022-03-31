@@ -140,6 +140,8 @@ class LoginFragment : Fragment() {
 
                         if (currentUser2.isProvider == 0){ //if not provider go to customer home.
                         navController.navigate(LoginFragmentDirections.actionLoginFragmentToCustomerHomeFragment());
+                            } else if (currentUser2.isProvider == 1) {
+                                navController.navigate(LoginFragmentDirections.actionLoginFragmentToProviderHomeFragment())
                             }
                     }
                 }

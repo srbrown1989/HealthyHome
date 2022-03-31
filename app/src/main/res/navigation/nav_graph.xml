@@ -22,11 +22,15 @@
         <action
             android:id="@+id/action_loginFragment_to_customerHomeFragment"
             app:destination="@id/customerHomeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_providerHomeFragment"
+            app:destination="@id/providerHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/providerHomeFragment"
         android:name="com.example.android.healthyhome.ui.ProviderHomeFragment"
-        android:label="@string/provider_home">
+        android:label="@string/provider_home"
+        tools:layout="@layout/fragment_provider_home">
         <action
             android:id="@+id/action_providerHomeFragment_to_providerChangeBioFragment"
             app:destination="@id/providerChangeBioFragment" />
