@@ -15,13 +15,12 @@
     <string name="credit_card_number">Credit card number</string>
     <string name="company_name">Company Name</string>
     <string name="edit_your_profile">Edit your bio to provide your customers with the most up to date information.</string>
-    <string name="bookings">Bookings</string>
     <string name="bookings_desc">View and manage your bookings or contact your customers</string>
     <string name="messages">Messages</string>
     <string name="messages_desc">View your messages, keep in contact with your customers.</string>
     <string name="offers">Offers</string>
     <string name="offers_desc">Fully customizable offers to attract customers</string>
-    <string name="please_select_a_service">Please select a service:</string>
+    <string name="please_select_a_service">Select a service:</string>
     <string name="gardener">Gardener</string>
     <string name="fake_bio">
         Fluid Hygiene has been operating for over 25 years, \n and our over 1100 specialist cleaning staff are committed to delivering \n consistently high standards and a level of customer care that our \n competitors cannot match.
@@ -50,15 +49,16 @@
     <string name="threeRooms">3</string>
     <string name="fourRooms">4</string>
     <string name="fiveRooms">5</string>
-    <string name="oven">Oven</string>
-    <string name="carpet">Carpet</string>
-    <string name="hoover">Hoover</string>
-    <string name="Fridge">Fridge</string>
-    <string name="dust">Dust</string>
-    <string name="sofa">Sofa</string>
-    <string name="next">Next</string>
     <string name="pickDate">Tap to select a date</string>
     <string name="pickTime">Select a time : </string>
+    <string name="next">Next</string>
+    <string name="noExtras">This provider offers no additional services</string>
+    <string name="bookingTitle">Your Booking</string>
+    <string name="custName">Customer Name:</string>
+    <string name="provName">Provider Name:</string>
+    <string name="recurring">Recurring Service?</string>
+    <string name="extrasSelect">Extras Selected</string>
+    <string name="confirmBooking">Confirm Booking</string>
 
     <string name="submit">Submit</string>
     <string name="cleaning">cleaning</string>
@@ -82,11 +82,28 @@
     <string name="yes">yes</string>
     <string name="would_you_like_to_hear_about_our_exciting_offers">would you like to hear about our exciting offers?</string>
     <string name="store_name">store_name</string>
-    <string name="phone_number">phone_number</string>
-    <string name="provider_email">provider_email</string>
-    <string name="provider_name">provider_name</string>
-    <string name="service_type">service_type</string>
     <string name="please_note_that_your_dbs_will_have_to_be_cqc_countersigned">please note that your dbs will have to be cqc countersigned</string>
     <string name="back">Back</string>
+    <string name="bookings">Bookings</string>
+    <string name="what_would_you_like_your_new_bio_to_be">What would you like your new bio to be?</string>
+    <string name="about_me">About Me</string>
+    <string name="tell_us_a_little_about_yourself">Tell us a little about yourself</string>
+    <string name="would_you_like_to_set_a_new_price">Would you like to set a new price?</string>
+    <string name="do_you_have_a_new_phone_number">Do you have a new Phone Number?</string>
+    <string name="phone_number_change">Phone Number</string>
+    <string name="new_email">New Email?</string>
+    <string name="email_address">Email Address</string>
+    <string name="service_type">Service Type</string>
+    <string name="provider_name">Provider Name</string>
+    <string name="provider_email">Provider Email</string>
+    <string name="provider_phone_number">Phone Number</string>
+    <string name="provider_password">Password</string>
+    <string name="become_a_provider">Become a provider</string>
+    <string name="company_email">Company Email</string>
+    <string name="company_address_with_postcode">Company address including postcode</string>
+    <string name="company_address">Company Address</string>
+    <string name="company_postcode">Company Postcode</string>
+    <string name="company_phone_number">Phone Number</string>
+    <string name="service_provided">Service Provided</string>
 
 </resources>

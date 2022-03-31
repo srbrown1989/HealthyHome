@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/servicesFragment">
+    app:startDestination="@id/providerSignUpFragment2">
 
     <fragment
         android:id="@+id/servicesFragment"
@@ -24,25 +24,12 @@
             app:destination="@id/servicesFragment" />
     </fragment>
     <fragment
-        android:id="@+id/providerSignUpFragment"
-        android:name="com.example.android.healthyhome.ui.ProviderSignUpFragment"
-        android:label="@string/provider_sign_up"
-        tools:layout="@layout/fragment_provider_sign_up">
-        <action
-            android:id="@+id/action_providerSignUpFragment_to_providerHomeFragment"
-            app:destination="@id/providerHomeFragment" />
-        <action
-            android:id="@+id/action_providerSignUpFragment_to_servicesFragment"
-            app:destination="@id/servicesFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/providerHomeFragment"
         android:name="com.example.android.healthyhome.ui.ProviderHomeFragment"
-        android:label="@string/provider_home"
-        tools:layout="@layout/fragment_provider_home">
+        android:label="@string/provider_home">
         <action
-            android:id="@+id/action_providerHomeFragment_to_providerSignUpFragment"
-            app:destination="@id/providerSignUpFragment" />
+            android:id="@+id/action_providerHomeFragment_to_providerChangeBioFragment"
+            app:destination="@id/providerChangeBioFragment" />
     </fragment>
     <fragment
         android:id="@+id/filterServicesFragment"
@@ -59,8 +46,8 @@
         android:label="FilterDateFragment"
         tools:layout="@layout/fragment_filter_date">
         <argument
-            android:name="uid"
-            app:argType="string" />
+            android:name="pid"
+            app:argType="integer" />
         <argument
             android:name="recurring"
             app:argType="boolean" />
@@ -70,6 +57,9 @@
         <argument
             android:name="services"
             app:argType="string[]" />
+        <argument
+            android:name="cid"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/providerListFragment"
@@ -89,5 +79,27 @@
             android:id="@+id/action_chosenProviderFragment_to_filterServicesFragment"
             app:destination="@id/filterServicesFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/providerBookingsFragment"
+        android:name="com.example.android.healthyhome.ui.ProviderBookingsFragment"
+        android:label="ProviderBookingsFragment" >
+        <action
+            android:id="@+id/action_providerBookingsFragment_to_providerHomeFragment2"
+            app:destination="@id/providerHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/providerChangeBioFragment"
+        android:name="com.example.android.healthyhome.ui.ProviderChangeBioFragment"
+        android:label="ProviderChangeBioFragment" >
+        <action
+            android:id="@+id/action_providerChangeBioFragment_to_providerHomeFragment"
+            app:destination="@id/providerHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/providerSignUpFragment2"
+        android:name="com.example.android.healthyhome.ui.ProviderSignUpFragment"
+        android:label="ProviderSignUpFragment"
+        tools:layout="@layout/fragment_provider_sign_up"/>
+
 
 </navigation>

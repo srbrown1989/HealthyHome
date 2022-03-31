@@ -15,7 +15,7 @@ android {
     defaultConfig {
         applicationId "com.example.android.healthyhome"
         minSdk 21
-        targetSdk 31
+        targetSdk 29
         versionCode 1
         versionName "1.0"
 
@@ -61,9 +61,32 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:8.0.0'
     implementation 'com.google.firebase:firebase-firestore-ktx'
 
+    //HTML Calls
+    implementation 'com.github.kittinunf.fuel:fuel:2.3.1'
+    implementation "org.jetbrains.anko:anko:0.10.4"
+    //JSON
+    implementation 'com.google.code.gson:gson:2.8.5'
+
     //Calender stuff
     implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
 
+    //Email
+    implementation 'com.sun.mail:android-mail:1.6.2'
+    implementation 'com.sun.mail:android-activation:1.6.2'
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
+
+
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
+
+    // Coroutine Lifecycle Scopes
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
 
 
 }
