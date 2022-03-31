@@ -170,7 +170,11 @@
                 app:layout_constraintEnd_toEndOf="@+id/check_dbs"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinner_serviceType" />
+                app:layout_constraintTop_toBottomOf="@+id/spinner_serviceType"
+                android:background="@drawable/et_custom"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                />
 
             <RadioGroup
                 android:id="@+id/radio_set"
