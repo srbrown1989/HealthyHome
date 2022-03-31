@@ -98,5 +98,12 @@
     <string name="provider_email">Provider Email</string>
     <string name="provider_phone_number">Phone Number</string>
     <string name="provider_password">Password</string>
+    <string name="become_a_provider">Become a provider</string>
+    <string name="company_email">Company Email</string>
+    <string name="company_address_with_postcode">Company address including postcode</string>
+    <string name="company_address">Company Address</string>
+    <string name="company_postcode">Company Postcode</string>
+    <string name="company_phone_number">Phone Number</string>
+    <string name="service_provided">Service Provided</string>
 
 </resources>
