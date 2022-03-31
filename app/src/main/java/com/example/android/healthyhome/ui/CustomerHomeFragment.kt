@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.database.util.Common
 import com.example.android.healthyhome.database.util.IMyAPI
@@ -32,6 +33,8 @@ class CustomerHomeFragment : Fragment() {
 
 
         mService = Common.getAPI()
+
+        navController = findNavController()
 
         binding.searchButton.setOnClickListener {
             navController.navigate(CustomerHomeFragmentDirections.actionCustomerHomeFragmentToServicesFragment())
