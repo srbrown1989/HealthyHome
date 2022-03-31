@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/providerSignUpFragment2">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/servicesFragment"
@@ -20,8 +20,8 @@
         android:label="@string/login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_servicesFragment"
-            app:destination="@id/servicesFragment" />
+            android:id="@+id/action_loginFragment_to_customerHomeFragment"
+            app:destination="@id/customerHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/providerHomeFragment"
@@ -100,6 +100,15 @@
         android:name="com.example.android.healthyhome.ui.ProviderSignUpFragment"
         android:label="ProviderSignUpFragment"
         tools:layout="@layout/fragment_provider_sign_up"/>
+    <fragment
+        android:id="@+id/customerHomeFragment"
+        android:name="com.example.android.healthyhome.ui.CustomerHomeFragment"
+        android:label="CustomerHomeFragment"
+        tools:layout="@layout/fragment_customer_home">
+        <action
+            android:id="@+id/action_customerHomeFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
+    </fragment>
 
 
 </navigation>

@@ -105,5 +105,8 @@
     <string name="company_postcode">Company Postcode</string>
     <string name="company_phone_number">Phone Number</string>
     <string name="service_provided">Service Provided</string>
+    <string name="search_by_service">Search \n by \nService</string>
+    <string name="post_your_needs">POST \n YOUR \n NEEDS</string>
+    <string name="welcome">Welcome, %1$s </string>
 
 </resources>
