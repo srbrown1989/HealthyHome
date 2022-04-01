@@ -30,7 +30,6 @@ import retrofit2.Response
 class ProviderHomeFragment : Fragment() {
 
     private lateinit var binding : FragmentProviderHomeBinding
-    private lateinit var database : DatabaseReference
     private lateinit var mService: IMyAPI
     private lateinit var navController: NavController
 
@@ -51,29 +50,33 @@ class ProviderHomeFragment : Fragment() {
             navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderChangeBioFragment())
 
         }
+        
+        binding.bookingsCardView.setOnClickListener {
+           navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderBookingsFragment())
+        }
+
+        binding.findJobCardview.setOnClickListener{
+            navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToFindJobFragment())
+        }
+
+        binding.userReviewsCardview.setOnClickListener{
+            navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderReviewsFragment())
+        }
+
 
 
 
 
         mService = Common.getAPI()
 
-        fillProviderInfo()
+        //TODO: IMPLEMENT GETTING INFORMATION FROM LOGGED IN PROVIDER.
+
+
 
 
         return binding.root    }
 
-    private fun fillProviderInfo() {
-        database.child(FirebaseAuth.getInstance().uid!!).get().addOnSuccessListener{
-            val provider : Provider? = it.getValue(Provider::class.java)
-            binding.companyNameTextView.text = provider?.providerName.toString()
-            binding.ratingBar.rating = provider?.rating?.toFloat()!!
-
-
-        }.addOnFailureListener{
-            Log.e("firebase", "Error getting data", it)
-        }
-
-    }
+    private fun fillProviderInfo() {}
 
 
 }

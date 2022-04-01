@@ -38,7 +38,10 @@ class CustomerHomeFragment : Fragment() {
 
         binding.searchButton.setOnClickListener {
             navController.navigate(CustomerHomeFragmentDirections.actionCustomerHomeFragmentToServicesFragment())
+        }
 
+        binding.postButton.setOnClickListener {
+            navController.navigate(CustomerHomeFragmentDirections.actionCustomerHomeFragmentToPostJobFragment())
         }
 
         if(Common.currentUser != null){

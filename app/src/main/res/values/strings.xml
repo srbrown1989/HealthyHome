@@ -108,5 +108,12 @@
     <string name="search_by_service">Search \n by \nService</string>
     <string name="post_your_needs">POST \n YOUR \n NEEDS</string>
     <string name="welcome">Welcome, %1$s </string>
+    <string name="user_reviews">User Reviews</string>
+    <string name="view_and_respond_to_your_user_reviews">View and respond to your user reviews</string>
+    <string name="find_job">Find Job</string>
+    <string name="find_jobs_posted_to_your_area_that_match_your_service">Find jobs posted to your area that match your service</string>
+    <string name="reviews">Reviews</string>
+    <string name="post_job">Post Job</string>
+    <string name="job_responses">Job Responses</string>
 
 </resources>
