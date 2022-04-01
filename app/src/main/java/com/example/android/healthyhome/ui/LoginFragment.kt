@@ -77,6 +77,7 @@ class LoginFragment : Fragment() {
 
         binding.buttonLogin.setOnClickListener {
             loginIntent()
+            //TODO: if user is provider, grab provider info
 
         }
 

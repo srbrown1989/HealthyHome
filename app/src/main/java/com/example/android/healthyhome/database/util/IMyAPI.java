@@ -3,9 +3,12 @@ package com.example.android.healthyhome.database.util;
 import com.example.android.healthyhome.database.LoginResponse;
 import com.example.android.healthyhome.database.ProviderSignUpResponse;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface IMyAPI {
@@ -46,6 +49,9 @@ public interface IMyAPI {
             @Field("rating") int rating,
             @Field("price") String price
     );
+
+    @GET("getBookings.php")
+    Call<Bookings> getAllBookings();
 
 
 }

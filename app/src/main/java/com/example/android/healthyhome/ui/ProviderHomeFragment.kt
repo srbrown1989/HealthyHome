@@ -3,6 +3,7 @@ import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.Log.d
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +20,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.example.android.healthyhome.database.LoginResponse
+import com.example.android.healthyhome.database.util.Bookings
+import com.example.android.healthyhome.database.util.BookingsItem
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
@@ -46,13 +50,16 @@ class ProviderHomeFragment : Fragment() {
 
         navController = findNavController()
 
+        mService = Common.getAPI()
+
         binding.bioCardView.setOnClickListener {
             navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderChangeBioFragment())
 
         }
         
         binding.bookingsCardView.setOnClickListener {
-           navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderBookingsFragment())
+          getBookings()
+
         }
 
         binding.findJobCardview.setOnClickListener{
@@ -67,7 +74,7 @@ class ProviderHomeFragment : Fragment() {
 
 
 
-        mService = Common.getAPI()
+
 
         //TODO: IMPLEMENT GETTING INFORMATION FROM LOGGED IN PROVIDER.
 
@@ -75,6 +82,20 @@ class ProviderHomeFragment : Fragment() {
 
 
         return binding.root    }
+
+    private fun getBookings() {
+            mService.allBookings.enqueue(object: Callback<Bookings>{
+               override fun onResponse(call: Call<Bookings>, response: Response<Bookings>) {
+                   var result : Bookings? = response.body()
+               }
+
+               override fun onFailure(call: Call<Bookings>, t: Throwable) {
+                   TODO("Not yet implemented")
+               }
+
+           })
+        d("here","getbookings")
+    }
 
     private fun fillProviderInfo() {}
 
