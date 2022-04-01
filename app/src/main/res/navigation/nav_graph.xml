@@ -34,6 +34,15 @@
         <action
             android:id="@+id/action_providerHomeFragment_to_providerChangeBioFragment"
             app:destination="@id/providerChangeBioFragment" />
+        <action
+            android:id="@+id/action_providerHomeFragment_to_providerReviewsFragment"
+            app:destination="@id/providerReviewsFragment" />
+        <action
+            android:id="@+id/action_providerHomeFragment_to_findJobFragment"
+            app:destination="@id/findJobFragment" />
+        <action
+            android:id="@+id/action_providerHomeFragment_to_providerBookingsFragment"
+            app:destination="@id/providerBookingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/filterServicesFragment"
@@ -86,17 +95,18 @@
     <fragment
         android:id="@+id/providerBookingsFragment"
         android:name="com.example.android.healthyhome.ui.ProviderBookingsFragment"
-        android:label="ProviderBookingsFragment" >
-        <action
-            android:id="@+id/action_providerBookingsFragment_to_providerHomeFragment2"
-            app:destination="@id/providerHomeFragment" />
-    </fragment>
+        android:label="ProviderBookingsFragment"
+        tools:layout="@layout/fragment_provider_bookings"/>
     <fragment
         android:id="@+id/providerSignUpFragment2"
         android:name="com.example.android.healthyhome.ui.ProviderSignUpFragment"
         android:label="ProviderSignUpFragment"
         tools:layout="@layout/fragment_provider_sign_up"
-        />
+        >
+        <action
+            android:id="@+id/action_providerSignUpFragment2_to_providerHomeFragment"
+            app:destination="@id/providerHomeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/customerHomeFragment"
         android:name="com.example.android.healthyhome.ui.CustomerHomeFragment"
@@ -105,12 +115,38 @@
         <action
             android:id="@+id/action_customerHomeFragment_to_servicesFragment"
             app:destination="@id/servicesFragment" />
+        <action
+            android:id="@+id/action_customerHomeFragment_to_postJobFragment"
+            app:destination="@id/postJobFragment" />
+        <action
+            android:id="@+id/action_customerHomeFragment_to_customerJobResponsesFragment"
+            app:destination="@id/customerJobResponsesFragment" />
     </fragment>
     <fragment
         android:id="@+id/providerChangeBioFragment"
         android:name="com.example.android.healthyhome.ui.ProviderChangeBioFragment"
         android:label="ProviderChangeBioFragment"
         tools:layout="@layout/fragment_provider_change_bio"/>
+    <fragment
+        android:id="@+id/providerReviewsFragment"
+        android:name="com.example.android.healthyhome.ui.ProviderReviewsFragment"
+        android:label="ProviderReviewsFragment"
+        tools:layout="@layout/fragment_provider_reviews"/>
+    <fragment
+        android:id="@+id/findJobFragment"
+        android:name="com.example.android.healthyhome.ui.FindJobFragment"
+        android:label="FindJobFragment"
+        tools:layout="@layout/fragment_find_job"/>
+    <fragment
+        android:id="@+id/postJobFragment"
+        android:name="com.example.android.healthyhome.ui.PostJobFragment"
+        android:label="PostJobFragment"
+        tools:layout="@layout/fragment_post_job"/>
+    <fragment
+        android:id="@+id/customerJobResponsesFragment"
+        android:name="com.example.android.healthyhome.ui.CustomerJobResponsesFragment"
+        android:label="CustomerJobResponsesFragment"
+        tools:layout="@layout/fragment_customer_job_responses"/>
 
 
 </navigation>
