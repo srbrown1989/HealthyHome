@@ -37,6 +37,7 @@ class ProviderBookingsFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         val args = ProviderBookingsFragmentArgs.fromBundle(requireArguments())
+        bookings = args.bookings
 
 
 

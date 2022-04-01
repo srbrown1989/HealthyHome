@@ -2,6 +2,7 @@ package com.example.android.healthyhome.database.util;
 
 import com.example.android.healthyhome.database.LoginResponse;
 import com.example.android.healthyhome.database.ProviderSignUpResponse;
+import com.example.android.healthyhome.database.ProviderX;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface IMyAPI {
 
@@ -51,7 +53,10 @@ public interface IMyAPI {
     );
 
     @GET("getBookings.php")
-    Call<Bookings> getAllBookings();
+    Call<Bookings> getAllBookings(@Query("pid") String pid);
+
+    @GET("getProviderByID.php")
+    Call<ProviderX> getProviderByID(@Query("uid") String uid);
 
 
 }

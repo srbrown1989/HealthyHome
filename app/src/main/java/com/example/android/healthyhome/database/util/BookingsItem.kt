@@ -9,5 +9,9 @@ data class BookingsItem(
     val halfHoursreq: String,
     val pid: String,
     val room: Any,
-    val time: String
+    val time: String,
+    val firstName: String,
+    val lastName : String,
+    val address : String,
+    val postcode : String
 )

@@ -36,6 +36,7 @@ class ProviderHomeFragment : Fragment() {
     private lateinit var binding : FragmentProviderHomeBinding
     private lateinit var mService: IMyAPI
     private lateinit var navController: NavController
+    private lateinit var bookings : Bookings
 
 
     override fun onCreateView(
@@ -84,9 +85,11 @@ class ProviderHomeFragment : Fragment() {
         return binding.root    }
 
     private fun getBookings() {
-            mService.allBookings.enqueue(object: Callback<Bookings>{
+            mService.getAllBookings("2").enqueue(object: Callback<Bookings>{//TODO: UPDATE ARGUMENT IN CALL TO currentProvider.pid.toString()
                override fun onResponse(call: Call<Bookings>, response: Response<Bookings>) {
                    var result : Bookings? = response.body()
+                   bookings = result!!
+                   navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderBookingsFragment(bookings))
                }
 
                override fun onFailure(call: Call<Bookings>, t: Throwable) {

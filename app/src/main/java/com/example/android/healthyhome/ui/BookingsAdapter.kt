@@ -22,15 +22,15 @@ class BookingsAdapter(private val bookings: MutableList<BookingsItem>) : Recycle
         holder.bid.text = booking.bid
         holder.date.text = booking.date
         holder.time.text = booking.time
-        holder.name.text = booking.cid
+        holder.name.text = (booking.firstName + " " + booking.lastName)
     }
 
     override fun getItemCount(): Int = bookings.size
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val bid : TextView = itemView.find(R.id.bid_textview)
-        val name: TextView = itemView.find(R.id.date_textview)
-        val date : TextView = itemView.find(R.id.bid_textview)
+        val name: TextView = itemView.find(R.id.name_textview)
+        val date : TextView = itemView.find(R.id.date_textview)
         val time: TextView = itemView.find(R.id.time_textview)
 
 
