@@ -67,7 +67,6 @@ class LoginFragment : Fragment() {
             binding.passwordGuideTextView.visibility = View.VISIBLE
             binding.nameEditText.visibility = View.VISIBLE
             binding.buttonRegister.visibility = View.GONE
-            binding.signInButton.visibility = View.GONE
             binding.buttonLogin.text= getString(R.string.confirm)
             binding.buttonLogin.setOnClickListener {
                 registerIntent()
@@ -138,7 +137,12 @@ class LoginFragment : Fragment() {
                         Common.currentUser = response.body()!!.user
                         var currentUser2 = response.body()!!.user
                         Toast.makeText(activity?.applicationContext,"Logged in as " + response.body()!!.user.name,Toast.LENGTH_SHORT).show()
-                        navController.navigate(LoginFragmentDirections.actionLoginFragmentToServicesFragment());
+
+                        if (currentUser2.isProvider == 0){ //if not provider go to customer home.
+                        navController.navigate(LoginFragmentDirections.actionLoginFragmentToCustomerHomeFragment());
+                            } else if (currentUser2.isProvider == 1) {
+                                navController.navigate(LoginFragmentDirections.actionLoginFragmentToProviderHomeFragment())
+                            }
                     }
                 }
 
@@ -216,7 +220,7 @@ class LoginFragment : Fragment() {
                     } else {
                         Common.currentUser = response.body()!!.user
                         Toast.makeText(activity?.applicationContext,"Signed up as " + response.body()!!.user.name,Toast.LENGTH_SHORT).show()
-                        navController.navigate(LoginFragmentDirections.actionLoginFragmentToServicesFragment());
+                        navController.navigate(LoginFragmentDirections.actionLoginFragmentToCustomerHomeFragment());
                     }
                 }
 

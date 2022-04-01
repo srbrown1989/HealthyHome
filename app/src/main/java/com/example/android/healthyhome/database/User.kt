@@ -1,11 +1,10 @@
 package com.example.android.healthyhome.database
 
 data class User(
-    var uid : String? = null,
-
-    //actual fields.
-    var name : String? = null,
-    var email : String? = null,
-    var isProvider : Boolean? = null
-
+    val uid: Int,
+    val created_at: String,
+    val email: String,
+    val isProvider: Int,
+    val name: String,
+    val updated_at: Any
 )

@@ -18,6 +18,7 @@ import com.example.android.healthyhome.databinding.FragmentProviderHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
@@ -29,7 +30,6 @@ import retrofit2.Response
 class ProviderHomeFragment : Fragment() {
 
     private lateinit var binding : FragmentProviderHomeBinding
-    private lateinit var database : DatabaseReference
     private lateinit var mService: IMyAPI
     private lateinit var navController: NavController
 
@@ -44,31 +44,39 @@ class ProviderHomeFragment : Fragment() {
             inflater, R.layout.fragment_provider_home, container, false
         )
 
+        navController = findNavController()
+
         binding.bioCardView.setOnClickListener {
-            it.findNavController()
-                .navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderChangeBioFragment())
+            navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderChangeBioFragment())
+
         }
+        
+        binding.bookingsCardView.setOnClickListener {
+           navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderBookingsFragment())
+        }
+
+        binding.findJobCardview.setOnClickListener{
+            navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToFindJobFragment())
+        }
+
+        binding.userReviewsCardview.setOnClickListener{
+            navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderReviewsFragment())
+        }
+
+
+
 
 
         mService = Common.getAPI()
 
-        fillProviderInfo()
+        //TODO: IMPLEMENT GETTING INFORMATION FROM LOGGED IN PROVIDER.
+
+
 
 
         return binding.root    }
 
-    private fun fillProviderInfo() {
-        database.child(FirebaseAuth.getInstance().uid!!).get().addOnSuccessListener{
-            val provider : Provider? = it.getValue(Provider::class.java)
-            binding.companyNameTextView.text = provider?.providerName.toString()
-            binding.ratingBar.rating = provider?.rating?.toFloat()!!
-
-
-        }.addOnFailureListener{
-            Log.e("firebase", "Error getting data", it)
-        }
-
-    }
+    private fun fillProviderInfo() {}
 
 
 }

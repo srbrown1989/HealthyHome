@@ -10,16 +10,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.android.healthyhome.R
-import com.example.android.healthyhome.database.UserX
+import com.example.android.healthyhome.database.User
 import com.example.android.healthyhome.database.util.Common
 import com.example.android.healthyhome.databinding.FragmentServicesBinding
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 
 class ServicesFragment : Fragment() {
-    private lateinit var currentUser: UserX
+    private lateinit var currentUser: User
     private lateinit var navController: NavController
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

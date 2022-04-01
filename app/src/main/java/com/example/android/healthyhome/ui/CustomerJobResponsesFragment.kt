@@ -1,26 +1,21 @@
 package com.example.android.healthyhome.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.DatePicker
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.database.util.Common
 import com.example.android.healthyhome.database.util.IMyAPI
-import com.example.android.healthyhome.databinding.FragmentProviderBookingsBinding
-import com.example.android.healthyhome.databinding.FragmentProviderSignUpBinding
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.example.android.healthyhome.databinding.FragmentCustomerJobResponsesBinding
+import com.example.android.healthyhome.databinding.FragmentPostJobBinding
 
-class ProviderBookingsFragment : Fragment() {
-    private lateinit var binding: FragmentProviderBookingsBinding
+class CustomerJobResponsesFragment : Fragment() {
+    private lateinit var binding: FragmentCustomerJobResponsesBinding
     private lateinit var mService: IMyAPI
     private lateinit var navController: NavController
 
@@ -29,8 +24,8 @@ class ProviderBookingsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate<FragmentProviderBookingsBinding>(
-            inflater, R.layout.fragment_provider_bookings, container, false
+        binding = DataBindingUtil.inflate<FragmentCustomerJobResponsesBinding>(
+            inflater, R.layout.fragment_customer_job_responses, container, false
         )
 
         mService = Common.getAPI()
@@ -44,4 +39,3 @@ class ProviderBookingsFragment : Fragment() {
     }
 
 }
-
