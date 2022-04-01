@@ -116,4 +116,13 @@
     <string name="post_job">Post Job</string>
     <string name="job_responses">Job Responses</string>
 
+    <string-array name="services_array">
+        <item>Cleaning</item>
+        <item>Locksmith</item>
+        <item>Dog Walking</item>
+        <item>Removals</item>
+        <item>Gardening</item>
+        <item>Odd Jobs</item>
+    </string-array>
+
 </resources>

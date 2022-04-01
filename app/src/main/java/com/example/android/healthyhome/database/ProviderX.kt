@@ -7,9 +7,11 @@ data class ProviderX(
     val email: String,
     val extras: String,
     val name: String,
+    //
     val pid: Int,
     val postcode: String,
     val price: String,
+    //
     val rating: Int,
     val service: String
 )
