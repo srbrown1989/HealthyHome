@@ -96,7 +96,11 @@
         android:id="@+id/providerBookingsFragment"
         android:name="com.example.android.healthyhome.ui.ProviderBookingsFragment"
         android:label="ProviderBookingsFragment"
-        tools:layout="@layout/fragment_provider_bookings"/>
+        tools:layout="@layout/fragment_provider_bookings">
+        <argument
+            android:name="bookings"
+            app:argType="com.example.android.healthyhome.database.util.Bookings" />
+    </fragment>
     <fragment
         android:id="@+id/providerSignUpFragment2"
         android:name="com.example.android.healthyhome.ui.ProviderSignUpFragment"

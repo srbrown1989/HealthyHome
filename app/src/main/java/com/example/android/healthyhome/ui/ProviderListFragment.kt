@@ -20,7 +20,7 @@ import com.example.android.healthyhome.databinding.FragmentProviderListBinding
 
 class ProviderListFragment : Fragment() {
 
-    private lateinit var fAuth : FirebaseAuth
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,12 +28,10 @@ class ProviderListFragment : Fragment() {
         val binding: FragmentProviderListBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_provider_list, container, false)
         // Inflate the layout for this fragment
-        fAuth = Firebase.auth
 
-        val providerList = generateDummyList(30)
 
         val recyclerView: RecyclerView = binding.recyclerView
-        recyclerView.adapter = ProviderListAdapter(providerList)
+        //recyclerView.adapter = ProviderListAdapter(providerList)
         recyclerView.layoutManager = LinearLayoutManager(this.context)
         recyclerView.setHasFixedSize(true)
 
@@ -43,18 +41,7 @@ class ProviderListFragment : Fragment() {
 
         return binding.root
     }
-    private fun generateDummyList(size: Int): List<Provider> {
 
-        val list = ArrayList<Provider>()
-
-        for(i in 0 until size) {
-
-            val item = Provider("UID$i", "Provider Name$i", "Contact$i", "Email$i", "Bio$i", "Service$i",
-            "CreditCard$i", 5, 5)
-            list += item
-        }
-        return list
-    }
 
 
 
