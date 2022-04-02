@@ -19,6 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Line 1"
+            android:tag="pid"
             android:textColor="@color/secondaryDarkColor"
 
             android:textSize="18sp"

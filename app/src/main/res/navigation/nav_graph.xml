@@ -82,6 +82,9 @@
         <action
             android:id="@+id/action_providerListFragment_to_chosenProviderFragment"
             app:destination="@id/chosenProviderFragment" />
+        <argument
+            android:name="providers"
+            app:argType="com.example.android.healthyhome.database.util.Providers" />
     </fragment>
     <fragment
         android:id="@+id/chosenProviderFragment"
