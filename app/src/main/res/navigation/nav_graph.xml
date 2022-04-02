@@ -134,6 +134,9 @@
         <action
             android:id="@+id/action_customerHomeFragment_to_customerJobResponsesFragment"
             app:destination="@id/customerJobResponsesFragment" />
+        <action
+            android:id="@+id/action_customerHomeFragment_to_customerBookingsFragment"
+            app:destination="@id/customerBookingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/providerChangeBioFragment"
@@ -160,6 +163,14 @@
         android:name="com.example.android.healthyhome.ui.CustomerJobResponsesFragment"
         android:label="CustomerJobResponsesFragment"
         tools:layout="@layout/fragment_customer_job_responses"/>
+    <fragment
+        android:id="@+id/customerBookingsFragment"
+        android:name="com.example.android.healthyhome.ui.CustomerBookingsFragment"
+        android:label="CustomerBookingsFragment" >
+        <argument
+            android:name="bookings"
+            app:argType="com.example.android.healthyhome.database.util.Bookings" />
+    </fragment>
 
 
 </navigation>

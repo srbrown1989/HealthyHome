@@ -39,7 +39,6 @@ class ServicesFragment : Fragment() {
         }
         mService = Common.getAPI()
 
-        binding.servicesFragmentText.text = currentUser.uid.toString()
 
         return binding.root
     }

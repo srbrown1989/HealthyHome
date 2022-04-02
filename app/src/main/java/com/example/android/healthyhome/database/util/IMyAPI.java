@@ -55,6 +55,9 @@ public interface IMyAPI {
     @GET("getBookings.php")
     Call<Bookings> getAllBookings(@Query("pid") String pid);
 
+    @GET("getBookingsByCid.php")
+    Call<Bookings> getBookingsByCid(@Query("cid") String cid);
+
     @GET("getProviderByID.php")
     Call<Provider> getProviderByID(@Query("uid") String uid);
 
