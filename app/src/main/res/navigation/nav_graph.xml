@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_loginFragment_to_providerHomeFragment"
             app:destination="@id/providerHomeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
     </fragment>
     <fragment
         android:id="@+id/providerHomeFragment"
@@ -147,6 +150,11 @@
         android:name="com.example.android.healthyhome.ui.CustomerJobResponsesFragment"
         android:label="CustomerJobResponsesFragment"
         tools:layout="@layout/fragment_customer_job_responses"/>
+    <fragment
+        android:id="@+id/homeScreenFragment"
+        android:name="com.example.android.healthyhome.ui.HomeScreenFragment"
+        android:label="fragment_home_screen"
+        tools:layout="@layout/fragment_home_screen" />
 
 
 </navigation>
