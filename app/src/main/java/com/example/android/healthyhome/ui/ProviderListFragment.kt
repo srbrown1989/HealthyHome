@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.findFragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,7 +22,7 @@ import com.google.firebase.ktx.Firebase
 import com.example.android.healthyhome.databinding.FragmentProviderListBinding
 
 
-class ProviderListFragment : Fragment() {
+class ProviderListFragment  : Fragment(), ProviderListAdapter.OnItemClickListener{
 
     private lateinit var providers : List<Provider>
 
@@ -35,20 +37,18 @@ class ProviderListFragment : Fragment() {
             inflater, R.layout.fragment_provider_list, container, false)
         // Inflate the layout for this fragment
 
-
         binding.recyclerView.apply {
-            layoutManager = LinearLayoutManager(this.context)
-            adapter = ProviderListAdapter(providers as Providers)
-        }
-
-        binding.tempButton.setOnClickListener {
-            it.findNavController().navigate( ProviderListFragmentDirections.actionProviderListFragmentToChosenProviderFragment())
+            layoutManager = LinearLayoutManager(activity)
+            adapter = ProviderListAdapter(providers as Providers, this@ProviderListFragment)
         }
 
         return binding.root
     }
 
-
+    override fun onItemClick(position: Int) {
+        Toast.makeText(this.context, "Item position: $position Item pid: ${providers.get(position).pid} clicked", Toast.LENGTH_SHORT).show()
+        //TODO : NAVIGATE TO NEXT SCREEN WITH PID AS ARGUMENT.
+    }
 
 
 }
