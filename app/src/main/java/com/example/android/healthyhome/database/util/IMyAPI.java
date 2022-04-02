@@ -2,7 +2,7 @@ package com.example.android.healthyhome.database.util;
 
 import com.example.android.healthyhome.database.LoginResponse;
 import com.example.android.healthyhome.database.ProviderSignUpResponse;
-import com.example.android.healthyhome.database.ProviderX;
+import com.example.android.healthyhome.database.Provider;
 
 import java.util.List;
 
@@ -56,7 +56,7 @@ public interface IMyAPI {
     Call<Bookings> getAllBookings(@Query("pid") String pid);
 
     @GET("getProviderByID.php")
-    Call<ProviderX> getProviderByID(@Query("uid") String uid);
+    Call<Provider> getProviderByID(@Query("uid") String uid);
 
 
 }
