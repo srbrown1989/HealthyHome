@@ -23,6 +23,7 @@ class BookingsAdapter(private val bookings: MutableList<BookingsItem>) : Recycle
         holder.date.text = booking.date
         holder.time.text = booking.time
         holder.name.text = (booking.firstName + " " + booking.lastName)
+
     }
 
     override fun getItemCount(): Int = bookings.size
@@ -32,6 +33,7 @@ class BookingsAdapter(private val bookings: MutableList<BookingsItem>) : Recycle
         val name: TextView = itemView.find(R.id.name_textview)
         val date : TextView = itemView.find(R.id.date_textview)
         val time: TextView = itemView.find(R.id.time_textview)
+        val temp : TextView = itemView.find(R.id.time_textview)
 
 
     }

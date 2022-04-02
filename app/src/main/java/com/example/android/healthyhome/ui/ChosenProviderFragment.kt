@@ -44,6 +44,9 @@ class ChosenProviderFragment : Fragment() {
             inflater,R.layout.fragment_chosen_provider,container,false
         )
 
+        binding.bioTextView.text = chosenProvider.Bio
+
+
         binding.arrangeButton.setOnClickListener {
             it.findNavController().navigate(ChosenProviderFragmentDirections.actionChosenProviderFragmentToFilterServicesFragment(chosenProvider.pid.toString()))
         }

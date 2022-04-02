@@ -10,6 +10,7 @@ import androidx.annotation.NonNull
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.findFragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.healthyhome.R
@@ -47,6 +48,14 @@ class ProviderListFragment  : Fragment(), ProviderListAdapter.OnItemClickListene
 
     override fun onItemClick(position: Int) {
         Toast.makeText(this.context, "Item position: $position Item pid: ${providers.get(position).pid} clicked", Toast.LENGTH_SHORT).show()
+        var navigation = findNavController()
+
+        val temp : Providers = Providers()
+        temp.add(providers[position])
+
+        navigation.navigate(ProviderListFragmentDirections.actionProviderListFragmentToChosenProviderFragment(
+            temp
+        ))
         //TODO : NAVIGATE TO NEXT SCREEN WITH PID AS ARGUMENT.
     }
 
