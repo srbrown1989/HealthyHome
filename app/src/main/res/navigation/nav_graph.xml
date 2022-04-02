@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_filterServicesFragment_to_filterDateFragment"
             app:destination="@id/filterDateFragment" />
+        <argument
+            android:name="pid"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/filterDateFragment"
@@ -94,6 +97,9 @@
         <action
             android:id="@+id/action_chosenProviderFragment_to_filterServicesFragment"
             app:destination="@id/filterServicesFragment" />
+        <argument
+            android:name="provider"
+            app:argType="com.example.android.healthyhome.database.util.Providers" />
     </fragment>
     <fragment
         android:id="@+id/providerBookingsFragment"
