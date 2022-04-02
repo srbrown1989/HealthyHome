@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.database.Provider
 
-class ProviderListAdapter(private val providerList: List<Provider>) : RecyclerView.Adapter<ProviderListAdapter.ProviderViewHolder>() {
+class ProviderListAdapter(private val providerList: Providers) : RecyclerView.Adapter<ProviderListAdapter.ProviderViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProviderViewHolder {
 
         val itemView = LayoutInflater.from(parent.context)
@@ -21,10 +21,10 @@ class ProviderListAdapter(private val providerList: List<Provider>) : RecyclerVi
 //   holder vals come from ProviderViewHolder
     override fun onBindViewHolder(holder: ProviderViewHolder, position: Int) {
         val currentItem = providerList[position]
-        holder.textView1.text = currentItem.providerName
-        holder.textView2.text = currentItem.bio
-        holder.textView3.text = "Rating: " + currentItem.rating.toString()
-        holder.textView4.text = "Price: " + currentItem.price.toString()
+        holder.textView1.text = currentItem.companyName
+        holder.textView2.text = currentItem.Bio
+        holder.textView3.text = ("Rating: " + currentItem.rating.toString())
+        holder.textView4.text = ("Price: " + currentItem.price.toString())
     }
 
     override fun getItemCount() = providerList.size
