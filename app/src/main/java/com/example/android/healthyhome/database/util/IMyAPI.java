@@ -64,5 +64,8 @@ public interface IMyAPI {
     @GET("ProvidersByService.php") //default sorts by rating.
     Call<Providers>getProvidersByService(@Query("service") String service);
 
+    @GET("getReviewsByPid.php")
+    Call<Reviews>getReviewsByPid(@Query("pid") String pid);
+
 
 }
