@@ -21,7 +21,19 @@ public interface IMyAPI {
 
     @FormUrlEncoded
     @POST("register.php")
-    Call<LoginResponse> registerUser(@Field("name") String name, @Field("email") String email, @Field("password") String password);
+    Call<LoginResponse> registerUser(
+            @Field("name") String name,
+            @Field("email") String email,
+            @Field("password") String password,
+            @Field("address") String address,
+            @Field("postcode") String postcode,
+            @Field("firstName") String firstName,
+            @Field("lastName") String lastName,
+            @Field("contact") String contact
+
+
+
+    );
 
     @FormUrlEncoded
     @POST("providerSignUp.php")

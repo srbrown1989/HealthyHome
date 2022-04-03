@@ -64,12 +64,12 @@ class LoginFragment : Fragment() {
 
        // Register button.
         binding.buttonRegister.setOnClickListener {
-            binding.confirmPasswordEditText.visibility = View.VISIBLE
-            binding.passwordGuideTextView.visibility = View.VISIBLE
-            binding.nameEditText.visibility = View.VISIBLE
+
             binding.buttonRegister.visibility = View.GONE
-            binding.buttonLogin.text= getString(R.string.confirm)
-            binding.buttonLogin.setOnClickListener {
+            binding.buttonLogin.visibility = View.GONE
+            binding.svCustomerLogin.visibility = View.VISIBLE
+
+            binding.svConfirmButton.setOnClickListener {
                 registerIntent()
             }
         }
@@ -197,11 +197,25 @@ class LoginFragment : Fragment() {
             TextUtils.isEmpty(binding.nameEditText.text.toString().trim()) ->{
                 binding.nameEditText.setError("Please enter your full name",icon)
             }
+            TextUtils.isEmpty(binding.etAddressFirst.text.toString().trim()) ->{
+                binding.nameEditText.setError("Please enter your first line of address",icon)
+            }
+            TextUtils.isEmpty(binding.etAddressPostcode.text.toString().trim()) ->{
+                binding.nameEditText.setError("Please enter your postcode",icon)
+            }
+            TextUtils.isEmpty(binding.etTelephone.text.toString().trim()) ->{
+                binding.nameEditText.setError("Please enter your phone number",icon)
+            }
 
             binding.emailEditText.text.toString().isNotEmpty() &&
                     binding.passwordEditText.toString().isNotEmpty() &&
                     binding.confirmPasswordEditText.toString().isNotEmpty() &&
-                    binding.nameEditText.toString().isNotEmpty() -> {
+                    binding.nameEditText.toString().isNotEmpty() &&
+                    binding.etAddressFirst.toString().isNotEmpty() &&
+                    binding.etAddressPostcode.toString().isNotEmpty() &&
+                    binding.etTelephone.toString().isNotEmpty() -> {
+
+                //TODO:: Error checking for name,address,postcode,telephone, address2 can be null
 
                         if (binding.emailEditText.text.toString().matches(Regex("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"))){
                             if (binding.passwordEditText.text.toString().matches(Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@\$%^&*-]).{8,}\$"))){
@@ -227,7 +241,18 @@ class LoginFragment : Fragment() {
 
     private fun SignUp() {
 
-        mService.registerUser(binding.nameEditText.text.toString(),binding.emailEditText.text.toString(),binding.passwordEditText.text.toString())
+        val name  = binding.nameEditText.text.toString()
+        val email = binding.emailEditText.text.toString()
+        val password = binding.passwordEditText.text.toString()
+        val address = binding.etAddressFirst.text.toString() + "," + binding.etAddressSecond.text.toString()
+        val postcode = binding.etAddressPostcode.text.toString()
+        val contact = binding.etTelephone.text.toString()
+
+        val names : Array<String> = splitNames(name);
+        val firstName = names[0]
+        val lastName = names[1]
+
+        mService.registerUser(name,email,password,address,postcode,firstName,lastName,contact)
             .enqueue(object : Callback<LoginResponse>{
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     val result : LoginResponse? = response.body()
@@ -245,6 +270,12 @@ class LoginFragment : Fragment() {
                 }
 
             })
+
+    }
+
+    private fun splitNames(name : String): Array<String> {
+       return name.split("\\s".toRegex()).toTypedArray()
+
 
     }
 
