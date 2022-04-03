@@ -38,10 +38,10 @@ class ProviderListAdapter(
     inner class ProviderViewHolder(itemView: View): RecyclerView.ViewHolder(itemView),
 View.OnClickListener{
 
-        val textView1: TextView = itemView.findViewById(R.id.text_view_1)
-        val textView2: TextView = itemView.findViewById(R.id.text_view_2)
-        val textView3: TextView = itemView.findViewById(R.id.text_view_3)
-        val textView4: TextView = itemView.findViewById(R.id.text_view_4)
+        val textView1: TextView = itemView.findViewById(R.id.tv_company_name)
+        val textView2: TextView = itemView.findViewById(R.id.tv_company_bio)
+        val textView3: TextView = itemView.findViewById(R.id.tv_provider_rating)
+        val textView4: TextView = itemView.findViewById(R.id.tv_provider_price)
 
 
     init {
