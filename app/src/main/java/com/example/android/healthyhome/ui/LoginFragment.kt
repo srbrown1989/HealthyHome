@@ -72,6 +72,7 @@ class LoginFragment : Fragment() {
             binding.svConfirmButton.setOnClickListener {
                 registerIntent()
             }
+
         }
 
         //login button.
