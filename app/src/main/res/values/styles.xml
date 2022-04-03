@@ -17,5 +17,9 @@
         <item name="android:textAllCaps">true</item>
 
     </style>
+    <style name="Widget.App.Spinner" parent="@style/Widget.AppCompat.Spinner">
+        <item name="overlapAnchor">true</item>
+        <item name="android:background">@drawable/sp_custom</item>
+    </style>
     
 </resources>
