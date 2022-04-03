@@ -6,5 +6,11 @@ data class User(
     val email: String,
     val isProvider: Int,
     val name: String,
-    val updated_at: Any
+    val updated_at: String?,
+    val firstName: String?,
+    val lastName: String?,
+    val address: String?,
+    val postcode: String?,
+    val cid: String?,
+    val contact: String?
 )

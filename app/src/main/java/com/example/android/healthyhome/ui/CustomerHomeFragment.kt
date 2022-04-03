@@ -63,7 +63,7 @@ class CustomerHomeFragment : Fragment() {
         return binding.root    }
 
     private fun getCustomerBookings() {
-        mService.getBookingsByCid(Common.currentUser.uid.toString()).enqueue(object: Callback<Bookings>{ //TODO: change currentUser.uid to actual cid
+        mService.getBookingsByCid(Common.currentUser.cid.toString()).enqueue(object: Callback<Bookings>{
             override fun onResponse(call: Call<Bookings>, response: Response<Bookings>) {
                 val result = response.body()!!
                 navController.navigate(CustomerHomeFragmentDirections.actionCustomerHomeFragmentToCustomerBookingsFragment(result))

@@ -5,7 +5,6 @@
     <string name="gardening">Gardening</string>
     <string name="dog_walking">Dog Walking</string>
     <string name="odd_jobs">Odd Jobs</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="name">Name</string>
     <string name="contact_number">Contact Number</string>
@@ -118,11 +117,11 @@
     <string name="your_bookings">Your Bookings</string>
     <string name="firstName">firstName</string>
     <string name="review">Review:</string>
-    <string name="confirm2">Confirm</string>
-    <string name="contact_number2">Contact Number</string>
-    <string name="postcode">Postcode</string>
-    <string name="address_line_2">Address Line 2</string>
+    <string name="please_log_in_or_register_your_account_to_continue">Please log in or register your account to continue.</string>
+    <string name="login_register_account">Login/Register Account</string>
     <string name="address_line_1">Address Line 1</string>
+    <string name="postcode">Postcode</string>
+    <string name="address_line_2_optional">Address Line 2 : Optional</string>
 
     <string-array name="services_array">
         <item>Cleaning</item>
