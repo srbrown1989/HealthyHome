@@ -68,10 +68,13 @@ class LoginFragment : Fragment() {
             binding.passwordGuideTextView.visibility = View.VISIBLE
             binding.nameEditText.visibility = View.VISIBLE
             binding.buttonRegister.visibility = View.GONE
-            binding.buttonLogin.text= getString(R.string.confirm)
-            binding.buttonLogin.setOnClickListener {
+            binding.buttonLogin.visibility = View.GONE
+            binding.svCustomerLogin.visibility = View.VISIBLE
+
+            binding.svConfirmButton.setOnClickListener {
                 registerIntent()
             }
+
         }
 
         //login button.
