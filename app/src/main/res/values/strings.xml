@@ -116,6 +116,8 @@
     <string name="post_job">Post Job</string>
     <string name="job_responses">Job Responses</string>
     <string name="your_bookings">Your Bookings</string>
+    <string name="firstName">firstName</string>
+    <string name="review">Review:</string>
 
     <string-array name="services_array">
         <item>Cleaning</item>

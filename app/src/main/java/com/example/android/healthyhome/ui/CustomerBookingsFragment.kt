@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.database.util.Bookings
+import com.example.android.healthyhome.database.util.BookingsAdapter
 import com.example.android.healthyhome.database.util.Common
 import com.example.android.healthyhome.database.util.IMyAPI
 import com.example.android.healthyhome.databinding.FragmentCustomerBookingsBinding

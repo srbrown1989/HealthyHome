@@ -1,4 +1,4 @@
-package com.example.android.healthyhome.ui
+package com.example.android.healthyhome.database.util
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.healthyhome.R
-import com.example.android.healthyhome.database.util.BookingsItem
 import org.jetbrains.anko.find
 
 class BookingsAdapter(private val bookings: MutableList<BookingsItem>) : RecyclerView.Adapter<BookingsAdapter.ViewHolder>() {
@@ -33,7 +32,6 @@ class BookingsAdapter(private val bookings: MutableList<BookingsItem>) : Recycle
         val name: TextView = itemView.find(R.id.name_textview)
         val date : TextView = itemView.find(R.id.date_textview)
         val time: TextView = itemView.find(R.id.time_textview)
-        val temp : TextView = itemView.find(R.id.time_textview)
 
 
     }
