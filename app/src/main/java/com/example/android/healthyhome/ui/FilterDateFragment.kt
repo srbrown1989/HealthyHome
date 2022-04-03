@@ -1,6 +1,7 @@
 package com.example.android.healthyhome.ui
 
 import android.app.Activity
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.database.AvailabilityType
 import com.example.android.healthyhome.database.BookingType
@@ -82,10 +84,23 @@ class FilterDateFragment : Fragment(){
                 DBCalls.getEmailByUID("1"){ email ->
                     Mail.sendEMail("Healthy Homes : New Booking", Mail.buildConfirmation(binding.tvCustNamePresent.text.toString(), binding.tvProvNamePresent.text.toString(), binding.tvDatePicker.text.toString(), time), email)
                 }
+
+                Alerts.basicAlert(this.requireContext(), "", "Your booking has been confirmed\nYou will receive an additional confirmation by E-Mail", false, ::confirmSuccess)
+
+            }else{
+                Alerts.basicAlert(this.requireContext(), "", "Please select a date and time to continue this booking", false, ::confirmNoInput)
             }
         }
 
+
+
         return binding.root
+    }
+
+    private fun confirmNoInput(dialog: DialogInterface, which: Int){}
+    private fun confirmSuccess(dialog: DialogInterface, which: Int){
+        //Temporary takes you back to booking screen
+        view?.findNavController()?.navigate(FilterDateFragmentDirections.actionFilterDateFragmentToFilterServicesFragment())
     }
 
     /**
