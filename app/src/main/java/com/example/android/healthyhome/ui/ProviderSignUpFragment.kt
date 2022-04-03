@@ -1,9 +1,12 @@
 package com.example.android.healthyhome.ui
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -19,7 +22,7 @@ class ProviderSignUpFragment : Fragment() {
     private lateinit var navController: NavController
 
     private lateinit var mService : IMyAPI
-
+    private lateinit var spinner: Spinner
 
 
 
@@ -29,8 +32,14 @@ class ProviderSignUpFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate<FragmentProviderSignUpBinding>(
-            inflater, R.layout.fragment_provider_sign_up, container, false
-        )
+            inflater, R.layout.fragment_provider_sign_up, container, false)
+
+        //spinner = binding.spProviderServices
+
+
+
+
+
 
         mService = Common.getAPI()
 
@@ -38,4 +47,5 @@ class ProviderSignUpFragment : Fragment() {
 
         return binding.root
     }
+
 }
