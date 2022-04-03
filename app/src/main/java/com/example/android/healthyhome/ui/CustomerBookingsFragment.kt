@@ -10,11 +10,15 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.healthyhome.R
-import com.example.android.healthyhome.database.util.*
-import com.example.android.healthyhome.databinding.FragmentProviderBookingsBinding
+import com.example.android.healthyhome.database.util.Bookings
+import com.example.android.healthyhome.database.util.BookingsAdapter
+import com.example.android.healthyhome.database.util.Common
+import com.example.android.healthyhome.database.util.IMyAPI
+import com.example.android.healthyhome.databinding.FragmentCustomerBookingsBinding
 
-class ProviderBookingsFragment : Fragment() {
-    private lateinit var binding: FragmentProviderBookingsBinding
+
+class CustomerBookingsFragment : Fragment() {
+    private lateinit var binding: FragmentCustomerBookingsBinding
     private lateinit var mService: IMyAPI
     private lateinit var navController: NavController
     private lateinit var bookings: Bookings
@@ -22,9 +26,8 @@ class ProviderBookingsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val args = ProviderBookingsFragmentArgs.fromBundle(requireArguments())
+        val args = CustomerBookingsFragmentArgs.fromBundle(requireArguments())
         bookings = args.bookings
-
 
 
 
@@ -35,8 +38,8 @@ class ProviderBookingsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate<FragmentProviderBookingsBinding>(
-            inflater, R.layout.fragment_provider_bookings, container, false
+        binding = DataBindingUtil.inflate<FragmentCustomerBookingsBinding>(
+            inflater, R.layout.fragment_customer_bookings, container, false
         )
 
 
@@ -46,7 +49,7 @@ class ProviderBookingsFragment : Fragment() {
 
 
 
-        binding.bookingsRecycler.apply {
+        binding.customerBookingsRecycler.apply {
             layoutManager = LinearLayoutManager(this.context)
             adapter = BookingsAdapter(bookings)
         }
@@ -58,4 +61,3 @@ class ProviderBookingsFragment : Fragment() {
     }
 
 }
-

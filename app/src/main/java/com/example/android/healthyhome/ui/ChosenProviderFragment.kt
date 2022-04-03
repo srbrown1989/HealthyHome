@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.android.healthyhome.R
+import com.example.android.healthyhome.database.Provider
 import com.example.android.healthyhome.databinding.FragmentChosenProviderBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -23,18 +24,15 @@ private const val ARG_PARAM1 = "param1"
  */
 class ChosenProviderFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private lateinit var providerID: String
-    private lateinit var dbProvider : DatabaseReference
+    private lateinit var chosenProvider: Provider
 
     private lateinit var binding : FragmentChosenProviderBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            providerID = it.getString(ARG_PARAM1).toString()
+        var args = ChosenProviderFragmentArgs.fromBundle(requireArguments())
+        chosenProvider = args.provider[0]
 
-        }
-        dbProvider = FirebaseDatabase.getInstance().reference.child("Provider").child(providerID)
     }
 
     override fun onCreateView(
@@ -46,29 +44,15 @@ class ChosenProviderFragment : Fragment() {
             inflater,R.layout.fragment_chosen_provider,container,false
         )
 
+        binding.bioTextView.text = chosenProvider.Bio
+
+
         binding.arrangeButton.setOnClickListener {
-            it.findNavController().navigate(ChosenProviderFragmentDirections.actionChosenProviderFragmentToFilterServicesFragment())
+            it.findNavController().navigate(ChosenProviderFragmentDirections.actionChosenProviderFragmentToFilterServicesFragment(chosenProvider.pid.toString()))
         }
         return binding.root
 
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ChosenProviderFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(providerID: String) =
-            ChosenProviderFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, providerID)
-                }
-            }
-    }
+
 }

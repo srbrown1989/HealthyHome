@@ -13,6 +13,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.database.LoginResponse
+import com.example.android.healthyhome.database.Provider
 import com.example.android.healthyhome.database.util.Common
 import com.example.android.healthyhome.database.util.IMyAPI
 import com.example.android.healthyhome.databinding.FragmentLoginBinding
@@ -77,6 +78,7 @@ class LoginFragment : Fragment() {
 
         binding.buttonLogin.setOnClickListener {
             loginIntent()
+            //TODO: if user is provider, grab provider info
 
         }
 
@@ -141,7 +143,21 @@ class LoginFragment : Fragment() {
                         if (currentUser2.isProvider == 0){ //if not provider go to customer home.
                         navController.navigate(LoginFragmentDirections.actionLoginFragmentToCustomerHomeFragment());
                             } else if (currentUser2.isProvider == 1) {
-                                navController.navigate(LoginFragmentDirections.actionLoginFragmentToProviderHomeFragment())
+                                mService.getProviderByID(currentUser2.uid.toString()).enqueue(object: Callback<Provider>{
+                                    override fun onResponse(
+                                        call: Call<Provider>,
+                                        response: Response<Provider>
+                                    ) {
+                                        Common.currentProvider = response.body()
+                                        navController.navigate(LoginFragmentDirections.actionLoginFragmentToProviderHomeFragment())
+                                    }
+
+                                    override fun onFailure(call: Call<Provider>, t: Throwable) {
+                                        TODO("Not yet implemented")
+                                    }
+
+                                })
+
                             }
                     }
                 }

@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_filterServicesFragment_to_filterDateFragment"
             app:destination="@id/filterDateFragment" />
+        <argument
+            android:name="pid"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/filterDateFragment"
@@ -82,6 +85,9 @@
         <action
             android:id="@+id/action_providerListFragment_to_chosenProviderFragment"
             app:destination="@id/chosenProviderFragment" />
+        <argument
+            android:name="providers"
+            app:argType="com.example.android.healthyhome.database.util.Providers" />
     </fragment>
     <fragment
         android:id="@+id/chosenProviderFragment"
@@ -91,12 +97,19 @@
         <action
             android:id="@+id/action_chosenProviderFragment_to_filterServicesFragment"
             app:destination="@id/filterServicesFragment" />
+        <argument
+            android:name="provider"
+            app:argType="com.example.android.healthyhome.database.util.Providers" />
     </fragment>
     <fragment
         android:id="@+id/providerBookingsFragment"
         android:name="com.example.android.healthyhome.ui.ProviderBookingsFragment"
         android:label="ProviderBookingsFragment"
-        tools:layout="@layout/fragment_provider_bookings"/>
+        tools:layout="@layout/fragment_provider_bookings">
+        <argument
+            android:name="bookings"
+            app:argType="com.example.android.healthyhome.database.util.Bookings" />
+    </fragment>
     <fragment
         android:id="@+id/providerSignUpFragment2"
         android:name="com.example.android.healthyhome.ui.ProviderSignUpFragment"
@@ -121,6 +134,9 @@
         <action
             android:id="@+id/action_customerHomeFragment_to_customerJobResponsesFragment"
             app:destination="@id/customerJobResponsesFragment" />
+        <action
+            android:id="@+id/action_customerHomeFragment_to_customerBookingsFragment"
+            app:destination="@id/customerBookingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/providerChangeBioFragment"
@@ -147,6 +163,14 @@
         android:name="com.example.android.healthyhome.ui.CustomerJobResponsesFragment"
         android:label="CustomerJobResponsesFragment"
         tools:layout="@layout/fragment_customer_job_responses"/>
+    <fragment
+        android:id="@+id/customerBookingsFragment"
+        android:name="com.example.android.healthyhome.ui.CustomerBookingsFragment"
+        android:label="CustomerBookingsFragment" >
+        <argument
+            android:name="bookings"
+            app:argType="com.example.android.healthyhome.database.util.Bookings" />
+    </fragment>
 
 
 </navigation>

@@ -10,9 +10,13 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.android.healthyhome.R
+import com.example.android.healthyhome.database.util.Bookings
 import com.example.android.healthyhome.database.util.Common
 import com.example.android.healthyhome.database.util.IMyAPI
 import com.example.android.healthyhome.databinding.FragmentCustomerHomeBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class CustomerHomeFragment : Fragment() {
 
@@ -22,6 +26,7 @@ class CustomerHomeFragment : Fragment() {
 
 
     override fun onCreateView(
+
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,6 +49,10 @@ class CustomerHomeFragment : Fragment() {
             navController.navigate(CustomerHomeFragmentDirections.actionCustomerHomeFragmentToPostJobFragment())
         }
 
+        binding.bookingsButton.setOnClickListener {
+            getCustomerBookings()
+        }
+
         if(Common.currentUser != null){
             binding.welcomeTextView.text = String.format(getString(R.string.welcome),getFirstName(Common.currentUser.name))
         }
@@ -52,6 +61,21 @@ class CustomerHomeFragment : Fragment() {
 
 
         return binding.root    }
+
+    private fun getCustomerBookings() {
+        mService.getBookingsByCid(Common.currentUser.uid.toString()).enqueue(object: Callback<Bookings>{ //TODO: change currentUser.uid to actual cid
+            override fun onResponse(call: Call<Bookings>, response: Response<Bookings>) {
+                val result = response.body()!!
+                navController.navigate(CustomerHomeFragmentDirections.actionCustomerHomeFragmentToCustomerBookingsFragment(result))
+
+            }
+
+            override fun onFailure(call: Call<Bookings>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
 
     private fun getFirstName(name: String): String {
 
