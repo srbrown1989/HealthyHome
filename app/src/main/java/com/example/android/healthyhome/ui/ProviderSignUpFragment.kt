@@ -37,7 +37,7 @@ class ProviderSignUpFragment : Fragment() {
         //spinner = binding.spProviderServices
 
 
-
+      //TODO:: NEED TO ASK FOR AVAILABILTIY IN SOME WAY
 
 
 

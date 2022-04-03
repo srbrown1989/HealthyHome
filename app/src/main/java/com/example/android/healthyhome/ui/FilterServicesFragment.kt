@@ -13,6 +13,8 @@ import androidx.navigation.findNavController
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.database.DBCalls
 import com.example.android.healthyhome.database.mail.Mail
+import com.example.android.healthyhome.database.util.Common
+import com.example.android.healthyhome.database.util.Common.currentUser
 import com.example.android.healthyhome.databinding.FragmentFilterServicesBinding
 
 class FilterServicesFragment : Fragment() {
@@ -51,7 +53,7 @@ class FilterServicesFragment : Fragment() {
 
         binding.btnNext.setOnClickListener { view: View ->
 
-            val cid = Integer.parseInt(binding.cidTemp.text.toString()) //Filler//TODO: Common.currentUser.uid or db call to get cid.
+            val cid = Integer.parseInt(currentUser.cid) //Filler//TODO: Common.currentUser.uid or db call to get cid.
             val pid = Integer.parseInt(chosenProvider) //Filler
             val numOfRooms = binding.radioGroup.checkedRadioButtonId + 1
             view.findNavController().navigate(FilterServicesFragmentDirections.actionFilterServicesFragmentToFilterDateFragment(pid, recurring, 1, activeServices.toTypedArray(), cid))
