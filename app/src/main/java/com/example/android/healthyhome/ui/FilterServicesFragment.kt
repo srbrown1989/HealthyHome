@@ -53,10 +53,14 @@ class FilterServicesFragment : Fragment() {
 
         binding.btnNext.setOnClickListener { view: View ->
 
-            val cid = Integer.parseInt(currentUser.cid) //Filler//TODO: Common.currentUser.uid or db call to get cid.
-            val pid = Integer.parseInt(chosenProvider) //Filler
-            val numOfRooms = binding.radioGroup.checkedRadioButtonId + 1
-            view.findNavController().navigate(FilterServicesFragmentDirections.actionFilterServicesFragmentToFilterDateFragment(pid, recurring, 1, activeServices.toTypedArray(), cid))
+            DBCalls.getCIDFromUID(Common.currentUser.uid.toString()){r ->
+                val cid = Integer.parseInt(r)
+                val pid = Integer.parseInt(chosenProvider)
+                val numOfRooms = binding.radioGroup.checkedRadioButtonId + 1
+                view.findNavController().navigate(FilterServicesFragmentDirections.actionFilterServicesFragmentToFilterDateFragment(pid, recurring, 1, activeServices.toTypedArray(), cid))
+            }
+
+
         }
 
 

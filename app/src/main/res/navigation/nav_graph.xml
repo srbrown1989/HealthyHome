@@ -166,7 +166,11 @@
         android:id="@+id/postJobFragment"
         android:name="com.example.android.healthyhome.ui.PostJobFragment"
         android:label="PostJobFragment"
-        tools:layout="@layout/fragment_post_job"/>
+        tools:layout="@layout/fragment_post_job">
+        <action
+            android:id="@+id/action_postJobFragment_to_customerHomeFragment"
+            app:destination="@id/customerHomeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/customerJobResponsesFragment"
         android:name="com.example.android.healthyhome.ui.CustomerJobResponsesFragment"
