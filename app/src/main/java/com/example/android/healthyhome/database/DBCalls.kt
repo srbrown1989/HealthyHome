@@ -14,6 +14,8 @@ class DBCalls {
         //php scripts
         var servicesList = "getProviderExtras.php?pid="
         var makeBooking = "makeBooking.php?"
+        var postJob = "postJob.php?"
+        var postJobResponse = "postJobResponse.php?"
         var custNameByID = "getCustomerNameByID.php?cid="
         var provNameByID = "getProviderNameByID.php?pid="
         var availByPID = "getProviderAvailability.php?pid="
@@ -189,6 +191,28 @@ class DBCalls {
                     println("Signed in user isnt a customer. Error")
                 }
             }
+        }
+
+        /**
+         * Posts a job response to the database
+         * @param pid ProviderID of the provider responding
+         * @param jid JobID of the job being responded to
+         * @param msg Text contents of the response
+         */
+        fun postJobResponse(pid: String, jid: String, msg: String){
+            val variableString = "pid=${pid}&jid=${jid}&msg=\"${msg}\""
+            getJSONFromPath(baseURL + postJobResponse + variableString, false){}
+        }
+
+        /**
+         * Posts a job listing to the database
+         * @param cid CustomerID of the poster of the job
+         * @param service Service String
+         * @param msg Optional message
+         */
+        fun postJob(cid: String, service: String, msg: String){
+            val variableString = "cid=${cid}&service=\"${service}\"&msg=\"${msg}\""
+            getJSONFromPath(baseURL + postJob + variableString, false){}
         }
 
         /**
