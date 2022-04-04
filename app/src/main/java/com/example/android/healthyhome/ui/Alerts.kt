@@ -6,7 +6,7 @@ import android.content.DialogInterface
 
 class Alerts {
     companion object{
-        fun basicAlert(context: Context, title: String, message: String, cancelable: Boolean, onClickFunction: (DialogInterface, Int) -> Unit){
+        fun basicAlert(context: Context, title: String, message: String, cancelable: Boolean, onClickFunction: (DialogInterface, Int) -> Unit): AlertDialog.Builder{
 
             val builder = AlertDialog.Builder(context)
 
@@ -15,9 +15,13 @@ class Alerts {
                 setMessage(message)
                 setPositiveButton("OK", DialogInterface.OnClickListener(function = onClickFunction))
                 setCancelable(cancelable)
-                show()
             }
 
+            return builder
+        }
+
+        fun cancelableAlert(context: Context, title: String, message: String, onClickFunction: (DialogInterface, Int) -> Unit): AlertDialog.Builder{
+            return basicAlert(context, title, message, true, onClickFunction).setNegativeButton("Cancel", null)
         }
     }
 }

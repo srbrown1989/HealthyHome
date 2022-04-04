@@ -62,12 +62,33 @@ class Mail {
             }
         }
 
-        fun buildConfirmation(custName: String, provName: String, date: String, time: String): String{
+        fun buildBookingConfirmation(custName: String, provName: String, date: String, time: String): String{
             return "Hello ${custName},\n" +
                     "Thank you again for choosing Healthy Homes as a domestic service provider" +
                     "A new booking has just been made with ${provName} on ${date} at ${time}\n" +
                     "If you wish to change or cancel this booking, log into the Healthy Homes app and navigate to Bookings\n\n" +
                     "This is a no-reply email"
+        }
+
+        fun buildJobResponseNotification(custName: String, jobService: String, jobDesc: String, responseMsg: String, provName: String): String{
+            if (jobDesc.equals("")){
+                return "Hello ${custName},\n" +
+                        "${provName} just posted a response to your job listing for ${jobService} services\n" +
+                        "You described this job as :\n" +
+                        "The response to this listing from ${provName} was :\n" +
+                        "${responseMsg}\n\n" +
+                        "To view more information on this, log into the Healthy Homes app\n\n\n" +
+                        "This is a no-reply email"
+            }else{
+                return "Hello ${custName},\n" +
+                        "${provName} just posted a response to your job listing for ${jobService} services\n" +
+                        "You described this job as :\n" +
+                        "${jobDesc}\n\n" +
+                        "The response to this listing from ${provName} was :\n" +
+                        "${responseMsg}\n\n" +
+                        "To view more information on this, log into the Healthy Homes app\n\n\n" +
+                        "This is a no-reply email"
+            }
         }
 
         private fun putIfMissing(props: Properties, key: String, value: String) {
