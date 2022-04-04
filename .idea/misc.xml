@@ -18,10 +18,9 @@
         <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/fragment_filter_services.xml" value="0.18802083333333333" />
         <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/fragment_provider_list.xml" value="0.33" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/fragment_provider_sign_up.xml" value="0.1" />
+        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/fragment_provider_sign_up.xml" value="0.25" />
         <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/fragment_services.xml" value="0.16210739614994935" />
         <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/provider_list_item.xml" value="0.2576271186440678" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/reviews_row.xml" value="0.3171875" />
         <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/mipmap-anydpi-v26/btn_dropdown.xml" value="0.1015" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/drawable/ic__926140_03a9f4.xml" value="0.21770833333333334" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.221875" />
@@ -60,6 +59,8 @@
         <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/menu/navdrawer_menu.xml" value="0.5541666666666667" />
         <entry key="..\:/desk/ASProjects/HealthyHome/app/src/main/res/layout/fragment_filter_date.xml" value="0.5" />
         <entry key="..\:/desk/ASProjects/HealthyHome/app/src/main/res/layout/fragment_filter_services.xml" value="0.375" />
+        <entry key="..\:/desk/ASProjects/HealthyHome/app/src/main/res/layout/fragment_find_job.xml" value="0.4276041666666667" />
+        <entry key="..\:/desk/ASProjects/HealthyHome/app/src/main/res/layout/fragment_post_job.xml" value="0.4276041666666667" />
       </map>
     </option>
   </component>

@@ -19,6 +19,7 @@ class DBCalls {
         var availByPID = "getProviderAvailability.php?pid="
         var bookingByPID = "getBookingsByPIDAndDate.php?"
         var emailByUID = "getEmailByUID.php?uid="
+        var cidFromUID = "getCIDFromUID.php?uid="
 
         /**
          * Make an API call and have it returned in a specified return function
@@ -168,6 +169,24 @@ class DBCalls {
                 }else{
                     val unSet = AvailabilityType("","","","","","","", false)
                     responseFunction(unSet)
+                }
+            }
+        }
+
+        /**
+         * Returns the CID of the user provided
+         * @param uid UID of User for lookup
+         * @param responseFunction A lambda function that returns String of CID
+         */
+        fun getCIDFromUID(uid: String, responseFunction: (String) -> Unit){
+            getJSONFromPath(baseURL + cidFromUID + uid, true){ rJson ->
+                if(rJson != "" && rJson != "{}"){
+                    val typeCID = object : TypeToken<CIDType>() {}.type
+                    val gson = Gson()
+                    val cidResponse: CIDType = gson.fromJson(rJson, typeCID)
+                    responseFunction(cidResponse.cid)
+                }else{
+                    println("Signed in user isnt a customer. Error")
                 }
             }
         }
