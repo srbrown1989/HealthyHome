@@ -100,7 +100,7 @@ class FilterDateFragment : Fragment(){
     private fun confirmNoInput(dialog: DialogInterface, which: Int){}
     private fun confirmSuccess(dialog: DialogInterface, which: Int){
         //Temporary takes you back to booking screen
-        view?.findNavController()?.navigate(FilterDateFragmentDirections.actionFilterDateFragmentToFilterServicesFragment(pid.toString())) //TODO:: had to put this argument in to comiple, not sure if its right
+        view?.findNavController()?.navigate(FilterDateFragmentDirections.actionFilterDateFragmentToServicesFragment())
     }
 
     /**

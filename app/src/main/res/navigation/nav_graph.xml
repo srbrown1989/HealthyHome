@@ -80,8 +80,8 @@
             android:name="cid"
             app:argType="integer" />
         <action
-            android:id="@+id/action_filterDateFragment_to_filterServicesFragment"
-            app:destination="@id/filterServicesFragment" />
+            android:id="@+id/action_filterDateFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
     </fragment>
     <fragment
         android:id="@+id/providerListFragment"
