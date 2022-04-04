@@ -122,6 +122,11 @@
     <string name="address_line_1">Address Line 1</string>
     <string name="postcode">Postcode</string>
     <string name="address_line_2_optional">Address Line 2 : Optional</string>
+    <string name="hourlyRate">Hourly Rate</string>
+    <string name="select_service">Select Service:</string>
+    <string name="select_hourly_rate">Select Hourly Rate</string>
+    <string name="submit">Submit</string>
+    <string name="enter_an_optional_bio_here">Enter an optional bio here</string>
 
     <string-array name="services_array">
         <item>Cleaning</item>

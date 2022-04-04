@@ -63,5 +63,15 @@
             android:text="Button"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="219dp" />
+
+        <Button
+            android:id="@+id/testing_provider_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_constraintBottom_toTopOf="@+id/welcome_text_view"
+            app:layout_constraintEnd_toStartOf="@+id/bookings_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

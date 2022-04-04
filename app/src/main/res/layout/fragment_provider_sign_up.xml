@@ -55,7 +55,7 @@
                     android:layout_marginRight="20dp"
                     android:background="@drawable/et_custom"
                     android:ems="10"
-                    android:hint="Email"
+                    android:hint="@string/email_example"
                     android:inputType="textEmailAddress"
                     android:minHeight="48dp"
                     android:padding="15dp"
@@ -63,7 +63,8 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    tools:ignore="SpeakableTextPresentCheck"
+                    android:autofillHints="" />
 
                 <EditText
                     android:id="@+id/et_provider_name_signup"
@@ -74,8 +75,7 @@
                     android:layout_marginRight="20dp"
                     android:background="@drawable/et_custom"
                     android:ems="10"
-                    android:hint="Username"
-
+                    android:hint="@string/company_name"
                     android:inputType="text"
                     android:minHeight="48dp"
                     android:padding="15dp"
@@ -83,7 +83,8 @@
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/et_provider_email_signup"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    tools:ignore="SpeakableTextPresentCheck"
+                    android:autofillHints="" />
 
                 <EditText
                     android:id="@+id/et_address_first"
@@ -95,12 +96,13 @@
                     android:layout_marginRight="20dp"
                     android:background="@drawable/et_custom"
                     android:ems="10"
-                    android:hint="Address Line 1"
+                    android:hint="@string/address_line_1"
                     android:inputType="text"
                     android:minHeight="48dp"
                     android:padding="15dp"
                     app:layout_constraintTop_toBottomOf="@+id/et_provider_name_signup"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    tools:ignore="SpeakableTextPresentCheck"
+                    android:autofillHints="" />
 
                 <EditText
                     android:id="@+id/et_address_second"
@@ -112,14 +114,15 @@
                     android:layout_marginRight="20dp"
                     android:background="@drawable/et_custom"
                     android:ems="10"
-                    android:hint="Address Line 2"
+                    android:hint="@string/address_line_2_optional"
                     android:inputType="text"
                     android:minHeight="48dp"
                     android:padding="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/et_address_first"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    tools:ignore="SpeakableTextPresentCheck"
+                    android:autofillHints="" />
 
                 <EditText
                     android:id="@+id/et_address_postcode"
@@ -131,12 +134,13 @@
                     android:layout_marginRight="20dp"
                     android:background="@drawable/et_custom"
                     android:ems="10"
-                    android:hint="Postcode"
+                    android:hint="@string/postcode"
                     android:inputType="textPostalAddress"
                     android:minHeight="48dp"
                     android:padding="15dp"
                     app:layout_constraintTop_toBottomOf="@+id/et_address_second"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    tools:ignore="SpeakableTextPresentCheck"
+                    android:autofillHints="" />
 
                 <EditText
                     android:id="@+id/et_telephone"
@@ -148,28 +152,30 @@
                     android:layout_marginRight="20dp"
                     android:background="@drawable/et_custom"
                     android:ems="10"
-                    android:hint="Contact Number"
+                    android:hint="@string/contact_number"
                     android:inputType="phone"
                     android:minHeight="48dp"
                     android:padding="15dp"
                     app:layout_constraintTop_toBottomOf="@+id/et_address_postcode"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    tools:ignore="SpeakableTextPresentCheck"
+                    android:autofillHints="" />
 
                 <EditText
                     android:id="@+id/et_price"
                     android:layout_width="120dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"
                     android:background="@drawable/et_custom"
                     android:ems="10"
-                    android:hint="Hourly Rate"
+                    android:hint="@string/hourlyRate"
                     android:inputType="number"
                     android:minHeight="48dp"
                     android:padding="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/spinner"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    tools:ignore="SpeakableTextPresentCheck"
+                    android:autofillHints="" />
 
                 <TextView
                     android:id="@+id/tv_select_service"
@@ -183,7 +189,7 @@
                     android:background="@drawable/et_custom"
                     android:ems="10"
                     android:padding="15dp"
-                    android:text="Select Service:"
+                    android:text="@string/select_service"
 
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/et_telephone" />
@@ -198,11 +204,11 @@
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/et_custom"
                     android:ems="10"
-                    android:inputType="text"
+
 
                     android:minHeight="48dp"
                     android:padding="15dp"
-                    android:text="Select Hourly Rate"
+                    android:text="@string/select_hourly_rate"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/et_price"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -216,7 +222,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
 
-                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"
                     android:entries="@array/Services"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -232,12 +238,13 @@
                     android:layout_marginRight="20dp"
                     android:background="@drawable/et_custom"
                     android:ems="10"
-                    android:hint="Enter an optional bio here"
-                    android:inputType="number"
+                    android:hint="@string/enter_an_optional_bio_here"
+                    android:inputType="text"
                     android:minHeight="48dp"
                     android:padding="15dp"
                     app:layout_constraintTop_toBottomOf="@+id/tv_select_rate"
-                    tools:layout_editor_absoluteX="20dp" />
+                    tools:layout_editor_absoluteX="20dp"
+                    android:autofillHints="" />
 
                 <Button
                     android:id="@+id/btn_provider_submit"
@@ -245,7 +252,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/btn_custom"
-                    android:text="Submit"
+                    android:text="@string/submit"
                     android:textColor="@color/mdtp_white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

@@ -150,7 +150,7 @@ class LoginFragment : Fragment() {
                                         response: Response<Provider>
                                     ) {
                                         Common.currentProvider = response.body()
-                                        navController.navigate(LoginFragmentDirections.actionLoginFragmentToProviderHomeFragment())
+                                        navController.navigate(LoginFragmentDirections.actionLoginFragmentToProviderHomeFragment(Common.currentProvider.pid.toString()))
                                     }
 
                                     override fun onFailure(call: Call<Provider>, t: Throwable) {

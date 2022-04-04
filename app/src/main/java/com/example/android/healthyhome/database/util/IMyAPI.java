@@ -47,7 +47,6 @@ public interface IMyAPI {
             @Field("Bio") String bio,
             @Field("service") String service,
             @Field("extras") String extras,
-            @Field("rating") int rating,
             @Field("price") String price
     );
 

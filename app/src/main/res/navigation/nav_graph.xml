@@ -43,6 +43,9 @@
         <action
             android:id="@+id/action_providerHomeFragment_to_providerBookingsFragment"
             app:destination="@id/providerBookingsFragment" />
+        <argument
+            android:name="pid"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/filterServicesFragment"
@@ -140,6 +143,9 @@
         <action
             android:id="@+id/action_customerHomeFragment_to_customerBookingsFragment"
             app:destination="@id/customerBookingsFragment" />
+        <action
+            android:id="@+id/action_customerHomeFragment_to_providerSignUpFragment2"
+            app:destination="@id/providerSignUpFragment2" />
     </fragment>
     <fragment
         android:id="@+id/providerChangeBioFragment"
