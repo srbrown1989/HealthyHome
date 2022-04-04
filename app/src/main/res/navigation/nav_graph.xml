@@ -175,7 +175,8 @@
     <fragment
         android:id="@+id/customerBookingsFragment"
         android:name="com.example.android.healthyhome.ui.CustomerBookingsFragment"
-        android:label="CustomerBookingsFragment" >
+        android:label="CustomerBookingsFragment"
+        tools:layout="@layout/fragment_customer_bookings">
         <argument
             android:name="bookings"
             app:argType="com.example.android.healthyhome.database.util.Bookings" />

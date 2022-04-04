@@ -70,7 +70,7 @@ public interface IMyAPI {
     Call<Bookings> getBookingsByCid(@Query("cid") String cid);
 
     @GET("getProviderByID.php")
-    Call<Provider> getProviderByID(@Query("uid") String uid);
+    Call<Providers> getProviderByID(@Query("uid") int uid);
 
     @GET("ProvidersByService.php") //default sorts by rating.
     Call<Providers>getProvidersByService(@Query("service") String service);
