@@ -16,6 +16,7 @@ import com.example.android.healthyhome.database.LoginResponse
 import com.example.android.healthyhome.database.Provider
 import com.example.android.healthyhome.database.util.Common
 import com.example.android.healthyhome.database.util.IMyAPI
+import com.example.android.healthyhome.database.util.Providers
 import com.example.android.healthyhome.databinding.FragmentLoginBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -144,20 +145,7 @@ class LoginFragment : Fragment() {
                         if (currentUser2.isProvider == 0){ //if not provider go to customer home.
                         navController.navigate(LoginFragmentDirections.actionLoginFragmentToCustomerHomeFragment());
                             } else if (currentUser2.isProvider == 1) {
-                                mService.getProviderByID(currentUser2.uid.toString()).enqueue(object: Callback<Provider>{
-                                    override fun onResponse(
-                                        call: Call<Provider>,
-                                        response: Response<Provider>
-                                    ) {
-                                        Common.currentProvider = response.body()
-                                        navController.navigate(LoginFragmentDirections.actionLoginFragmentToProviderHomeFragment(Common.currentProvider.pid.toString()))
-                                    }
-
-                                    override fun onFailure(call: Call<Provider>, t: Throwable) {
-                                        TODO("Not yet implemented")
-                                    }
-
-                                })
+                                getProviderInfo();
 
                             }
                     }
@@ -170,6 +158,24 @@ class LoginFragment : Fragment() {
             })
 
 
+    }
+
+    private fun getProviderInfo() {
+        mService.getProviderByID(Common.currentUser.uid).enqueue(object: Callback<Providers>{
+            override fun onResponse(
+                call: Call<Providers>,
+                response: Response<Providers>
+            ) {
+                val result = response.body()
+                Common.currentProvider = result!![0]
+                navController.navigate(LoginFragmentDirections.actionLoginFragmentToProviderHomeFragment(Common.currentProvider.pid.toString()))
+            }
+
+            override fun onFailure(call: Call<Providers>, t: Throwable) {
+                Toast.makeText(activity?.applicationContext, "Error getting provider information", Toast.LENGTH_SHORT).show()
+            }
+
+        })
     }
 
 

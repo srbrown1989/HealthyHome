@@ -52,6 +52,9 @@ class ProviderHomeFragment : Fragment() {
         navController = findNavController()
 
         mService = Common.getAPI()
+        if (Common.currentProvider != null){
+        binding.companyNameTextView.text = Common.currentProvider.companyName
+        }
 
         binding.bioCardView.setOnClickListener {
             navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderChangeBioFragment())
