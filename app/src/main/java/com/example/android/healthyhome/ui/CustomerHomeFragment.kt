@@ -52,6 +52,9 @@ class CustomerHomeFragment : Fragment() {
         binding.bookingsButton.setOnClickListener {
             getCustomerBookings()
         }
+        binding.testingProviderSignup.setOnClickListener {
+                navController.navigate(CustomerHomeFragmentDirections.actionCustomerHomeFragmentToProviderSignUpFragment2())
+        }
 
         if(Common.currentUser != null){
             binding.welcomeTextView.text = String.format(getString(R.string.welcome),getFirstName(Common.currentUser.name))
