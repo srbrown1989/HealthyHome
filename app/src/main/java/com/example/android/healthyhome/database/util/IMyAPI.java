@@ -81,5 +81,8 @@ public interface IMyAPI {
     @GET("getJobsByService.php")
     Call<Jobs>getJobsByService(@Query("service") String service);
 
+    @GET("getResponsesByCid.php")
+    Call<Responses>getResponsesByCid(@Query("cid")int cid);
+
 
 }
