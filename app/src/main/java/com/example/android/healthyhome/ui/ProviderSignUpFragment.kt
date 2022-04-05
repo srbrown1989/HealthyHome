@@ -43,7 +43,7 @@ class ProviderSignUpFragment : Fragment() {
 
     mService = Common.getAPI()
     navController = findNavController()
-      //TODO:: NEED TO ASK FOR AVAILABILTIY IN SOME WAY
+      //TODO:: NEED TO SET AVAILABILITIES TO 9-5 AS DEFAULT
 
     binding.btnProviderSubmit.setOnClickListener { 1
         signUp()
