@@ -1,6 +1,7 @@
 package com.example.android.healthyhome.ui
 
 import android.app.Activity
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.database.AvailabilityType
 import com.example.android.healthyhome.database.BookingType
@@ -80,12 +82,25 @@ class FilterDateFragment : Fragment(){
 
                 //UID OBTAINED FROM SESSION
                 DBCalls.getEmailByUID("1"){ email ->
-                    Mail.sendEMail("Healthy Homes : New Booking", Mail.buildConfirmation(binding.tvCustNamePresent.text.toString(), binding.tvProvNamePresent.text.toString(), binding.tvDatePicker.text.toString(), time), email)
+                    Mail.sendEMail("Healthy Homes : New Booking", Mail.buildBookingConfirmation(binding.tvCustNamePresent.text.toString(), binding.tvProvNamePresent.text.toString(), binding.tvDatePicker.text.toString(), time), email)
                 }
+
+                Alerts.basicAlert(this.requireContext(), "", "Your booking has been confirmed\nYou will receive an additional confirmation by E-Mail", false, ::confirmSuccess).show()
+
+            }else{
+                Alerts.basicAlert(this.requireContext(), "", "Please select a date and time to continue this booking", false, ::confirmNoInput).show()
             }
         }
 
+
+
         return binding.root
+    }
+
+    private fun confirmNoInput(dialog: DialogInterface, which: Int){}
+    private fun confirmSuccess(dialog: DialogInterface, which: Int){
+        //Temporary takes you back to booking screen
+        view?.findNavController()?.navigate(FilterDateFragmentDirections.actionFilterDateFragmentToServicesFragment())
     }
 
     /**
@@ -247,6 +262,8 @@ class FilterDateFragment : Fragment(){
         //This would be for if there are no valid times for the date selected
         if(dayAvailability == "" || times.isEmpty()){
             var adap = ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item, arrayOf("No Times"))
+            adap.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            binding.spnrTimePicker.adapter = adap
         }
         else {
             var adap: ArrayAdapter<String> =

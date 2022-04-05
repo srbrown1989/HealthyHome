@@ -14,11 +14,14 @@ class DBCalls {
         //php scripts
         var servicesList = "getProviderExtras.php?pid="
         var makeBooking = "makeBooking.php?"
+        var postJob = "postJob.php?"
+        var postJobResponse = "postJobResponse.php?"
         var custNameByID = "getCustomerNameByID.php?cid="
         var provNameByID = "getProviderNameByID.php?pid="
         var availByPID = "getProviderAvailability.php?pid="
         var bookingByPID = "getBookingsByPIDAndDate.php?"
         var emailByUID = "getEmailByUID.php?uid="
+        var cidFromUID = "getCIDFromUID.php?uid="
 
         /**
          * Make an API call and have it returned in a specified return function
@@ -170,6 +173,46 @@ class DBCalls {
                     responseFunction(unSet)
                 }
             }
+        }
+
+        /**
+         * Returns the CID of the user provided
+         * @param uid UID of User for lookup
+         * @param responseFunction A lambda function that returns String of CID
+         */
+        fun getCIDFromUID(uid: String, responseFunction: (String) -> Unit){
+            getJSONFromPath(baseURL + cidFromUID + uid, true){ rJson ->
+                if(rJson != "" && rJson != "{}"){
+                    val typeCID = object : TypeToken<CIDType>() {}.type
+                    val gson = Gson()
+                    val cidResponse: CIDType = gson.fromJson(rJson, typeCID)
+                    responseFunction(cidResponse.cid)
+                }else{
+                    println("Signed in user isnt a customer. Error")
+                }
+            }
+        }
+
+        /**
+         * Posts a job response to the database
+         * @param pid ProviderID of the provider responding
+         * @param jid JobID of the job being responded to
+         * @param msg Text contents of the response
+         */
+        fun postJobResponse(pid: String, jid: String, msg: String){
+            val variableString = "pid=${pid}&jid=${jid}&msg=\"${msg}\""
+            getJSONFromPath(baseURL + postJobResponse + variableString, false){}
+        }
+
+        /**
+         * Posts a job listing to the database
+         * @param cid CustomerID of the poster of the job
+         * @param service Service String
+         * @param msg Optional message
+         */
+        fun postJob(cid: String, service: String, msg: String){
+            val variableString = "cid=${cid}&service=\"${service}\"&msg=\"${msg}\""
+            getJSONFromPath(baseURL + postJob + variableString, false){}
         }
 
         /**

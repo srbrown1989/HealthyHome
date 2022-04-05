@@ -5,7 +5,6 @@
     <string name="gardening">Gardening</string>
     <string name="dog_walking">Dog Walking</string>
     <string name="odd_jobs">Odd Jobs</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="name">Name</string>
     <string name="contact_number">Contact Number</string>
@@ -60,7 +59,6 @@
     <string name="extrasSelect">Extras Selected</string>
     <string name="confirmBooking">Confirm Booking</string>
 
-    <string name="submit">Submit</string>
     <string name="cleaning">cleaning</string>
     <string name="locksmith">locksmith</string>
     <string name="removals">removals</string>
@@ -108,5 +106,34 @@
     <string name="search_by_service">Search \n by \nService</string>
     <string name="post_your_needs">POST \n YOUR \n NEEDS</string>
     <string name="welcome">Welcome, %1$s </string>
+    <string name="user_reviews">User Reviews</string>
+    <string name="view_and_respond_to_your_user_reviews">View and respond to your user reviews</string>
+    <string name="find_job">Find Job</string>
+    <string name="find_jobs_posted_to_your_area_that_match_your_service">Find jobs posted to your area that match your service</string>
+    <string name="reviews">Reviews</string>
+    <string name="post_job">Post Job</string>
+    <string name="job_responses">Job Responses</string>
+    <string name="your_bookings">Your Bookings</string>
+    <string name="firstName">firstName</string>
+    <string name="review">Review:</string>
+    <string name="please_log_in_or_register_your_account_to_continue">Please log in or register your account to continue.</string>
+    <string name="login_register_account">Login/Register Account</string>
+    <string name="address_line_1">Address Line 1</string>
+    <string name="postcode">Postcode</string>
+    <string name="address_line_2_optional">Address Line 2 : Optional</string>
+    <string name="hourlyRate">Hourly Rate</string>
+    <string name="select_service">Select Service:</string>
+    <string name="select_hourly_rate">Select Hourly Rate</string>
+    <string name="submit">Submit</string>
+    <string name="enter_an_optional_bio_here">Enter an optional bio here</string>
+
+    <string-array name="services_array">
+        <item>Cleaning</item>
+        <item>Locksmith</item>
+        <item>Dog Walking</item>
+        <item>Removals</item>
+        <item>Gardening</item>
+        <item>Odd Jobs</item>
+    </string-array>
 
 </resources>

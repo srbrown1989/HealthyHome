@@ -15,48 +15,63 @@
 
 
         <TextView
-            android:id="@+id/text_view_1"
+            android:id="@+id/tv_company_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Line 1"
+            android:tag="pid"
+            android:text="Company Name"
             android:textColor="@color/secondaryDarkColor"
 
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
-            android:id="@+id/text_view_2"
+            android:id="@+id/tv_company_bio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Line 2"
+            android:layout_marginTop="20dp"
             android:textColor="@color/secondaryDarkColor"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_view_1"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_provider_price"
+            tools:text="@string/fake_bio"
+            android:clickable="true"
+            />
 
         <TextView
-            android:id="@+id/text_view_3"
+            android:id="@+id/tv_provider_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Line3"
+            android:padding="10dp"
+            android:color="#e0e0e0"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_provider_price"
+            app:layout_constraintTop_toBottomOf="@+id/tv_company_name" />
 
         <TextView
-            android:id="@+id/text_view_4"
+            android:id="@+id/tv_provider_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Line4"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_view_3" />
+            android:color="#e0e0e0"
+            android:padding="10dp"
+
+            app:layout_constraintEnd_toStartOf="@+id/tv_provider_rating"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_company_name" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -176,11 +176,12 @@
             app:layout_constraintTop_toBottomOf="@+id/bookings_card_view">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/find_job_cardview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/messages_imageView"
+                    android:id="@+id/find_job_imageView"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
                     android:layout_marginStart="8dp"
@@ -194,20 +195,20 @@
                     tools:ignore="ImageContrastCheck" />
 
                 <TextView
-                    android:id="@+id/messages_heading"
+                    android:id="@+id/find_job_header"
                     style="@style/header"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="@string/messages"
+                    android:text="@string/find_job"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/messages_imageView"
+                    app:layout_constraintStart_toEndOf="@+id/find_job_imageView"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/messages_description"
+                    android:id="@+id/find_job_description"
                     android:layout_width="250dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -215,15 +216,15 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:rotation="0"
-                    android:text="@string/messages_desc"
+                    android:text="@string/find_jobs_posted_to_your_area_that_match_your_service"
                     android:textAlignment="center"
                     android:textSize="14sp"
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.6"
-                    app:layout_constraintStart_toEndOf="@+id/messages_imageView"
-                    app:layout_constraintTop_toBottomOf="@+id/messages_heading" />
+                    app:layout_constraintStart_toEndOf="@+id/find_job_imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/find_job_header" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -240,11 +241,12 @@
             app:layout_constraintTop_toBottomOf="@+id/messages_card_view">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/user_reviews_cardview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/offers_imageView"
+                    android:id="@+id/reviews_imageView"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
                     android:layout_marginStart="8dp"
@@ -258,20 +260,20 @@
                     tools:ignore="ImageContrastCheck" />
 
                 <TextView
-                    android:id="@+id/offers_heading"
+                    android:id="@+id/reviews_heading"
                     style="@style/header"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="@string/offers"
+                    android:text="@string/user_reviews"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/offers_imageView"
+                    app:layout_constraintStart_toEndOf="@+id/reviews_imageView"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/offers_description"
+                    android:id="@+id/reviews_description"
                     android:layout_width="250dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
@@ -279,15 +281,15 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:rotation="0"
-                    android:text="@string/offers_desc"
+                    android:text="@string/view_and_respond_to_your_user_reviews"
                     android:textAlignment="center"
                     android:textSize="14sp"
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.6"
-                    app:layout_constraintStart_toEndOf="@+id/offers_imageView"
-                    app:layout_constraintTop_toBottomOf="@+id/offers_heading" />
+                    app:layout_constraintStart_toEndOf="@+id/reviews_imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/reviews_heading" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

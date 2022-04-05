@@ -3,6 +3,7 @@ import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.Log.d
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,10 @@ import com.example.android.healthyhome.databinding.FragmentProviderHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import com.example.android.healthyhome.database.LoginResponse
+import com.example.android.healthyhome.database.util.Bookings
+import com.example.android.healthyhome.database.util.BookingsItem
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
@@ -29,9 +34,9 @@ import retrofit2.Response
 class ProviderHomeFragment : Fragment() {
 
     private lateinit var binding : FragmentProviderHomeBinding
-    private lateinit var database : DatabaseReference
     private lateinit var mService: IMyAPI
     private lateinit var navController: NavController
+    private lateinit var bookings : Bookings
 
 
     override fun onCreateView(
@@ -44,31 +49,61 @@ class ProviderHomeFragment : Fragment() {
             inflater, R.layout.fragment_provider_home, container, false
         )
 
+        navController = findNavController()
+
+        mService = Common.getAPI()
+        if (Common.currentProvider != null){
+        binding.companyNameTextView.text = Common.currentProvider.companyName
+        }
+
         binding.bioCardView.setOnClickListener {
-            it.findNavController()
-                .navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderChangeBioFragment())
+            navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderChangeBioFragment())
+
+        }
+        
+        binding.bookingsCardView.setOnClickListener {
+          getBookings()
+
+        }
+
+        binding.findJobCardview.setOnClickListener{
+            navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToFindJobFragment())
+        }
+
+        binding.userReviewsCardview.setOnClickListener{
+            navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderReviewsFragment())
         }
 
 
-        mService = Common.getAPI()
 
-        fillProviderInfo()
+
+
+
+
+        //TODO: IMPLEMENT GETTING INFORMATION FROM LOGGED IN PROVIDER.
+
+
 
 
         return binding.root    }
 
-    private fun fillProviderInfo() {
-        database.child(FirebaseAuth.getInstance().uid!!).get().addOnSuccessListener{
-            val provider : Provider? = it.getValue(Provider::class.java)
-            binding.companyNameTextView.text = provider?.providerName.toString()
-            binding.ratingBar.rating = provider?.rating?.toFloat()!!
+    private fun getBookings() {
+            mService.getAllBookings("2").enqueue(object: Callback<Bookings>{//TODO: UPDATE ARGUMENT IN CALL TO currentProvider.pid.toString()
+               override fun onResponse(call: Call<Bookings>, response: Response<Bookings>) {
+                   var result : Bookings? = response.body()
+                   bookings = result!!
+                   navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToProviderBookingsFragment(bookings))
+               }
 
+               override fun onFailure(call: Call<Bookings>, t: Throwable) {
+                   TODO("Not yet implemented")
+               }
 
-        }.addOnFailureListener{
-            Log.e("firebase", "Error getting data", it)
-        }
-
+           })
+        d("here","getbookings")
     }
+
+    private fun fillProviderInfo() {}
 
 
 }

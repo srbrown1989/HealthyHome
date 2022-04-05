@@ -13,6 +13,8 @@ import androidx.navigation.findNavController
 import com.example.android.healthyhome.R
 import com.example.android.healthyhome.database.DBCalls
 import com.example.android.healthyhome.database.mail.Mail
+import com.example.android.healthyhome.database.util.Common
+import com.example.android.healthyhome.database.util.Common.currentUser
 import com.example.android.healthyhome.databinding.FragmentFilterServicesBinding
 
 class FilterServicesFragment : Fragment() {
@@ -22,6 +24,8 @@ class FilterServicesFragment : Fragment() {
     private var activeServices : MutableList<String> = mutableListOf();
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        var args = FilterServicesFragmentArgs.fromBundle(requireArguments())
+        var chosenProvider = args.pid
         activeServices = mutableListOf()
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate<FragmentFilterServicesBinding>(inflater, R.layout.fragment_filter_services, container, false)
@@ -49,15 +53,19 @@ class FilterServicesFragment : Fragment() {
 
         binding.btnNext.setOnClickListener { view: View ->
 
-            val cid = Integer.parseInt(binding.cidTemp.text.toString()) //Filler
-            val pid = Integer.parseInt(binding.pidTemp.text.toString()) //Filler
-            val numOfRooms = binding.radioGroup.checkedRadioButtonId + 1
-            view.findNavController().navigate(FilterServicesFragmentDirections.actionFilterServicesFragmentToFilterDateFragment(pid, recurring, 1, activeServices.toTypedArray(), cid))
+            DBCalls.getCIDFromUID(Common.currentUser.uid.toString()){r ->
+                val cid = Integer.parseInt(r)
+                val pid = Integer.parseInt(chosenProvider)
+                val numOfRooms = binding.radioGroup.checkedRadioButtonId + 1
+                view.findNavController().navigate(FilterServicesFragmentDirections.actionFilterServicesFragmentToFilterDateFragment(pid, recurring, 1, activeServices.toTypedArray(), cid))
+            }
+
+
         }
 
 
         //pID taken from selected provider
-        DBCalls.getServicesListFromProvider("2"){ rArray ->
+        DBCalls.getServicesListFromProvider(chosenProvider){ rArray ->
             buildServiceButtons(rArray)
         }
 
