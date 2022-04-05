@@ -288,7 +288,7 @@
             android:layout_height="wrap_content"
             android:background="@color/primaryDarkColor"
             android:backgroundTint="@color/primaryLightColor"
-            android:padding="5"
+            android:padding="@dimen/button_padding"
             android:shadowColor="#453E3E"
             android:shadowRadius="10"
             android:text="@string/go_to_customer_home"
