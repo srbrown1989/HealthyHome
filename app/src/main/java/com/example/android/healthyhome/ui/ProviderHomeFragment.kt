@@ -66,6 +66,10 @@ class ProviderHomeFragment : Fragment() {
 
         }
 
+        binding.customerHomeButton.setOnClickListener {
+            navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToCustomerHomeFragment())
+        }
+
         binding.findJobCardview.setOnClickListener{
             navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToFindJobFragment())
         }
