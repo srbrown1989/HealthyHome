@@ -3,25 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/drawable/baseline_arrow_drop_down_24.xml" value="0.1015" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/drawable/btn_custom.xml" value="0.196" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/drawable/btn_dropdown_background.xml" value="0.1" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/drawable/et_custom.xml" value="0.196" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/drawable/shape_drop_down.xml" value="0.364" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/drawable/sp_custom.xml" value="0.1015" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/activity_provider_bookings_fragment.xml" value="0.18802083333333333" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/activity_provider_change_bio_fragment.xml" value="0.33" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/fragment_chosen_provider.xml" value="0.18802083333333333" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/fragment_customer_home.xml" value="0.3482789855072464" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/fragment_filter_date.xml" value="0.18802083333333333" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/fragment_filter_services.xml" value="0.18802083333333333" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/fragment_login.xml" value="0.25" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/fragment_provider_list.xml" value="0.33" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/fragment_provider_sign_up.xml" value="0.25" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/fragment_services.xml" value="0.16210739614994935" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/provider_list_item.xml" value="0.2576271186440678" />
-        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/mipmap-anydpi-v26/btn_dropdown.xml" value="0.1015" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/drawable/ic__926140_03a9f4.xml" value="0.21770833333333334" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.221875" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/drawable/ic_cleaning.xml" value="0.21770833333333334" />
@@ -34,45 +15,21 @@
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/drawable/ic_offer_logo.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/drawable/ic_removals.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/bookings_row.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/bookings_row.xml" value="0.25677083333333334" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_chosen_provider.xml" value="0.25" />
-        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_customer_home.xml" value="0.20052083333333334" />
-        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_customer_job_responses.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_customer_home.xml" value="0.25677083333333334" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_filter_date.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_filter_services.xml" value="0.18854166666666666" />
-        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_find_job.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_login.xml" value="0.31179775280898875" />
-        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_post_job.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_provider_change_bio.xml" value="0.20052083333333334" />
-        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_provider_home.xml" value="0.25" />
+        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_provider_home.xml" value="0.3201347935973041" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_provider_list.xml" value="0.67" />
-        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_provider_reviews.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_provider_selection.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_provider_sign_up.xml" value="0.33" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_services.xml" value="0.24229979466119098" />
-        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/jobs_row.xml" value="0.1" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/nav_header.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/provider_list_item.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/provider_list_item_recycler.xml" value="0.33" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/provider_list_view_recycler.xml" value="0.18854166666666666" />
-        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/responses_row.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/reviews_row.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/menu/navdrawer_menu.xml" value="0.5" />
-        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/activity_main.xml" value="0.33177083333333335" />
-        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_chosen_provider.xml" value="0.33177083333333335" />
-        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_filter_date.xml" value="0.33177083333333335" />
-        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_filter_services.xml" value="0.33177083333333335" />
-        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_login.xml" value="0.33177083333333335" />
-        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_provider_home.xml" value="0.33177083333333335" />
-        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_provider_sign_up.xml" value="0.33" />
-        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/fragment_services.xml" value="0.33177083333333335" />
-        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/layout/nav_header.xml" value="0.33177083333333335" />
-        <entry key="..\:/Users/irfan/AndroidStudioProjects/HealthyHome/app/src/main/res/menu/navdrawer_menu.xml" value="0.5541666666666667" />
-        <entry key="..\:/desk/ASProjects/HealthyHome/app/src/main/res/layout/fragment_filter_date.xml" value="0.5" />
-        <entry key="..\:/desk/ASProjects/HealthyHome/app/src/main/res/layout/fragment_filter_services.xml" value="0.375" />
-        <entry key="..\:/desk/ASProjects/HealthyHome/app/src/main/res/layout/fragment_find_job.xml" value="0.4276041666666667" />
-        <entry key="..\:/desk/ASProjects/HealthyHome/app/src/main/res/layout/fragment_post_job.xml" value="0.4276041666666667" />
-        <entry key="..\:/desk/ASProjects/HealthyHome/app/src/main/res/layout/fragment_services.xml" value="0.3302083333333333" />
       </map>
     </option>
   </component>
