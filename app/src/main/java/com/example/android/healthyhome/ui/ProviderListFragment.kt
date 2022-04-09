@@ -23,7 +23,7 @@ import com.google.firebase.ktx.Firebase
 import com.example.android.healthyhome.databinding.FragmentProviderListBinding
 
 
-class ProviderListFragment  : Fragment(), ProviderListAdapter.OnItemClickListener{
+class ProviderListFragment  : Fragment(){
 
     private lateinit var providers : List<Provider>
 
@@ -40,24 +40,13 @@ class ProviderListFragment  : Fragment(), ProviderListAdapter.OnItemClickListene
 
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = ProviderListAdapter(providers as Providers, this@ProviderListFragment)
+            adapter = ProviderListAdapter(providers as Providers)
         }
 
         return binding.root
     }
 
-    override fun onItemClick(position: Int) {
-        //Toast.makeText(this.context, "Item position: $position Item pid: ${providers.get(position).pid} clicked", Toast.LENGTH_SHORT).show()
-        var navigation = findNavController()
 
-        val temp : Providers = Providers()
-        temp.add(providers[position])
-
-        navigation.navigate(ProviderListFragmentDirections.actionProviderListFragmentToChosenProviderFragment(
-            temp
-        ))
-        //TODO : NAVIGATE TO NEXT SCREEN WITH PID AS ARGUMENT.
-    }
 
 
 }

@@ -134,6 +134,9 @@
     <string name="customer_w_colon">Customer:</string>
     <string name="booking_id_withcolon">Booking ID:</string>
     <string name="booking_w_colon">Booking:</string>
+    <string name="make_booking">Make Booking</string>
+    <string name="bio_w_colon">Bio:</string>
+    <string name="price_p_h">Price(P/H):</string>
 
     <string-array name="services_array">
         <item>Cleaning</item>
