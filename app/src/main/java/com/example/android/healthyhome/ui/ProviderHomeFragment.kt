@@ -92,7 +92,7 @@ class ProviderHomeFragment : Fragment() {
         return binding.root    }
 
     private fun getBookings() {
-            mService.getAllBookings(Common.currentProvider.pid.toString()).enqueue(object: Callback<Bookings>{
+            mService.getAllBookings("2").enqueue(object: Callback<Bookings>{
                override fun onResponse(call: Call<Bookings>, response: Response<Bookings>) {
                    var result : Bookings? = response.body()
                    bookings = result!!

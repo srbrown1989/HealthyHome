@@ -13,4 +13,21 @@ public class Common {
         return RetrofitClient.getClient(BASE_URL).create(IMyAPI.class);
     }
 
+    public static String dateFormat(String date){
+        StringBuilder sb = new StringBuilder();
+        sb.append(date.substring(date.length()-2,date.length()));
+        sb.append("/");
+        sb.append(date.substring(date.length()-5,date.length()-3));
+        sb.append("/");
+        sb.append(date.substring(0,4));
+
+        return sb.toString();
+    }
+
+    public static String timeFormat(String time){
+        StringBuilder sb = new StringBuilder(time);
+        sb.insert(2,':');
+        return sb.toString();
+    }
+
 }

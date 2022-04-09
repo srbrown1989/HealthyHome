@@ -18,20 +18,28 @@ class BookingsAdapter(private val bookings: MutableList<BookingsItem>) : Recycle
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val booking = bookings[position]
-        holder.bid.text = booking.bid
-        holder.date.text = booking.date
-        holder.time.text = booking.time
-        holder.name.text = (booking.firstName + " " + booking.lastName)
-
+        holder.booking.text = ("Booking : " + (position + 1))
+        holder.bid.text = ("Booking ID: " + booking.bid)
+        holder.date.text = Common.dateFormat(booking.date)
+        holder.time.text = Common.timeFormat(booking.time)
+        holder.address.text = ("Address: " + booking.address)
+        holder.postcode.text = ("Postcode: " + booking.postcode)
+        holder.custName.text = (booking.firstName + " " + booking.lastName)
+        holder.providername.text = ("Provider: " + booking.companyName)
     }
+
 
     override fun getItemCount(): Int = bookings.size
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val bid : TextView = itemView.find(R.id.bid_textview)
-        val name: TextView = itemView.find(R.id.name_textview)
-        val date : TextView = itemView.find(R.id.date_textview)
-        val time: TextView = itemView.find(R.id.time_textview)
+        val booking : TextView = itemView.find(R.id.tv_booking)
+        val bid : TextView = itemView.find(R.id.tv_booking_id)
+        val providername : TextView = itemView.find(R.id.tv_provider_name)
+        val address : TextView = itemView.find(R.id.tv_booking_address)
+        val postcode: TextView = itemView.find(R.id.tv_postcode)
+        val custName: TextView = itemView.find(R.id.tv_booking_custName)
+        val date : TextView = itemView.find(R.id.tv_booking_date)
+        val time: TextView = itemView.find(R.id.tv_booking_time)
 
 
     }

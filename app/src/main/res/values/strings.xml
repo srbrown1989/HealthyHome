@@ -127,6 +127,13 @@
     <string name="submit">Submit</string>
     <string name="enter_an_optional_bio_here">Enter an optional bio here</string>
     <string name="go_to_customer_home">Go to Customer Home</string>
+    <string name="provider_w_colon">Provider:</string>
+    <string name="extras_with_colon">Extras:</string>
+    <string name="address_with_colon">Address:</string>
+    <string name="booking_for">Booking for:</string>
+    <string name="customer_w_colon">Customer:</string>
+    <string name="booking_id_withcolon">Booking ID:</string>
+    <string name="booking_w_colon">Booking:</string>
 
     <string-array name="services_array">
         <item>Cleaning</item>
