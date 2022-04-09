@@ -66,6 +66,10 @@ class ProviderHomeFragment : Fragment() {
 
         }
 
+        binding.customerHomeButton.setOnClickListener {
+            navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToCustomerHomeFragment())
+        }
+
         binding.findJobCardview.setOnClickListener{
             navController.navigate(ProviderHomeFragmentDirections.actionProviderHomeFragmentToFindJobFragment())
         }
@@ -88,7 +92,7 @@ class ProviderHomeFragment : Fragment() {
         return binding.root    }
 
     private fun getBookings() {
-            mService.getAllBookings("2").enqueue(object: Callback<Bookings>{//TODO: UPDATE ARGUMENT IN CALL TO currentProvider.pid.toString()
+            mService.getAllBookings(Common.currentProvider.pid.toString()).enqueue(object: Callback<Bookings>{
                override fun onResponse(call: Call<Bookings>, response: Response<Bookings>) {
                    var result : Bookings? = response.body()
                    bookings = result!!

@@ -126,6 +126,7 @@
     <string name="select_hourly_rate">Select Hourly Rate</string>
     <string name="submit">Submit</string>
     <string name="enter_an_optional_bio_here">Enter an optional bio here</string>
+    <string name="go_to_customer_home">Go to Customer Home</string>
 
     <string-array name="services_array">
         <item>Cleaning</item>
