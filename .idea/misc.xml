@@ -3,6 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/drawable/baseline_arrow_drop_down_24.xml" value="0.1015" />
+        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/drawable/btn_custom.xml" value="0.196" />
+        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/drawable/btn_dropdown_background.xml" value="0.1" />
+        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/drawable/et_custom.xml" value="0.196" />
+        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/drawable/shape_drop_down.xml" value="0.364" />
+        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/drawable/sp_custom.xml" value="0.1015" />
+        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/activity_provider_bookings_fragment.xml" value="0.18802083333333333" />
+        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/activity_provider_change_bio_fragment.xml" value="0.33" />
+        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/bookings_row.xml" value="0.33" />
+        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/layout/fragment_customer_bookings.xml" value="0.33" />
+        <entry key="..\:/AndroidApps/HealthyHome/app/src/main/res/mipmap-anydpi-v26/btn_dropdown.xml" value="0.1015" />
+
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/drawable/ic__926140_03a9f4.xml" value="0.21770833333333334" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.221875" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome/app/src/main/res/drawable/ic_cleaning.xml" value="0.21770833333333334" />
