@@ -4,11 +4,14 @@ import android.opengl.Visibility
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.healthyhome.R
+import com.firebase.ui.auth.AuthUI.getApplicationContext
 import org.jetbrains.anko.find
 
 class BookingsAdapter(private val bookings: MutableList<BookingsItem>) : RecyclerView.Adapter<BookingsAdapter.ViewHolder>() {
@@ -29,6 +32,9 @@ class BookingsAdapter(private val bookings: MutableList<BookingsItem>) : Recycle
         holder.postcode.text = ("Postcode: " + booking.postcode)
         holder.custName.text = (booking.firstName + " " + booking.lastName)
         holder.providername.text = ("Provider: " + booking.companyName)
+        holder.bookingButton.setOnClickListener {
+            Toast.makeText(getApplicationContext(), "proceed to cancel booking", Toast.LENGTH_SHORT).show()
+        }
 
         holder.bookingsExtra.setOnClickListener{
             if (!booking.expanded) {
@@ -59,6 +65,7 @@ class BookingsAdapter(private val bookings: MutableList<BookingsItem>) : Recycle
         val bookingsExtra : ConstraintLayout = itemView.find(R.id.booking_extra)
         val bookingsBody : ConstraintLayout = itemView.find(R.id.booking_body)
         val triangle : ImageView = itemView.find(R.id.triangle_image)
+        val bookingButton: Button = itemView.find(R.id.booking_cancel_button)
 
 
     }
