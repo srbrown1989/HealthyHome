@@ -47,7 +47,7 @@ class ProviderListFragment  : Fragment(), ProviderListAdapter.OnItemClickListene
     }
 
     override fun onItemClick(position: Int) {
-        Toast.makeText(this.context, "Item position: $position Item pid: ${providers.get(position).pid} clicked", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this.context, "Item position: $position Item pid: ${providers.get(position).pid} clicked", Toast.LENGTH_SHORT).show()
         var navigation = findNavController()
 
         val temp : Providers = Providers()

@@ -46,6 +46,9 @@
         <argument
             android:name="pid"
             app:argType="string" />
+        <action
+            android:id="@+id/action_providerHomeFragment_to_customerHomeFragment"
+            app:destination="@id/customerHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/filterServicesFragment"

@@ -13,5 +13,7 @@ data class BookingsItem(
     val firstName: String,
     val lastName : String,
     val address : String,
-    val postcode : String
+    val postcode : String,
+    val companyName: String?,
+    var expanded : Boolean = false
 )
