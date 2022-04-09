@@ -1,9 +1,12 @@
 package com.example.android.healthyhome.database.util
 
+import android.opengl.Visibility
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.healthyhome.R
 import org.jetbrains.anko.find
@@ -26,6 +29,18 @@ class BookingsAdapter(private val bookings: MutableList<BookingsItem>) : Recycle
         holder.postcode.text = ("Postcode: " + booking.postcode)
         holder.custName.text = (booking.firstName + " " + booking.lastName)
         holder.providername.text = ("Provider: " + booking.companyName)
+
+        holder.bookingsExtra.setOnClickListener{
+            if (!booking.expanded) {
+                holder.bookingsBody.visibility = View.VISIBLE
+                holder.triangle.rotation = 180f
+                booking.expanded = true
+            } else {
+                holder.bookingsBody.visibility = View.GONE
+                holder.triangle.rotation = 0f
+                booking.expanded = false;
+            }
+        }
     }
 
 
@@ -40,6 +55,10 @@ class BookingsAdapter(private val bookings: MutableList<BookingsItem>) : Recycle
         val custName: TextView = itemView.find(R.id.tv_booking_custName)
         val date : TextView = itemView.find(R.id.tv_booking_date)
         val time: TextView = itemView.find(R.id.tv_booking_time)
+
+        val bookingsExtra : ConstraintLayout = itemView.find(R.id.booking_extra)
+        val bookingsBody : ConstraintLayout = itemView.find(R.id.booking_body)
+        val triangle : ImageView = itemView.find(R.id.triangle_image)
 
 
     }

@@ -3,16 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linear_layout"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:rotation="0">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         app:cardBackgroundColor="@color/mdtp_white"
         app:cardCornerRadius="11dp"
         app:cardElevation="11dp"
@@ -23,10 +24,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/booking_header"
             android:layout_width="match_parent"
+
+
             android:layout_height="wrap_content"
-
-
             android:background="@color/primaryLightColor">
 
 
@@ -77,20 +79,43 @@
                 tools:text="Date" />
 
             <View
-                android:id="@+id/view3"
+                android:id="@+id/bookings_line"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:background="#0C0C0C"
-                app:layout_constraintBottom_toTopOf="@+id/constraintLayout" />
+                app:layout_constraintBottom_toBottomOf="@+id/booking_header" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
+                android:id="@+id/booking_extra"
                 android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="#AEF8B1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/booking_body"
+                app:layout_constraintVertical_bias="0.0">
 
+                <ImageView
+                    android:id="@+id/triangle_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerInside"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/baseline_arrow_drop_down_24" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/booking_body"
+                android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="16dp"
                 android:background="@color/secondaryTextColor"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_booking"
