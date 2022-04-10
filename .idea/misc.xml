@@ -34,7 +34,11 @@
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome2/app/src/main/res/drawable/ic_locksmith.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome2/app/src/main/res/drawable/ic_odd_jobs.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome2/app/src/main/res/layout/bookings_row.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome2/app/src/main/res/layout/fragment_customer_bookings.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome2/app/src/main/res/layout/fragment_customer_home.xml" value="0.23324275362318841" />
+        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome2/app/src/main/res/layout/fragment_customer_job_responses.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome2/app/src/main/res/layout/fragment_provider_change_bio.xml" value="0.25" />
+        <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome2/app/src/main/res/layout/fragment_provider_home.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome2/app/src/main/res/layout/fragment_provider_list.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome2/app/src/main/res/layout/fragment_services.xml" value="0.25" />
         <entry key="..\:/Users/Shaun/AndroidStudioProjects/HealthyHome2/app/src/main/res/layout/provider_list_item.xml" value="0.20520833333333333" />

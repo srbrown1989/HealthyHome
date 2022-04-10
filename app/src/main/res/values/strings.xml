@@ -146,6 +146,7 @@
     <string name="email_w_colon">Email:</string>
     <string name="contact_w_colon">Contact:</string>
     <string name="service_w_colon">Service:</string>
+    <string name="responses">Responses</string>
 
     <string-array name="services_array">
         <item>Cleaning</item>
