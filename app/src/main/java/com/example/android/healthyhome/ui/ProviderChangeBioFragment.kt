@@ -13,6 +13,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.android.healthyhome.R
+import com.example.android.healthyhome.database.Provider
 import com.example.android.healthyhome.database.ProviderSignUpResponse
 import com.example.android.healthyhome.database.util.Common
 import com.example.android.healthyhome.database.util.IMyAPI
@@ -41,11 +42,25 @@ class ProviderChangeBioFragment : Fragment() {
 
         navController = findNavController()
 
+        updateFields();
+
 
         return binding.root
 
     }
 
+    private fun updateFields() {
+        val provider : Provider = Common.currentProvider
+        binding.cbNameTv.text = provider.companyName
+        binding.cbBioTv.text = provider.Bio
+        binding.cbAddressTv.text = provider.address
+        binding.cbPostcodeTv.text = provider.postcode
+        binding.cbContactTv.text = provider.contact
+        binding.cbEmailTv.text = provider.companyEmail
+        binding.cbServiceTv.text = provider.service
+        binding.cbPriceTv.text = provider.price
+
+    }
 
 
 }

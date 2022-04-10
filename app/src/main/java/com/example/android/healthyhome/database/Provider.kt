@@ -6,7 +6,7 @@ data class Provider(
     val address: String,
     val Bio: String,
     val contact: String,
-    val email: String,
+    val companyEmail: String,
     val extras: String,
     val companyName: String,
     //
@@ -15,7 +15,9 @@ data class Provider(
     val price: String,
     //
     val rating: Int,
-    val service: String
+    val service: String,
+
+    var expanded : Boolean = false
 
 
 )

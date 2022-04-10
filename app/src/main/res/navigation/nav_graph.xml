@@ -91,24 +91,12 @@
         android:name="com.example.android.healthyhome.ui.ProviderListFragment"
         android:label="@string/provider_list_screen"
         tools:layout="@layout/fragment_provider_list">
-        <action
-            android:id="@+id/action_providerListFragment_to_chosenProviderFragment"
-            app:destination="@id/chosenProviderFragment" />
         <argument
             android:name="providers"
             app:argType="com.example.android.healthyhome.database.util.Providers" />
-    </fragment>
-    <fragment
-        android:id="@+id/chosenProviderFragment"
-        android:name="com.example.android.healthyhome.ui.ChosenProviderFragment"
-        android:label="ChosenProviderFragment"
-        tools:layout="@layout/fragment_chosen_provider">
         <action
-            android:id="@+id/action_chosenProviderFragment_to_filterServicesFragment"
+            android:id="@+id/action_providerListFragment_to_filterServicesFragment"
             app:destination="@id/filterServicesFragment" />
-        <argument
-            android:name="provider"
-            app:argType="com.example.android.healthyhome.database.util.Providers" />
     </fragment>
     <fragment
         android:id="@+id/providerBookingsFragment"

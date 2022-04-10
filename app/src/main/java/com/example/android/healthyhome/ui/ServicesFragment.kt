@@ -37,6 +37,21 @@ class ServicesFragment : Fragment() {
         binding.icServicesCleaner.setOnClickListener {
             getProviders("cleaning")
         }
+        binding.icServicesLocksmith.setOnClickListener {
+            getProviders("locksmith")
+        }
+        binding.icServicesDw.setOnClickListener {
+            getProviders("dogwalking")
+        }
+        binding.icServicesRemovals.setOnClickListener {
+            getProviders("removals")
+        }
+        binding.icServicesGard.setOnClickListener {
+            getProviders("gardening")
+        }
+        binding.icServicesOddjobs.setOnClickListener {
+            getProviders("oddjobs")
+        }
         mService = Common.getAPI()
 
 
@@ -51,7 +66,7 @@ class ServicesFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<Providers>, t: Throwable) {
-                TODO("Not yet implemented")
+                Toast.makeText(activity!!.applicationContext, "error getting providers", Toast.LENGTH_SHORT).show()
             }
 
         })
