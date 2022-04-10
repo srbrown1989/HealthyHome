@@ -137,6 +137,11 @@
     <string name="make_booking">Make Booking</string>
     <string name="bio_w_colon">Bio:</string>
     <string name="price_p_h">Price(P/H):</string>
+    <string name="cleaning_c">Cleaning</string>
+    <string name="gardener_c">Gardener</string>
+    <string name="locksmith_c">Locksmith</string>
+    <string name="removals_c">Removals</string>
+    <string name="select_service_c">Select Service</string>
 
     <string-array name="services_array">
         <item>Cleaning</item>
