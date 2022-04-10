@@ -51,7 +51,7 @@ class ServicesFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<Providers>, t: Throwable) {
-                TODO("Not yet implemented")
+                Toast.makeText(activity!!.applicationContext, "error getting providers", Toast.LENGTH_SHORT).show()
             }
 
         })
