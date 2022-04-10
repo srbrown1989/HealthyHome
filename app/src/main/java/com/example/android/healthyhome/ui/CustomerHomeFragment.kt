@@ -49,6 +49,10 @@ class CustomerHomeFragment : Fragment() {
             navController.navigate(CustomerHomeFragmentDirections.actionCustomerHomeFragmentToPostJobFragment())
         }
 
+        binding.responsesButton.setOnClickListener {
+            navController.navigate(CustomerHomeFragmentDirections.actionCustomerHomeFragmentToCustomerJobResponsesFragment())
+        }
+
         binding.bookingsButton.setOnClickListener {
             getCustomerBookings()
         }

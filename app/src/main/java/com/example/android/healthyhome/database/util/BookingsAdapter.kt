@@ -1,5 +1,6 @@
 package com.example.android.healthyhome.database.util
 
+import android.annotation.SuppressLint
 import android.opengl.Visibility
 import android.view.LayoutInflater
 import android.view.View
@@ -22,6 +23,7 @@ class BookingsAdapter(private val bookings: MutableList<BookingsItem>) : Recycle
         return ViewHolder(view)
     }
 
+    @SuppressLint("RestrictedApi")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val booking = bookings[position]
         holder.booking.text = ("Booking : " + (position + 1))
@@ -32,6 +34,7 @@ class BookingsAdapter(private val bookings: MutableList<BookingsItem>) : Recycle
         holder.postcode.text = ("Postcode: " + booking.postcode)
         holder.custName.text = (booking.firstName + " " + booking.lastName)
         holder.providername.text = ("Provider: " + booking.companyName)
+        holder.extras.text = ("Extras: " + booking.extrasrequested)
         holder.bookingButton.setOnClickListener {
             Toast.makeText(getApplicationContext(), "proceed to cancel booking", Toast.LENGTH_SHORT).show()
         }
@@ -61,6 +64,7 @@ class BookingsAdapter(private val bookings: MutableList<BookingsItem>) : Recycle
         val custName: TextView = itemView.find(R.id.tv_booking_custName)
         val date : TextView = itemView.find(R.id.tv_booking_date)
         val time: TextView = itemView.find(R.id.tv_booking_time)
+        val extras: TextView = itemView.find(R.id.tv_extras)
 
         val bookingsExtra : ConstraintLayout = itemView.find(R.id.booking_extra)
         val bookingsBody : ConstraintLayout = itemView.find(R.id.booking_body)
