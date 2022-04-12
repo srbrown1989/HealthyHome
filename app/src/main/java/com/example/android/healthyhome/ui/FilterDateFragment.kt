@@ -17,6 +17,7 @@ import com.example.android.healthyhome.database.AvailabilityType
 import com.example.android.healthyhome.database.BookingType
 import com.example.android.healthyhome.database.DBCalls
 import com.example.android.healthyhome.database.mail.Mail
+import com.example.android.healthyhome.database.util.Common
 import com.example.android.healthyhome.databinding.FragmentFilterDateBinding
 import java.text.SimpleDateFormat
 import java.time.LocalDate
@@ -81,7 +82,7 @@ class FilterDateFragment : Fragment(){
                 DBCalls.insertBooking(cid.toString(), pid.toString(), binding.tvDatePicker.text.toString(), time.replace(":", ""), binding.tvExtrasPresent.text.toString().replace(" ", ""), numOfRooms + extras.size)
 
                 //UID OBTAINED FROM SESSION
-                DBCalls.getEmailByUID("1"){ email ->
+                DBCalls.getEmailByUID(Common.currentUser.uid.toString()){ email ->
                     Mail.sendEMail("Healthy Homes : New Booking", Mail.buildBookingConfirmation(binding.tvCustNamePresent.text.toString(), binding.tvProvNamePresent.text.toString(), binding.tvDatePicker.text.toString(), time), email)
                 }
 
