@@ -205,13 +205,13 @@ class LoginFragment : Fragment() {
                 binding.nameEditText.setError("Please enter your full name",icon)
             }
             TextUtils.isEmpty(binding.etAddressFirst.text.toString().trim()) ->{
-                binding.nameEditText.setError("Please enter your first line of address",icon)
+                binding.etAddressFirst.setError("Please enter your first line of address",icon)
             }
             TextUtils.isEmpty(binding.etAddressPostcode.text.toString().trim()) ->{
-                binding.nameEditText.setError("Please enter your postcode",icon)
+                binding.etAddressPostcode.setError("Please enter your postcode",icon)
             }
             TextUtils.isEmpty(binding.etTelephone.text.toString().trim()) ->{
-                binding.nameEditText.setError("Please enter your phone number",icon)
+                binding.etTelephone.setError("Please enter your phone number",icon)
             }
 
             binding.emailEditText.text.toString().isNotEmpty() &&
